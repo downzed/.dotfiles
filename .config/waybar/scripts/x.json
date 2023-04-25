@@ -1,0 +1,660 @@
+{
+  "id": 1,
+  "type": "root",
+  "orientation": "horizontal",
+  "percent": null,
+  "urgent": false,
+  "marks": [
+  ],
+  "focused": false,
+  "layout": "splith",
+  "border": "none",
+  "current_border_width": 0,
+  "rect": {
+    "x": 0,
+    "y": 0,
+    "width": 2560,
+    "height": 1080
+  },
+  "deco_rect": {
+    "x": 0,
+    "y": 0,
+    "width": 0,
+    "height": 0
+  },
+  "window_rect": {
+    "x": 0,
+    "y": 0,
+    "width": 0,
+    "height": 0
+  },
+  "geometry": {
+    "x": 0,
+    "y": 0,
+    "width": 0,
+    "height": 0
+  },
+  "name": "root",
+  "window": null,
+  "nodes": [
+    {
+      "id": 2147483647,
+      "type": "output",
+      "orientation": "horizontal",
+      "percent": null,
+      "urgent": false,
+      "marks": [
+      ],
+      "focused": false,
+      "layout": "output",
+      "border": "none",
+      "current_border_width": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 2560,
+        "height": 1080
+      },
+      "deco_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "window_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "geometry": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "name": "__i3",
+      "window": null,
+      "nodes": [
+        {
+          "id": 2147483646,
+          "type": "workspace",
+          "orientation": "horizontal",
+          "percent": null,
+          "urgent": false,
+          "marks": [
+          ],
+          "focused": false,
+          "layout": "splith",
+          "border": "none",
+          "current_border_width": 0,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 2560,
+            "height": 1080
+          },
+          "deco_rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "window_rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "geometry": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "name": "__i3_scratch",
+          "window": null,
+          "nodes": [
+          ],
+          "floating_nodes": [
+          ],
+          "focus": [
+          ],
+          "fullscreen_mode": 1,
+          "sticky": false
+        }
+      ],
+      "floating_nodes": [
+      ],
+      "focus": [
+        2147483646
+      ],
+      "fullscreen_mode": 0,
+      "sticky": false
+    },
+    {
+      "id": 5,
+      "type": "output",
+      "orientation": "none",
+      "percent": 1.0,
+      "urgent": false,
+      "marks": [
+      ],
+      "focused": false,
+      "layout": "output",
+      "border": "none",
+      "current_border_width": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 2560,
+        "height": 1080
+      },
+      "deco_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "window_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "geometry": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "name": "HDMI-A-1",
+      "window": null,
+      "nodes": [
+        {
+          "id": 31,
+          "type": "workspace",
+          "orientation": "horizontal",
+          "percent": null,
+          "urgent": false,
+          "marks": [
+          ],
+          "focused": false,
+          "layout": "splith",
+          "border": "none",
+          "current_border_width": 0,
+          "rect": {
+            "x": 16,
+            "y": 16,
+            "width": 2528,
+            "height": 1006
+          },
+          "deco_rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "window_rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "geometry": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "name": "1",
+          "window": null,
+          "nodes": [
+            {
+              "id": 18,
+              "type": "con",
+              "orientation": "none",
+              "percent": 0.49841772151898733,
+              "urgent": false,
+              "marks": [
+              ],
+              "focused": false,
+              "layout": "none",
+              "border": "normal",
+              "current_border_width": 2,
+              "rect": {
+                "x": 16,
+                "y": 43,
+                "width": 1260,
+                "height": 979
+              },
+              "deco_rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1260,
+                "height": 27
+              },
+              "window_rect": {
+                "x": 2,
+                "y": 0,
+                "width": 1256,
+                "height": 977
+              },
+              "geometry": {
+                "x": 0,
+                "y": 0,
+                "width": 1254,
+                "height": 1042
+              },
+              "name": "New chat - Vivaldi",
+              "window": 14680067,
+              "nodes": [
+              ],
+              "floating_nodes": [
+              ],
+              "focus": [
+              ],
+              "fullscreen_mode": 0,
+              "sticky": false,
+              "pid": 3266,
+              "app_id": null,
+              "visible": true,
+              "max_render_time": 0,
+              "shell": "xwayland",
+              "inhibit_idle": false,
+              "idle_inhibitors": {
+                "user": "none",
+                "application": "none"
+              },
+              "window_properties": {
+                "class": "Vivaldi-stable",
+                "instance": "vivaldi-stable",
+                "title": "New chat - Vivaldi",
+                "transient_for": null,
+                "window_role": "browser",
+                "window_type": "normal"
+              }
+            },
+            {
+              "id": 38,
+              "type": "con",
+              "orientation": "vertical",
+              "percent": 0.49841772151898733,
+              "urgent": false,
+              "marks": [
+              ],
+              "focused": false,
+              "layout": "splitv",
+              "border": "none",
+              "current_border_width": 0,
+              "rect": {
+                "x": 1284,
+                "y": 16,
+                "width": 1260,
+                "height": 1006
+              },
+              "deco_rect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "window_rect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "geometry": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "name": null,
+              "window": null,
+              "nodes": [
+                {
+                  "id": 36,
+                  "type": "con",
+                  "orientation": "none",
+                  "percent": 0.49602385685884692,
+                  "urgent": false,
+                  "marks": [
+                  ],
+                  "focused": false,
+                  "layout": "none",
+                  "border": "none",
+                  "current_border_width": 2,
+                  "rect": {
+                    "x": 1284,
+                    "y": 16,
+                    "width": 1260,
+                    "height": 499
+                  },
+                  "deco_rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "window_rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1260,
+                    "height": 499
+                  },
+                  "geometry": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 2560,
+                    "height": 1080
+                  },
+                  "name": "scripts : nvim — Konsole",
+                  "window": null,
+                  "nodes": [
+                  ],
+                  "floating_nodes": [
+                  ],
+                  "focus": [
+                  ],
+                  "fullscreen_mode": 0,
+                  "sticky": false,
+                  "pid": 18205,
+                  "app_id": "org.kde.konsole",
+                  "visible": true,
+                  "max_render_time": 0,
+                  "shell": "xdg_shell",
+                  "inhibit_idle": false,
+                  "idle_inhibitors": {
+                    "user": "none",
+                    "application": "none"
+                  }
+                },
+                {
+                  "id": 40,
+                  "type": "con",
+                  "orientation": "none",
+                  "percent": 0.49602385685884692,
+                  "urgent": false,
+                  "marks": [
+                  ],
+                  "focused": true,
+                  "layout": "none",
+                  "border": "none",
+                  "current_border_width": 2,
+                  "rect": {
+                    "x": 1284,
+                    "y": 523,
+                    "width": 1260,
+                    "height": 499
+                  },
+                  "deco_rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "window_rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1260,
+                    "height": 499
+                  },
+                  "geometry": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 2560,
+                    "height": 1080
+                  },
+                  "name": "scripts : zsh — Konsole",
+                  "window": null,
+                  "nodes": [
+                  ],
+                  "floating_nodes": [
+                  ],
+                  "focus": [
+                  ],
+                  "fullscreen_mode": 0,
+                  "sticky": false,
+                  "pid": 20398,
+                  "app_id": "org.kde.konsole",
+                  "visible": true,
+                  "max_render_time": 0,
+                  "shell": "xdg_shell",
+                  "inhibit_idle": false,
+                  "idle_inhibitors": {
+                    "user": "none",
+                    "application": "none"
+                  }
+                }
+              ],
+              "floating_nodes": [
+              ],
+              "focus": [
+                40,
+                36
+              ],
+              "fullscreen_mode": 0,
+              "sticky": false
+            }
+          ],
+          "floating_nodes": [
+          ],
+          "focus": [
+            38,
+            18
+          ],
+          "fullscreen_mode": 1,
+          "sticky": false,
+          "num": 1,
+          "output": "HDMI-A-1",
+          "representation": "H[Vivaldi-stable V[org.kde.konsole org.kde.konsole]]"
+        }
+      ],
+      "floating_nodes": [
+      ],
+      "focus": [
+        31
+      ],
+      "fullscreen_mode": 0,
+      "sticky": false,
+      "active": true,
+      "dpms": true,
+      "primary": false,
+      "make": "Unknown",
+      "model": "Mi 30 HFCW",
+      "serial": "3410300005592",
+      "scale": 1.0,
+      "scale_filter": "nearest",
+      "transform": "normal",
+      "adaptive_sync_status": "disabled",
+      "current_workspace": "1",
+      "modes": [
+        {
+          "width": 2560,
+          "height": 1080,
+          "refresh": 60001
+        },
+        {
+          "width": 2560,
+          "height": 1080,
+          "refresh": 75000
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "refresh": 120000
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "refresh": 119880
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "refresh": 100000
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "refresh": 60000
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "refresh": 60000
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "refresh": 59940
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "refresh": 50000
+        },
+        {
+          "width": 1680,
+          "height": 1050,
+          "refresh": 59883
+        },
+        {
+          "width": 1600,
+          "height": 900,
+          "refresh": 60000
+        },
+        {
+          "width": 1280,
+          "height": 1024,
+          "refresh": 75025
+        },
+        {
+          "width": 1280,
+          "height": 1024,
+          "refresh": 60020
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "refresh": 59901
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "refresh": 60000
+        },
+        {
+          "width": 1152,
+          "height": 864,
+          "refresh": 75000
+        },
+        {
+          "width": 1280,
+          "height": 720,
+          "refresh": 60000
+        },
+        {
+          "width": 1280,
+          "height": 720,
+          "refresh": 59940
+        },
+        {
+          "width": 1280,
+          "height": 720,
+          "refresh": 50000
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "refresh": 75029
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "refresh": 70069
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "refresh": 60004
+        },
+        {
+          "width": 800,
+          "height": 600,
+          "refresh": 75000
+        },
+        {
+          "width": 800,
+          "height": 600,
+          "refresh": 72188
+        },
+        {
+          "width": 800,
+          "height": 600,
+          "refresh": 60317
+        },
+        {
+          "width": 720,
+          "height": 576,
+          "refresh": 50000
+        },
+        {
+          "width": 720,
+          "height": 480,
+          "refresh": 60000
+        },
+        {
+          "width": 720,
+          "height": 480,
+          "refresh": 59940
+        },
+        {
+          "width": 640,
+          "height": 480,
+          "refresh": 75000
+        },
+        {
+          "width": 640,
+          "height": 480,
+          "refresh": 72809
+        },
+        {
+          "width": 640,
+          "height": 480,
+          "refresh": 60000
+        },
+        {
+          "width": 640,
+          "height": 480,
+          "refresh": 59940
+        },
+        {
+          "width": 640,
+          "height": 480,
+          "refresh": 59940
+        },
+        {
+          "width": 720,
+          "height": 400,
+          "refresh": 70082
+        }
+      ],
+      "current_mode": {
+        "width": 2560,
+        "height": 1080,
+        "refresh": 60001
+      },
+      "max_render_time": 0
+    }
+  ],
+  "floating_nodes": [
+  ],
+  "focus": [
+    5
+  ],
+  "fullscreen_mode": 0,
+  "sticky": false
+}

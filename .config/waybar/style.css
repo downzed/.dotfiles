@@ -1,0 +1,66 @@
+@define-color light #ecfff4;
+@define-color background #eceff4;
+@define-color text #4c566a;
+@define-color text_hover #4c446a;
+
+* {
+  border: 0;
+  font-family: "JetBrains Mono NL Medium";
+  /*font-size: 13px;*/
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+}
+
+window#waybar:first-child > box {
+  border-radius: 4px;
+  color: @text;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.modules-right {
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: @background;
+  border-radius: 4px;
+}
+
+.modules-center {
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: @background;
+  border-radius: 4px;
+}
+
+.modules-left {
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: @background;
+  border-radius: 4px;
+}
+
+#workspaces button {
+  transition: all 0.15s ease-in-out;
+  border-bottom: 4px solid transparent;
+  border-radius: 0px;
+  padding: 8px;
+  font-size: 18px;
+  margin: 0 4px;
+}
+
+#workspaces button:hover {
+  background: inherit;
+  border-color: @background;
+}
+
+#workspaces button.focused {
+  background-color: @background;
+  border-bottom: 4px solid @text_hover;
+  color: @text_hover;
+}
+
+/*background-color: @bg;*/

@@ -1,0 +1,14 @@
+
+always_parse_args=true
+show_all=true
+print_command=true
+insensitive=true
+show=drun
+layer=overlay
+width=100%
+height=100%
+prompt-pango-markup = true
+grid-columns = 3
+grid-rows = 3
+show-icon=true
+

@@ -1,0 +1,112 @@
+[{
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["idle_inhibitor"],
+    "modules-right": ["network","backlight","tray", "custom/scratchpad-indicator", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
+	"sway/workspaces" : {
+	
+        "format": "{name}",
+
+	},
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "network": {
+        /*"format-wifi": "{essid} ({signalStrength}%) ",*/
+        "format-wifi": "{essid}   ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", 
+        "max-length": 50,
+        "on-click": "gnome-terminal -e 'nmtui'"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+    
+     "cpu": {
+         "format": "{usage}% ",
+         "tooltip": false
+     },
+    // "memory": {
+    //     "format": "{}% "
+    // },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 82,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "0% {icon} ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+	/*"custom/power": {*/
+		/*"format": "",*/
+		/*"exec": "~/.config/waybar/p.sh",*/
+		/*"exec-if": "on-click"*/
+    /*},*/
+	"backlight": {
+      "on-scroll-up": "brightnessctl set +1%",
+      "on-scroll-down": "brightnessctl set 1%-",
+      "device": "intel_backlight",
+      "format": "{percent}% {icon}",
+      "format-icons": ["", ""]
+  },
+}, {
+	"position": "bottom",
+    "modules-left": ["custom/launcher", "sway/window"],
+    "modules-right": ["sway/language","custom/clock"],
+	"custom/clock": {
+		"interval": 5,
+        "exec": "echo '  '$(date +'%H:%M - %d/%m/%Y')'  '",
+        // "format-alt": "{:%Y-%m-%d}"
+		"on-click": "gnome-calendar"
+    },
+	"custom/launcher":{
+        "format": " ",
+        "on-click": "wofi --prompt='Apps:' | xargs swaymsg exec --",
+        "on-click-right": "killall wofi"
+    },
+	"sway/window": {
+        "format": "{}",
+		"icon": true,
+        "max-length": 70,
+    }
+ 
+}]

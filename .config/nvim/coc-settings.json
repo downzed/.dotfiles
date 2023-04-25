@@ -1,0 +1,5 @@
+{
+  "coc.preferences.formatOnSave": true,
+  "prettier.tabWidth": 2,
+  "prettier.enable": true
+}
