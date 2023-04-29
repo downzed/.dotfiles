@@ -14,9 +14,12 @@ dotfiles = {
 # Define a dictionary of directories to symlink
 directories = {
   ".config/nvim": f"{dotfiles_dir}/.config/nvim",
-  ".config/waybar": f"{dotfiles_dir}/.config/waybar",
-  ".config/sway": f"{dotfiles_dir}/.config/sway",
-  ".config/wofi": f"{dotfiles_dir}/.config/wofi",
+  ".config/alacritty": f"{dotfiles_dir}/.config/alacritty",
+  ".config/eww": f"{dotfiles_dir}/.config/eww",
+  ".config/hypr": f"{dotfiles_dir}/.config/hypr",
+  ".config/mako": f"{dotfiles_dir}/.config/mako",
+  ".config/swaylock": f"{dotfiles_dir}/.config/swaylock",
+  ".config/spotify-player": f"{dotfiles_dir}/.config/spotify-player",
 }
 
 # Function to create a backup of existing file/directory

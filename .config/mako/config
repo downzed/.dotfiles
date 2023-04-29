@@ -1,0 +1,2 @@
+default-timeout=5000
+on-button-left=exec notify-send 'Select action: '

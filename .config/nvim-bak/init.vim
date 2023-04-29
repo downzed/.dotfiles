@@ -5,6 +5,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sbdchd/neoformat'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'tpope/vim-surround'
+	Plug 'elkowar/yuck.vim'
+	Plug 'Exafunction/codeium.vim'
+	Plug 'rust-lang/rust.vim'
+	
 "===== git
 	Plug 'lewis6991/gitsigns.nvim'
 "===== files
@@ -30,8 +34,8 @@ filetype plugin on
 colorscheme PaperColor
 set termguicolors
 
-set background=light
-set relativenumber
+set background=dark
+set number relativenumber
 set laststatus=2
 set updatetime=300
 set signcolumn=yes
