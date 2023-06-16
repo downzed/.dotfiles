@@ -5,13 +5,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-pfetch
+#pfetch
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="flazz" # set by `omz`
-ZSH_THEME="terminalparty" # set by `omz`
+ZSH_THEME="nebirhos" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,10 +110,9 @@ alias yarn_refresh="echo 'Removing node_modules...'; rm -rf node_modules; echo '
 alias weather="curl 'wttr.in/Dvora?format=3'"
 alias nala_update="sudo nala update; sudo nala upgrade -y; sudo nala autopurge; sudo nala autoremove; echo 'system updated...' | cowsay"
 # alias ohmyzsh="vim ~/.oh-my-zsh"
-alias py="python"
-alias sp="spotify_player"
-alias ai="cd ~/Documents/ai" 
-alias rusty="cd ~/Documents/ai/RustyGPT"
+alias py="python3"
+alias ai="cd ~/projects/ai" 
+alias rusty="cd ~/projects/ai/RustyGPT"
 #
 #
 export NVM_DIR="$HOME/.nvm"
@@ -121,10 +120,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
-export PNPM_HOME="/home/downzed/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+#export PNPM_HOME="/home/downzed/.local/share/pnpm"
+#case ":$PATH:" in
+  #*":$PNPM_HOME:"*) ;;
+  #*) export PATH="$PNPM_HOME:$PATH" ;;
+#esac
 # pnpm end
 eval $(thefuck --alias fuck) 

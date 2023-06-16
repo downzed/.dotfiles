@@ -1,0 +1,10 @@
+require("core.configs.lualine")
+require("core.configs.bufferline")
+require("core.configs.theme")
+require("core.configs.nvim-tree")
+require("core.configs.telescope")
+require("core.configs.treesitter")
+require("core.configs.lsp_config")
+require("core.configs.which-key")
+require("core.configs.completions")
+
