@@ -104,15 +104,16 @@ source $ZSH/oh-my-zsh.sh
 
 alias cls="clear"
 #alias vim="nvim"
-alias zshconfig="cls; ~; nvim ~/.zshrc"
-alias vimconfig="cls; ~; nvim ~/.config/nvim"
+#alias zshconfig="cls; ~; nvim ~/.zshrc"
+#alias vimconfig="cls; ~; nvim ~/.config/nvim"
+alias dots="cls; ~/.dotfiles/;"
 alias yarn_refresh="echo 'Removing node_modules...'; rm -rf node_modules; echo 'Running Yarn'; yarn; echo 'Yarn is Ready \n run yrun dev'|cowsay"
 alias weather="curl 'wttr.in/Dvora?format=3'"
 alias nala_update="sudo nala update; sudo nala upgrade -y; sudo nala autopurge; sudo nala autoremove; echo 'system updated...' | cowsay"
 # alias ohmyzsh="vim ~/.oh-my-zsh"
 alias py="python3"
 alias ai="cd ~/projects/ai" 
-alias rusty="cd ~/projects/ai/RustyGPT"
+alias rusty="cd ~/projects/RustyGPT"
 #
 #
 export NVM_DIR="$HOME/.nvm"

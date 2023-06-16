@@ -15,11 +15,11 @@ dotfiles = {
 directories = {
   ".config/nvim": f"{dotfiles_dir}/.config/nvim",
   ".config/alacritty": f"{dotfiles_dir}/.config/alacritty",
-  ".config/eww": f"{dotfiles_dir}/.config/eww",
-  ".config/hypr": f"{dotfiles_dir}/.config/hypr",
-  ".config/mako": f"{dotfiles_dir}/.config/mako",
-  ".config/swaylock": f"{dotfiles_dir}/.config/swaylock",
-  ".config/spotify-player": f"{dotfiles_dir}/.config/spotify-player",
+  # ".config/eww": f"{dotfiles_dir}/.config/eww",
+  # ".config/hypr": f"{dotfiles_dir}/.config/hypr",
+  # ".config/mako": f"{dotfiles_dir}/.config/mako",
+  # ".config/swaylock": f"{dotfiles_dir}/.config/swaylock",
+  # ".config/spotify-player": f"{dotfiles_dir}/.config/spotify-player",
 }
 
 # Function to create a backup of existing file/directory

@@ -1,3 +1,4 @@
-require("core.keymaps")
+require("core.sets")
+require("core.remaps")
 require("core.plugins")
-require("core.configs")
+require("core.config")
