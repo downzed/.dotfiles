@@ -73,7 +73,7 @@ ZSH_THEME="nebirhos" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm yarn node npm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git) # rust nvm yarn node npm zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

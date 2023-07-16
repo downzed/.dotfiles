@@ -20,14 +20,14 @@ return require('packer').startup(function(use)
     tag = '0.1.1',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  use {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-    }
-  }
+  -- use {
+  --   'nvim-neo-tree/neo-tree.nvim',
+  --   branch = 'v2.x',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim',
+  --     'MunifTanjim/nui.nvim',
+  --   }
+  -- }
 
   -- git
   use 'tpope/vim-fugitive'

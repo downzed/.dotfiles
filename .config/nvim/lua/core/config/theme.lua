@@ -11,11 +11,10 @@ require('nightfox').setup({
 })
 
 vim.keymap.set("n", "<leader>th", require('telescope.builtin').colorscheme, {})
-Safe = {}
-function SetColorscheme(color)
-  color = color or "nightfox"
-  vim.cmd.colorscheme(color)
 
+function SetColorscheme(color)
+  color = color or "terafox"
+  vim.cmd.colorscheme(color)
   -- nightfox supports transparency
   -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

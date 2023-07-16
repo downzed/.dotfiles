@@ -4,7 +4,8 @@ require('lualine').setup({
     theme = 'auto'
   },
   sections = {
-    lualine_a = {
+    lualine_a = { 'mode' },
+    lualine_c = {
       {
         'filename',
         path = 4

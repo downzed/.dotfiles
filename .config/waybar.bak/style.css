@@ -5,19 +5,18 @@
 
 * {
   border: 0;
-  font-family: "JetBrains Mono NL Medium";
-  /*font-size: 13px;*/
+  font-family: "overpassm nerd font mono";
   min-height: 0;
 }
 
 window#waybar {
   background: transparent;
-  color: @text;
+  color: @background;
 }
 
 window#waybar:first-child > box {
-  border-radius: 4px;
-  color: @text;
+  /* border-radius: 4px; */
+  color: @background;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -25,31 +24,28 @@ window#waybar:first-child > box {
 .modules-right {
   padding-left: 16px;
   padding-right: 16px;
-  background-color: @background;
   border-radius: 4px;
 }
 
 .modules-center {
   padding-left: 16px;
   padding-right: 16px;
-  background-color: @background;
   border-radius: 4px;
 }
 
 .modules-left {
   padding-left: 16px;
   padding-right: 16px;
-  background-color: @background;
   border-radius: 4px;
 }
 
 #workspaces button {
-  transition: all 0.15s ease-in-out;
-  border-bottom: 4px solid transparent;
+  transition: all 0.1s ease-in-out;
+  border-bottom: 2px solid transparent;
   border-radius: 0px;
-  padding: 8px;
-  font-size: 18px;
-  margin: 0 4px;
+  padding: 4px;
+  font-size: 16px;
+  margin: 0 2px;
 }
 
 #workspaces button:hover {
@@ -58,9 +54,10 @@ window#waybar:first-child > box {
 }
 
 #workspaces button.focused {
-  background-color: @background;
-  border-bottom: 4px solid @text_hover;
-  color: @text_hover;
+  /* background-color: @background; */
+  border-bottom: 4px solid @background;
+  /* color: @text_hover; */
+  color: @background;
 }
 
 /*background-color: @bg;*/

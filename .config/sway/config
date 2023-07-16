@@ -16,20 +16,22 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 # make hyper default terminal
-set $term konsole
+set $term alacritty
 #set $term gnome-terminal
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu wofi --show=drun | xargs swaymsg exec --
-set $menu wofi --prompt="Apps:" | xargs swaymsg exec --
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu wofi --show=drun | xargs swaymsg exec --
+# set $menu wofi --show=drun --prompt="Apps:" | xargs swaymsg exec --
+include /etc/sway/config-vars.d/*
 
 default_border none
-set $opacity 0.95
+set $opacity 0.9
 #for_window [class="gnome-terminal"] opacity $opacity
 #for_window [app_id="gnome-terminal-server"] opacity $opacity
 
-for_window [app_id="konsole"] opacity $opacity
+for_window [app_id="alacritty"] opacity $opacity
 for_window [class="Code"] opacity $opacity
 for_window [app_id="foot"] opacity $opacity
 
@@ -45,7 +47,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/Way_by_Kacper_Ślusarczyk.jpg fill
 #
-output * bg /home/downzed/Pictures/ultra wide Minimalism Artwork Reflection Trees Simple.jpg fill
+output * bg /home/downzed/Pictures/Default_dark_shot11_luminous_backlit_glowing_forest_mushroom_d_0_509195b6-6630-403a-b90f-aa356143e341_1.jpg fill
 exec wal -R
 set $output-primary eDP-1
 set $output-secondary HDMI-A-1
@@ -80,17 +82,17 @@ bindswitch --reload --locked lid:off output $laptop enable
 #
 # Example configuration:
 #
-   input "1267:12484:DELL096A:00_04F3:30C4_Touchpad" {
-	   dwt enabled
-	   tap enabled
-	   natural_scroll disabled
-	   middle_emulation enabled
-   }
+input "1267:12484:DELL096A:00_04F3:30C4_Touchpad" {
+  dwt enabled
+  tap enabled
+  natural_scroll disabled
+  middle_emulation enabled
+}
 
 input * {
-		xkb_layout us,il
-		xkb_variant nodeadkeys
-		xkb_options grp:alt_shift_toggle
+  xkb_layout us,il
+  xkb_variant nodeadkeys
+  xkb_options grp:alt_shift_toggle
 }
 
 #
@@ -251,8 +253,8 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 
-gaps inner 8
-gaps outer 8
+# gaps inner 8
+# gaps outer 8
 bar {
 	swaybar_command waybar
     #position top
