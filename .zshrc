@@ -3,7 +3,7 @@
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"
 
 #pfetch
 # Set name of the theme to load --- if set to "random", it will
@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="flazz" # set by `omz`
-ZSH_THEME="nebirhos" # set by `omz`
+# ZSH_THEME="nebirhos" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,9 +73,10 @@ ZSH_THEME="nebirhos" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git) # rust nvm yarn node npm zsh-autosuggestions zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
+# plugins=(git zsh-autosuggestions) # rust nvm yarn node npm  zsh-syntax-highlighting)
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/spaceship/spaceship.zsh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -114,17 +115,21 @@ alias nala_update="sudo nala update; sudo nala upgrade -y; sudo nala autopurge; 
 alias py="python3"
 alias ai="cd ~/projects/ai" 
 alias rusty="cd ~/projects/RustyGPT"
+alias lsa="tree -La 1"
 #
 #
 export NVM_DIR="$HOME/.nvm"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -z "$TMUX" ] && command -v tmux &>/dev/null && tmux 
 
 # pnpm
+
 #export PNPM_HOME="/home/downzed/.local/share/pnpm"
 #case ":$PATH:" in
-  #*":$PNPM_HOME:"*) ;;
-  #*) export PATH="$PNPM_HOME:$PATH" ;;
+#*":$PNPM_HOME:"*) ;;
+#*) export PATH="$PNPM_HOME:$PATH" ;;
 #esac
 # pnpm end
 eval $(thefuck --alias fuck) 

@@ -8,14 +8,16 @@ dotfiles_dir = os.path.expanduser("~/.dotfiles")
 # Define a dictionary of dotfiles to symlink
 dotfiles = {
   ".zshrc": f"{dotfiles_dir}/.zshrc",
+  ".tmux.conf": f"{dotfiles_dir}/.tmux.conf",
   ".gitconfig": f"{dotfiles_dir}/.gitconfig",
 }
 
 # Define a dictionary of directories to symlink
 directories = {
   ".config/nvim": f"{dotfiles_dir}/.config/nvim",
-  ".config/alacritty": f"{dotfiles_dir}/.config/alacritty",
-  ".config/sway": f"{dotfiles_dir}/.config/sway",
+  ".config/kitty": f"{dotfiles_dir}/.config/kitty",
+  # ".config/alacritty": f"{dotfiles_dir}/.config/alacritty",
+  # ".config/sway": f"{dotfiles_dir}/.config/sway",
   # ".config/waybar": f"{dotfiles_dir}/.config/waybar",
   # ".config/eww": f"{dotfiles_dir}/.config/eww",
   # ".config/hypr": f"{dotfiles_dir}/.config/hypr",
