@@ -179,6 +179,11 @@ _G.packer_plugins = {
     path = "/home/downzed/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/downzed/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/downzed/.local/share/nvim/site/pack/packer/start/which-key.nvim",

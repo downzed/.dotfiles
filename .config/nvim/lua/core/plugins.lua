@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'  -- comment/uncomments
   use 'folke/which-key.nvim'
 
+  -- tmux
+  use 'christoomey/vim-tmux-navigator'
+
   -- start page
   use 'goolord/alpha-nvim'
 

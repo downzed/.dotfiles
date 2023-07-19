@@ -1,6 +1,10 @@
 #
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
+fpath+=($HOME/.zsh/pure)
+
+autoload -U promptinit; promptinit
+prompt pure
 
 # Path to your oh-my-zsh installation.
 # export ZSH="$HOME/.oh-my-zsh"
@@ -73,9 +77,11 @@
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git zsh-autosuggestions) # rust nvm yarn node npm  zsh-syntax-highlighting)
+
+# plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/spaceship/spaceship.zsh
+source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
 # source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,10 +110,12 @@ source ~/.zsh/spaceship/spaceship.zsh
 
 
 alias cls="clear"
-#alias vim="nvim"
+alias ..="cd .."
+alias ~="cd ~"
+alias vim="nvim"
 #alias zshconfig="cls; ~; nvim ~/.zshrc"
 #alias vimconfig="cls; ~; nvim ~/.config/nvim"
-alias dots="cls; ~/.dotfiles/;"
+alias dots="cls; cd ~/.dotfiles/; nvim"
 alias yarn_refresh="echo 'Removing node_modules...'; rm -rf node_modules; echo 'Running Yarn'; yarn; echo 'Yarn is Ready \n run yrun dev'|cowsay"
 alias weather="curl 'wttr.in/Dvora?format=3'"
 alias nala_update="sudo nala update; sudo nala upgrade -y; sudo nala autopurge; sudo nala autoremove; echo 'system updated...' | cowsay"
