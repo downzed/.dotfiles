@@ -1,14 +1,14 @@
 require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = 'auto'
+    theme = 'dracula-nvim'
   },
   sections = {
     lualine_a = { 'mode' },
     lualine_c = {
       {
         'filename',
-        path = 4
+        path = 1
       }
     },
   }

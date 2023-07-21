@@ -30,7 +30,11 @@ return require('packer').startup(function(use)
   -- }
 
   -- git
-  use 'tpope/vim-fugitive'
+  -- use 'tpope/vim-fugitive'
+  use {
+    'NeogitOrg/neogit',
+    requires = 'nvim-lua/plenary.nvim'
+  }
 
   -- syntax
   use {
@@ -76,6 +80,7 @@ return require('packer').startup(function(use)
 
   -- theme
   use 'EdenEast/nightfox.nvim'
+  use 'Mofiqul/dracula.nvim'
   use 'nvim-tree/nvim-web-devicons'
 
   -- Automatically set up your configuration after cloning packer.nvim

@@ -1,112 +1,130 @@
 [{
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["idle_inhibitor"],
-    "modules-right": ["network","backlight","tray", "custom/scratchpad-indicator", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
-	"sway/workspaces" : {
-	
-        "format": "{name}",
+  "layer":"bottom",
+  "position":"bottom",
+  "height": 28,
+  // "custom/d"
+  "modules-right": ["sway/mode", "idle_inhibitor", "user"],
+  "modules-center": ["custom/prevtune","custom/spotify", "custom/nexttune"],
+  "modules-left": ["clock"],
+  "clock": {
+      "format": "{:%H:%M >> %d/%m/%y}",
+      "tooltip": false
+  },
 
-	},
+  "user": {
+    "format": "{user} >> up {work_d} days",
+    "interval": 60,
+    "height": 30,
+    "width": 30,
+    "icon": true,
+  },
+
+  "idle_inhibitor": {
+    "format": "IDLE >> {status}",
+  },
+
+  "custom/spotify": {
+    "interval": 1,
+    "format": {},
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/spotify.py",
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "spotify",
+    "tooltip":true,
+    "escape": true,
+  },
+
+  "custom/prevtune": {
+    "format":"<span size='110%'>󰶢</span>",
+    "on-click": "playerctl previous",
+  },
+  "custom/nexttune": {
+    "format":"<span size='110%'>󰔰</span>",
+    "on-click": "playerctl next",
+  },
+},{
+    "layer": "bottom",
+    "position": "top",
+    "height": 28,
+    "modules-left": ["sway/workspaces","custom/d","sway/window"],
+    "modules-right": ["tray", "disk", "pulseaudio", "battery", "temperature", "bluetooth", "network"],
+
+    "custom/d": {
+      "format": " ",
+      "tooltip": false,
+    },
+
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "> {}"
     },
-    "network": {
-        /*"format-wifi": "{essid} ({signalStrength}%) ",*/
-        "format-wifi": "{essid}   ",
-        "format-ethernet": "{ifname} ",
-        "format-disconnected": "", 
-        "max-length": 50,
-        "on-click": "gnome-terminal -e 'nmtui'"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
+
+    "sway/workspaces": {
+        "format": "{icon} {name}",
+        "disable-scroll": true,
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+          "default":"<span>></span>",
+          "focused": "<span size='105%'>>></span>"
+        },
     },
-    "tray": {
-        "icon-size": 15,
-        "spacing": 10
+
+    "backlight":{
+      "device": "intel_backlight",
+      "format": "LIGHT >> {percent}%"
     },
-    
-     "cpu": {
-         "format": "{usage}% ",
-         "tooltip": false
-     },
-    // "memory": {
-    //     "format": "{}% "
-    // },
+
     "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-        "critical-threshold": 82,
-        "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [""]
+        "critical-threshold": 80,
+        "format-critical": "TEMP >> {temperatureC}°C",
+        "format": "TEMP >> {temperatureC}°C"
     },
+
+    "disk": {
+      "format": "SPACE >> {percentage_free}%",
+      "tooltip-format": "{used} used out of {total} >> ({percentage_used}% used)"
+    }, 
+
     "battery": {
+        "format": "BAT >> {capacity}%",
+        "format-alt": "{time}",
+        "format-full": "FULL >> {capacity}%",
+        "format-charging": "CHRG >> {capacity}%",
+        "interval": 30,
         "states": {
-            // "good": 95,
-            "warning": 20,
+            "full": 100,
+            "warning": 25,
             "critical": 10
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "tooltip": false
     },
+
+    "network": {
+      "format": "NET >> {ifname} ({signalStrength}%)",
+      "format-wifi": "WIFI >> {essid} ({signalStrength}%)",
+      "format-alt": "{ipaddr}/{cidr}",
+      "format-alt-click": "click-right",
+      //"on-click": "kitty -e nmtui",
+      "tooltip": false
+    },
+
+   "bluetooth": {
+      "format": "BT >> {status}",
+      "format-connected-battery": "{device_alias} {device_battery_percentage}%",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": "BT Devices >> {num_connections} connected",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+   
+    "tray": {
+      "icon-size": 18
+    },
+
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} ",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "0% {icon} ",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-	/*"custom/power": {*/
-		/*"format": "",*/
-		/*"exec": "~/.config/waybar/p.sh",*/
-		/*"exec-if": "on-click"*/
-    /*},*/
-	"backlight": {
-      "on-scroll-up": "brightnessctl set +1%",
-      "on-scroll-down": "brightnessctl set 1%-",
-      "device": "intel_backlight",
-      "format": "{percent}% {icon}",
-      "format-icons": ["", ""]
-  },
-}, {
-	"position": "bottom",
-    "modules-left": ["custom/launcher", "sway/window"],
-    "modules-right": ["sway/language","custom/clock"],
-	"custom/clock": {
-		"interval": 5,
-        "exec": "echo '  '$(date +'%H:%M - %d/%m/%Y')'  '",
-        // "format-alt": "{:%Y-%m-%d}"
-		"on-click": "gnome-calendar"
-    },
-	"custom/launcher":{
-        "format": " ",
-        "on-click": "wofi --prompt='Apps:' | xargs swaymsg exec --",
-        "on-click-right": "killall wofi"
-    },
-	"sway/window": {
-        "format": "{}",
-		"icon": true,
-        "max-length": 70,
-    }
- 
+      "format": "VOL >> {volume}%",
+      "format-bluetooth": "BTH VOL >> {volume}%",
+      "scroll-step": 1,
+      "on-click": "pavucontrol",
+      "ignored-sinks": ["Easy Effects Sink"]
+  }
 }]

@@ -1,63 +1,143 @@
-@define-color light #ecfff4;
-@define-color background #eceff4;
-@define-color text #4c566a;
-@define-color text_hover #4c446a;
-
 * {
-  border: 0;
-  font-family: "overpassm nerd font mono";
-  min-height: 0;
+ 	font-size: 14px;
+  border: none;
+  font-family: JetBrainsMono Nerd Font Mono, monospace;
+  padding: 0;
+  margin: 0;
+  color: #6FFFE9;
 }
 
 window#waybar {
   background: transparent;
-  color: @background;
 }
 
-window#waybar:first-child > box {
-  /* border-radius: 4px; */
-  color: @background;
-  padding-left: 16px;
-  padding-right: 16px;
-}
+/*-----module groups----*/
 
+.modules-center,
+.modules-left,
 .modules-right {
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 4px;
+}
+/*-----custom modules----*/
+
+#custom-d {
+  color: transparent;
+  background-color: transparent;
+  margin: 0 4px;
 }
 
-.modules-center {
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 4px;
+#custom-spotify {
+  font-weight: bold;
+  padding: 0 8px;
+  border: 0px solid rgba(58, 80, 107,0.31);
+	background-color: rgba(28, 37, 65, 0.74);
 }
 
-.modules-left {
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 4px;
+#custom-nexttune,
+#custom-prevtune {
+  padding: 0px 10px;
+  font-size: 25px;
+  background: rgba(58, 80, 107, 0.11);
+  border: 0px solid rgba(58, 80, 107, 0);
 }
 
-#workspaces button {
-  transition: all 0.1s ease-in-out;
-  border-bottom: 2px solid transparent;
-  border-radius: 0px;
-  padding: 4px;
-  font-size: 16px;
-  margin: 0 2px;
+#custom-spotify .tooltip {
+  border: 44px solid white;
 }
 
-#workspaces button:hover {
-  background: inherit;
-  border-color: @background;
+button {
+  border-radius: 0;
+  min-width: 100px;
+  padding: 0 8px;
+  background-color: rgba(58, 80, 107, 0.23);
 }
 
-#workspaces button.focused {
-  /* background-color: @background; */
-  border-bottom: 4px solid @background;
-  /* color: @text_hover; */
-  color: @background;
+button.focused {
+  background-color: rgba(11, 19, 43, 0.81);
 }
 
-/*background-color: @bg;*/
+#clock,
+#battery,
+#bluetooth,
+#network,
+#pulseaudio,
+#tray,
+#disk,
+#mode,
+/* #window, */
+#language,
+#temperature,
+#user,
+#idle_inhibitor {
+  padding: 0 8px;
+  background: rgba(11, 19, 43, 0.81);
+	border: 1px solid rgba(28, 37, 65, 0.81);
+}
+
+#user,
+#pulseaudio,
+#network,
+#temperature,
+#clock {
+  border: 1px solid rgba(11, 19, 43,0.81);
+	background-color: rgba(58, 80, 107, 0.41);
+}
+#battery, #network, #temperature {
+  border-left: none;
+}
+
+#pulseaudio {
+  border-left: none;
+}
+
+#window {
+  font-style: italic;
+  font-size: 1rem;
+}
+#window, #clock {
+  font-weight: bold;
+}
+
+#bluetooth.connected {
+  /* background: rgba(0,85,102, .63); */
+}
+
+#workspaces {
+  border: 1px solid #3A506B;
+}
+
+#mode {
+  color: #cc3436;
+  font-weight: bold;
+}
+
+/*-----Indicators----*/
+#idle_inhibitor.activated {
+    /* background-color: #2dcc36; */
+}
+
+#pulseaudio.muted {
+    color: #cc3436;
+}
+
+#battery.charging {
+  /* background-color: #2dcc36; */
+}
+#battery.full {
+  /* background: rgba(255,140,0, .35); */
+}
+#battery.warning:not(.charging) {
+	color: #e6e600;
+}
+#battery.critical:not(.charging) {
+    color: #cc3436;
+}
+#temperature.critical {
+    color: #cc3436;
+}
+/*-----Colors----*/
+/*
+ * rgba(11, 19, 43, 1)--> Dark Back 
+ * rgba(58, 80, 107, 1) --> Light Back
+ * rgba(111, 255, 233, 1) --> text
+ */
+

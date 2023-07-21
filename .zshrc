@@ -80,7 +80,9 @@ prompt pure
 
 # plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/.zsh/k/k.sh
+source ~/.zsh/zsh-completions/src
+# source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # source $ZSH/oh-my-zsh.sh
 
@@ -122,7 +124,7 @@ alias nala_update="sudo nala update; sudo nala upgrade -y; sudo nala autopurge; 
 # alias ohmyzsh="vim ~/.oh-my-zsh"
 alias py="python3"
 alias ai="cd ~/projects/ai" 
-alias rusty="cd ~/projects/RustyGPT"
+alias rust="cd ~/projects/rust"
 alias lsa="tree -La 1"
 #
 #
@@ -141,3 +143,5 @@ export NVM_DIR="$HOME/.nvm"
 #esac
 # pnpm end
 eval $(thefuck --alias fuck) 
+
+

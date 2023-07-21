@@ -16,9 +16,8 @@ dotfiles = {
 directories = {
   ".config/nvim": f"{dotfiles_dir}/.config/nvim",
   ".config/kitty": f"{dotfiles_dir}/.config/kitty",
-  # ".config/alacritty": f"{dotfiles_dir}/.config/alacritty",
-  # ".config/sway": f"{dotfiles_dir}/.config/sway",
-  # ".config/waybar": f"{dotfiles_dir}/.config/waybar",
+  ".config/sway": f"{dotfiles_dir}/.config/sway",
+  ".config/waybar": f"{dotfiles_dir}/.config/waybar",
   # ".config/eww": f"{dotfiles_dir}/.config/eww",
   # ".config/hypr": f"{dotfiles_dir}/.config/hypr",
   # ".config/mako": f"{dotfiles_dir}/.config/mako",
