@@ -1,7 +1,16 @@
-require('lualine').setup({
+local ll = require('lualine');
+
+local seps = {
+  left = "",
+  right = "",
+}
+
+ll.setup({
   options = {
+    component_separators = seps,
+    section_separators = seps,
     icons_enabled = true,
-    theme = 'dracula-nvim'
+    theme = 'auto',
   },
   sections = {
     lualine_a = { 'mode' },

@@ -20,26 +20,17 @@ return require('packer').startup(function(use)
     tag = '0.1.1',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  -- use {
-  --   'nvim-neo-tree/neo-tree.nvim',
-  --   branch = 'v2.x',
-  --   requires = {
-  --     'nvim-lua/plenary.nvim',
-  --     'MunifTanjim/nui.nvim',
-  --   }
-  -- }
 
-  -- git
-  -- use 'tpope/vim-fugitive'
-  use {
-    'NeogitOrg/neogit',
-    requires = 'nvim-lua/plenary.nvim'
-  }
-
-  -- syntax
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
+  }
+
+  -- git
+  use 'lewis6991/gitsigns.nvim'
+  use {
+    'NeogitOrg/neogit',
+    requires = 'nvim-lua/plenary.nvim'
   }
 
   -- lsp (language server protocols)
@@ -80,7 +71,6 @@ return require('packer').startup(function(use)
 
   -- theme
   use 'EdenEast/nightfox.nvim'
-  use 'Mofiqul/dracula.nvim'
   use 'nvim-tree/nvim-web-devicons'
 
   -- Automatically set up your configuration after cloning packer.nvim

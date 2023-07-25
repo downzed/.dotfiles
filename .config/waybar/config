@@ -1,53 +1,32 @@
-[{
-  "layer":"bottom",
-  "position":"bottom",
-  "height": 28,
-  // "custom/d"
-  "modules-right": ["sway/mode", "idle_inhibitor", "user"],
-  "modules-center": ["custom/prevtune","custom/spotify", "custom/nexttune"],
-  "modules-left": ["clock"],
-  "clock": {
-      "format": "{:%H:%M >> %d/%m/%y}",
-      "tooltip": false
-  },
-
-  "user": {
-    "format": "{user} >> up {work_d} days",
-    "interval": 60,
-    "height": 30,
-    "width": 30,
-    "icon": true,
-  },
-
-  "idle_inhibitor": {
-    "format": "IDLE >> {status}",
-  },
-
-  "custom/spotify": {
-    "interval": 1,
-    "format": {},
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/spotify.py",
-    "on-click": "playerctl play-pause",
-    "on-click-middle": "spotify",
-    "tooltip":true,
-    "escape": true,
-  },
-
-  "custom/prevtune": {
-    "format":"<span size='110%'>󰶢</span>",
-    "on-click": "playerctl previous",
-  },
-  "custom/nexttune": {
-    "format":"<span size='110%'>󰔰</span>",
-    "on-click": "playerctl next",
-  },
-},{
+{
     "layer": "bottom",
     "position": "top",
     "height": 28,
-    "modules-left": ["sway/workspaces","custom/d","sway/window"],
-    "modules-right": ["tray", "disk", "pulseaudio", "battery", "temperature", "bluetooth", "network"],
+
+    "modules-left": ["sway/workspaces","custom/d","sway/window", "sway/mode"],
+    "modules-right": ["tray", "disk", "pulseaudio", "battery", "temperature", "bluetooth", "network", "clock", "user"],
+    "modules-center": ["custom/prevtune","custom/spotify", "custom/nexttune"],
+
+    "custom/spotify": {
+      "interval": 1,
+      "format": {},
+      "return-type": "json",
+      "exec": "~/.config/waybar/scripts/spotify.py",
+      "on-click": "playerctl play-pause",
+      "on-click-middle": "spotify",
+      "tooltip":true,
+      "escape": true,
+    },
+
+    "custom/prevtune": {
+      "format":"<span size='110%'>󰶢</span>",
+      "on-click": "playerctl previous",
+    },
+
+    "custom/nexttune": {
+      "format":"<span size='110%'>󰔰</span>",
+      "on-click": "playerctl next",
+    },
 
     "custom/d": {
       "format": " ",
@@ -59,12 +38,21 @@
     },
 
     "sway/workspaces": {
-        "format": "{icon} {name}",
+        "format": "{name}",
         "disable-scroll": true,
-        "format-icons": {
-          "default":"<span>></span>",
-          "focused": "<span size='105%'>>></span>"
-        },
+    },
+
+    "user": {
+      "format": "{user} >> {work_d} days",
+      "interval": 60,
+      "height": 30,
+      "width": 30,
+      "icon": true,
+    },
+
+    "clock": {
+      "format": "{:%H:%M >> %d/%m/%y}",
+      "tooltip": false
     },
 
     "backlight":{
@@ -98,8 +86,8 @@
     },
 
     "network": {
-      "format": "NET >> {ifname} ({signalStrength}%)",
-      "format-wifi": "WIFI >> {essid} ({signalStrength}%)",
+      "format": "NET",
+      "format-wifi": "WIFI >> {signalStrength}%",
       "format-alt": "{ipaddr}/{cidr}",
       "format-alt-click": "click-right",
       //"on-click": "kitty -e nmtui",
@@ -110,7 +98,7 @@
       "format": "BT >> {status}",
       "format-connected-battery": "{device_alias} {device_battery_percentage}%",
       "format-disabled": "", // an empty format will hide the module
-      "format-connected": "BT Devices >> {num_connections} connected",
+      "format-connected": "BT >> {num_connections} connected",
       "tooltip-format": "{controller_alias}\t{controller_address}",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
@@ -127,4 +115,4 @@
       "on-click": "pavucontrol",
       "ignored-sinks": ["Easy Effects Sink"]
   }
-}]
+}

@@ -20,8 +20,9 @@ window#waybar {
 /*-----custom modules----*/
 
 #custom-d {
-  color: transparent;
-  background-color: transparent;
+  /* color: transparent; */
+	color: rgba(111, 255, 233, 1);
+  /* background-color: transparent; */
   margin: 0 4px;
 }
 
@@ -46,8 +47,8 @@ window#waybar {
 
 button {
   border-radius: 0;
-  min-width: 100px;
-  padding: 0 8px;
+  min-width: 30px;
+  padding: 0;
   background-color: rgba(58, 80, 107, 0.23);
 }
 
@@ -63,7 +64,6 @@ button.focused {
 #tray,
 #disk,
 #mode,
-/* #window, */
 #language,
 #temperature,
 #user,
@@ -76,8 +76,7 @@ button.focused {
 #user,
 #pulseaudio,
 #network,
-#temperature,
-#clock {
+#temperature {
   border: 1px solid rgba(11, 19, 43,0.81);
 	background-color: rgba(58, 80, 107, 0.41);
 }
@@ -89,11 +88,8 @@ button.focused {
   border-left: none;
 }
 
-#window {
-  font-style: italic;
-  font-size: 1rem;
-}
 #window, #clock {
+  font-style: italic;
   font-weight: bold;
 }
 
