@@ -1,0 +1,5 @@
+vim.keymap.set('n', '<leader>e', ':Ex<CR>')
+vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+vim.keymap.set('n', '*', '*zz', { desc = 'Search and center screen' })
+vim.keymap.set('n', '<leader>E', 'y%', { remap = true, desc = 'Go to matching pair' })

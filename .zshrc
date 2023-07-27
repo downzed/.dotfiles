@@ -10,7 +10,7 @@ prompt pure
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/k/k.sh
 source ~/.zsh/zsh-completions/src
-# source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
