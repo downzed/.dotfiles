@@ -23,7 +23,7 @@ set $right l
 set $term kitty
 set $browser firefox
 
-set $opacity 0.94
+set $opacity 0.97
 set $background_image ~/Pictures/penguin.jpg
 
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
@@ -57,7 +57,7 @@ bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 for_window [class="Code"] opacity $opacity
-for_window [class="firefox"] opacity $opacity
+# for_window [class="firefox"] opacity $opacity
 for_window [class="Spotify"] opacity $opacity
 
 ### Idle configuration

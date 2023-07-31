@@ -9,8 +9,8 @@ prompt pure
 # plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/k/k.sh
-source ~/.zsh/zsh-completions/src
-source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source ~/.zsh/zsh-completions/src
+# source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -48,7 +48,7 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -z "$TMUX" ] && command -v tmux &>/dev/null && tmux 
+# [ -z "$TMUX" ] && command -v tmux &>/dev/null && tmux 
 
 eval $(thefuck --alias fuck) 
 
