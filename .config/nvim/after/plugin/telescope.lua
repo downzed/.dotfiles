@@ -1,6 +1,5 @@
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
-
 local theme = {
   hidden = true,
   theme = 'ivy'
@@ -27,5 +26,4 @@ vim.keymap.set('n', '<C-f>', function()
   builtin.grep_string({ search = vim.fn.input("keyword >> ") })
 end)
 vim.keymap.set('n', '<leader>bf', builtin.buffers, {})
-
 vim.keymap.set('n', '<leader>gp', builtin.lsp_document_symbols, {})
