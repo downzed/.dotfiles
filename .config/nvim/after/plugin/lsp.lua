@@ -15,7 +15,6 @@ local servers = {
 }
 
 lsp.nvim_workspace()
-
 lsp.ensure_installed(servers)
 
 lsp.on_attach(function(_, bufnr)
@@ -32,7 +31,7 @@ lsp.on_attach(function(_, bufnr)
   -- lsp.async_autoformat(client, bufnr)
 end)
 
-lsp.skip_server_setup({'rust_analyzer'})
+lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.format_on_save({
   servers = {
@@ -46,7 +45,7 @@ lsp.format_on_save({
 local function eslint_config_exists()
   local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
   if not vim.tbl_isempty(eslintrc) then
-    print("eslint rc provided..")
+    print("eslintrc > provided")
     return true
   end
   return false
