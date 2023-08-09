@@ -10,6 +10,7 @@ local servers = {
   "tsserver",
   "eslint",
   "lua_ls",
+  "bashls",
   "pyright",
   "rust_analyzer"
 }
@@ -25,7 +26,6 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<cr>', opts)
   vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', opts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-  -- vim.keymap.set('n', 'K', '<cmd>Telescope lsp_hover<cr>', opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
 
@@ -39,17 +39,23 @@ lsp.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['rust_analyzer'] = { 'rust' },
     ['pyright'] = { 'python' },
-    ['eslint'] = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact' },
+    ['eslint'] = {
+      'javascript.js',
+      'javascript.jsx',
+      'javascriptreact',
+      'javascript',
+      'typescript',
+      'typescript.ts',
+      'typescript.tsx',
+      'typescriptreact'
+    },
   }
 })
 
 local function eslint_config_exists()
   local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
-  if not vim.tbl_isempty(eslintrc) then
-    print("eslint rc provided..")
-    return true
-  end
-  return false
+  print("eslintrc > provided")
+  return not vim.tbl_isempty(eslintrc)
 end
 
 lspconfig.eslint.setup({
@@ -59,8 +65,6 @@ lspconfig.eslint.setup({
   end,
   on_attach = function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
-    lsp.buffer_autoformat(client, bufnr)
-
     if not eslint_config_exists() then
       return nil
     end
