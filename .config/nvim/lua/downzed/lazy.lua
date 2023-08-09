@@ -37,6 +37,12 @@ local plugins = {
     }
   },
 
+
+  {
+    'folke/trouble.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+
   -- files & navigation
   {
     'nvim-telescope/telescope.nvim',
@@ -56,13 +62,11 @@ local plugins = {
   -- rust
   'simrat39/rust-tools.nvim',
 
-  -- ai completion
-  'Exafunction/codeium.vim',
-
   -- code tools
   'RRethy/vim-illuminate', -- highlight keyword
   'tpope/vim-commentary',  -- comment/uncomments
   'folke/which-key.nvim',
+  'Exafunction/codeium.vim',
 
   -- tmux
   'christoomey/vim-tmux-navigator',
