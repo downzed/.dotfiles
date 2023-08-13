@@ -50,6 +50,16 @@ local plugins = {
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
 
+  -- notifications
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    }
+  },
+
   -- git
   'lewis6991/gitsigns.nvim',
   {
@@ -87,6 +97,7 @@ local plugins = {
 
   -- theme
   'EdenEast/nightfox.nvim',
+  { 'rose-pine/neovim', name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
 }
 
