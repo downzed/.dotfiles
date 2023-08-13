@@ -27,3 +27,5 @@ vim.keymap.set('n', '<C-f>', function()
 end)
 vim.keymap.set('n', '<leader>bf', builtin.buffers, {})
 vim.keymap.set('n', '<leader>gp', builtin.lsp_document_symbols, {})
+-- recent files
+vim.keymap.set('n', '<leader>rf', builtin.oldfiles, {})

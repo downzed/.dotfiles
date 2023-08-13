@@ -63,14 +63,14 @@ lspconfig.eslint.setup({
   root_dir = function()
     return vim.fn.getcwd()
   end,
-  on_attach = function(client, bufnr)
+  on_attach = function(_, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
+    vim.keymap.set('n', '<leader>f', ':EslintFixAll<cr>', { buffer = bufnr })
+
     if not eslint_config_exists() then
       return nil
     end
 
-    lsp.async_autoformat(client, bufnr)
-    vim.keymap.set('n', '<leader>f', '<cmd>EslintFixAll<cr>', { buffer = bufnr })
   end,
   settings = {
     packageManager = "yarn",
