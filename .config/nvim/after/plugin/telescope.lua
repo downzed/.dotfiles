@@ -21,11 +21,11 @@ telescope.setup({
 })
 
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>p', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>of', builtin.oldfiles, {})
+vim.keymap.set('n', '<leader>bf', builtin.buffers, {})
+
+vim.keymap.set('n', '<leader>gp', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<C-f>', function()
   builtin.grep_string({ search = vim.fn.input("keyword >> ") })
 end)
-vim.keymap.set('n', '<leader>bf', builtin.buffers, {})
-vim.keymap.set('n', '<leader>gp', builtin.lsp_document_symbols, {})
--- recent files
-vim.keymap.set('n', '<leader>rf', builtin.oldfiles, {})

@@ -37,7 +37,6 @@ local plugins = {
     }
   },
 
-
   {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -48,16 +47,6 @@ local plugins = {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-
-  -- notifications
-  {
-    'folke/noice.nvim',
-    event = 'VeryLazy',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
-    }
   },
 
   -- git
@@ -84,6 +73,19 @@ local plugins = {
   -- start page
   'goolord/alpha-nvim',
 
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    }
+  },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
   -- status
   {
     'nvim-lualine/lualine.nvim',
