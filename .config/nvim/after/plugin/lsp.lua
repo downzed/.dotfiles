@@ -1,10 +1,13 @@
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero')
+local lspconfig = require('lspconfig')
+local mason = require('mason')
+local masonconfig = require('mason-lspconfig')
 -- local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local lspconfig = require('lspconfig')
 
 lsp.preset('recommended')
-lsp.nvim_workspace()
+mason.setup({})
+-- lsp.nvim_workspace()
 
 local servers = {
   "tsserver",
@@ -15,11 +18,18 @@ local servers = {
   "rust_analyzer"
 }
 
-lsp.nvim_workspace()
-lsp.ensure_installed(servers)
+-- lsp.nvim_workspace()
+-- lsp.ensure_installed(servers)
 
+masonconfig.setup({
+  ensure_installed = servers,
+  automatic_installation = true,
+  handlers = {
+    lsp.default_setup,
+  }
+})
 
-lsp.on_attach(function(_, bufnr)
+local on_attach = function(_, bufnr)
   local opts = { buffer = bufnr }
   lsp.default_keymaps(opts)
 
@@ -30,9 +40,10 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set('n', 'H', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
-end)
+end
 
-lsp.skip_server_setup({ 'rust_analyzer' })
+lsp.on_attach(on_attach)
+-- lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.format_on_save({
   servers = {

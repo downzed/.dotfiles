@@ -22,7 +22,13 @@ telescope.setup({
 
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>of', builtin.oldfiles, {})
+vim.keymap.set('n', '<leader>of', function()
+  builtin.oldfiles({
+    cwd_only = true,
+    hidden = true,
+    sort_last = true,
+  })
+end, {})
 vim.keymap.set('n', '<leader>bf', builtin.buffers, {})
 
 vim.keymap.set('n', '<leader>gp', builtin.lsp_document_symbols, {})
