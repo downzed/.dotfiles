@@ -98,7 +98,13 @@ local plugins = {
     }
   },
 
-  -- theme
+  -- themes
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   'EdenEast/nightfox.nvim',
   { 'rose-pine/neovim', name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
