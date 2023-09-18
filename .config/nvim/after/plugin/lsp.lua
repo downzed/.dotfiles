@@ -1,9 +1,9 @@
 local lsp = require('lsp-zero')
 local lspconfig = require('lspconfig')
-local mason = require('mason')
+local lsp_progress = require('lsp-progress')
 local masonconfig = require('mason-lspconfig')
+local mason = require('mason')
 local cmp = require('cmp')
-
 
 lsp.preset('recommended')
 
@@ -89,3 +89,4 @@ cmp.setup({
   }),
 })
 lsp.setup()
+lsp_progress.setup()
