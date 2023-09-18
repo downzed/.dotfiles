@@ -35,6 +35,10 @@ local plugins = {
     { 'L3MON4D3/LuaSnip' }
   },
 
+  -- AI completion
+  'Exafunction/codeium.vim',
+
+  -- trouble
   {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -66,7 +70,6 @@ local plugins = {
   'RRethy/vim-illuminate', -- highlight keyword
   'tpope/vim-commentary',  -- comment/uncomments
   'folke/which-key.nvim',
-  'Exafunction/codeium.vim',
 
   -- tmux
   'christoomey/vim-tmux-navigator',
@@ -83,17 +86,14 @@ local plugins = {
       'MunifTanjim/nui.nvim',
     }
   },
-  {
-    'stevearc/dressing.nvim',
-    opts = {},
-  },
-  -- notifications and messages
+
+  -- notes
+
+
+  -- ui, notifications & messages
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
@@ -103,6 +103,11 @@ local plugins = {
       "rcarriga/nvim-notify",
     }
   },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+
   -- status
   {
     'nvim-lualine/lualine.nvim',
@@ -117,9 +122,6 @@ local plugins = {
   {
     'linrongbin16/lsp-progress.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    -- config = function()
-    --   require('lsp-progress').setup()
-    -- end
   },
 
   -- themes
