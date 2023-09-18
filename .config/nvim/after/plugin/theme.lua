@@ -12,20 +12,12 @@
 --   }
 -- })
 
--- nightfox supports transparency, otherwise use:
 function SetColorscheme(color)
-  color = color or "rose-pine-moon"
+  color = color or "tokyonight-night"
   vim.cmd.colorscheme(color)
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
-  vim.cmd([[highlight TelescopeBorder guibg=none]])
-  vim.cmd([[highlight TelescopeTitle guibg=none]])
-  vim.cmd([[highlight TelescopeNormal guibg=none]])
 end
-
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 SetColorscheme()
 

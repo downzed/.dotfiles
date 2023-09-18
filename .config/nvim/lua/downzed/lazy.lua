@@ -22,19 +22,17 @@ local plugins = {
 
   -- lsp
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' },             -- Required
-      { 'williamboman/mason.nvim' },           -- Optional
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
 
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
-    }
+    -- LSP Support
+    { 'neovim/nvim-lspconfig' },
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+
+    -- Autocompletion
+    { 'hrsh7th/nvim-cmp' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'L3MON4D3/LuaSnip' }
   },
 
   {
@@ -57,6 +55,9 @@ local plugins = {
       'nvim-lua/plenary.nvim'
     }
   },
+
+  -- test
+  'klen/nvim-test',
 
   -- rust
   'simrat39/rust-tools.nvim',
@@ -86,18 +87,48 @@ local plugins = {
     'stevearc/dressing.nvim',
     opts = {},
   },
+  -- notifications and messages
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
+  },
   -- status
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       {
         'nvim-tree/nvim-web-devicons',
+        'linrongbin16/lsp-progress.nvim',
         opt = true
       }
     }
   },
+  {
+    'linrongbin16/lsp-progress.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    -- config = function()
+    --   require('lsp-progress').setup()
+    -- end
+  },
 
-  -- theme
+  -- themes
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   'EdenEast/nightfox.nvim',
   { 'rose-pine/neovim', name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
