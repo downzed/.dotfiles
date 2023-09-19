@@ -15,9 +15,9 @@ dotfiles = {
 # Define a dictionary of directories to symlink
 directories = {
     ".config/nvim": f"{dotfiles_dir}/.config/nvim",
-    ".config/kitty": f"{dotfiles_dir}/.config/kitty",
-    ".config/sway": f"{dotfiles_dir}/.config/sway",
-    ".config/waybar": f"{dotfiles_dir}/.config/waybar",
+    # ".config/kitty": f"{dotfiles_dir}/.config/kitty",
+    # ".config/sway": f"{dotfiles_dir}/.config/sway",
+    # ".config/waybar": f"{dotfiles_dir}/.config/waybar",
     # ".config/eww": f"{dotfiles_dir}/.config/eww",
     # ".config/hypr": f"{dotfiles_dir}/.config/hypr",
     # ".config/mako": f"{dotfiles_dir}/.config/mako",
