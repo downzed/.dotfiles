@@ -17,4 +17,4 @@ gs.setup {
 }
 
 
-vim.keymap.set('n', '<leader>gs', '<cmd>Neogit<CR>')
+vim.keymap.set('n', '<leader>ng', '<cmd>Neogit<CR>', { desc = 'Neogit' })

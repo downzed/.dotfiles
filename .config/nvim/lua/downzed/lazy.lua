@@ -88,7 +88,11 @@ local plugins = {
   },
 
   -- notes
-
+  {
+    'phaazon/mind.nvim',
+    branch = 'v2.2',
+    requires = { 'nvim-lua/plenary.nvim' },
+  },
 
   -- ui, notifications & messages
   {
@@ -107,7 +111,6 @@ local plugins = {
     'stevearc/dressing.nvim',
     opts = {},
   },
-
   -- status
   {
     'nvim-lualine/lualine.nvim',
