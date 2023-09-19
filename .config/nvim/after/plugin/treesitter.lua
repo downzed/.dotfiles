@@ -3,8 +3,11 @@ local ts_config = require('nvim-treesitter.configs')
 ts_config.setup {
   ensure_installed = {
     "vimdoc",
+    "vim",
+    "markdown",
     "javascript",
     "typescript",
+    "bash",
     "python",
     "lua",
     "rust"
