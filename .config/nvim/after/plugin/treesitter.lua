@@ -1,8 +1,13 @@
-require('nvim-treesitter.configs').setup {
+local ts_config = require('nvim-treesitter.configs')
+
+ts_config.setup {
   ensure_installed = {
     "vimdoc",
+    "vim",
+    "markdown",
     "javascript",
     "typescript",
+    "bash",
     "python",
     "lua",
     "rust"
@@ -14,8 +19,6 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-  ident = { enable = true },
-  rainbow = {
-    enable = true
-  }
+  indent = { enable = true },
+  rainbow = { enable = true }
 }
