@@ -71,9 +71,6 @@ local plugins = {
   'tpope/vim-commentary',  -- comment/uncomments
   'folke/which-key.nvim',
 
-  -- tmux
-  'christoomey/vim-tmux-navigator',
-
   -- start page
   'goolord/alpha-nvim',
 
