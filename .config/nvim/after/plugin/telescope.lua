@@ -23,8 +23,6 @@ telescope.setup({
   }
 })
 
-telescope.load_extension('noice')
-
 local config = {
   cwd_only = true,
   hidden = true,
@@ -33,7 +31,7 @@ local config = {
 
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Find git files' })
 vim.keymap.set('n', '<leader>ff', function() builtin.find_files(config) end, { desc = 'Find files' })
-vim.keymap.set('n', '<leader>of', function() builtin.oldfiles(config) end, { desc = 'Open oldfiles' })
+vim.keymap.set('n', '<leader>of', builtin.oldfiles, { desc = 'Open oldfiles' })
 vim.keymap.set('n', '<leader>bf', builtin.buffers, { desc = 'Open buffers' })
 
 vim.keymap.set('n', '<leader>gp', builtin.lsp_document_symbols, { desc = 'Show document symbols' })
