@@ -73,7 +73,18 @@ local plugins = {
 
   -- start page
   'goolord/alpha-nvim',
+  {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    -- config = function()
+    --   require('dashboard').setup {
+    --     -- config
+    --   }
+    -- end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
 
+  -- file tree
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',

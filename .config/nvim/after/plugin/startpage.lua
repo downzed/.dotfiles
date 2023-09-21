@@ -1,4 +1,7 @@
-local startpage = require('alpha')
-local themeConfig = require('alpha.themes.startify').config
-startpage.setup(themeConfig)
-vim.keymap.set('n', '<leader>A', ':Alpha<cr>')
+-- local startpage = require('alpha')
+-- local themeConfig = require('alpha.themes.startify').config
+-- startpage.setup(themeConfig)
+-- vim.keymap.set('n', '<leader>A', ':Alpha<cr>')
+
+local dashboard = require('dashboard')
+dashboard.setup()
