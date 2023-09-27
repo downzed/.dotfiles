@@ -1,8 +1,9 @@
-set -g default-terminal 'xterm-256color'
+set-option -sa terminal-overrides ",xterm*:Tc"
+set -s default-terminal 'tmux-256color'
 
 unbind r
-bind r source-file ~/.tmux.conf
 
+bind r source-file ~/.tmux.conf
 set -g prefix C-s
 
 # act like vim
@@ -17,10 +18,20 @@ bind-key k select-pane -U
 # list of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin "janoamaral/tokyo-night-tmux"
+# set -g @plugin 'dracula/tmux'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'christoomey/vim-tmux-navigator'
+# set -g @plugin 'trevarj/tmux-open-nvim'
 
 
-set -g status-position top
+# Tmux is automatically started after the computer/server is turned on
+set -g @continuum-boot 'on'
+set -g @continuum-boot-options 'kitty, fullscreen'
+# restore last saved environment (automatically)
+set -g @continuum-restore 'on'
+
+set -g status-position bottom
 set -g base-index 1
 set -g pane-base-index 1
 
@@ -32,4 +43,3 @@ bind - split-window -v -c "#{pane_current_path}"
 
 # load plugins
 run '~/.tmux/plugins/tpm/tpm'
-

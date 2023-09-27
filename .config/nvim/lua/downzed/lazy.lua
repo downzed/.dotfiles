@@ -18,7 +18,7 @@ local plugins = {
     build = ':TSUpdate',
   },
   'nvim-treesitter/nvim-treesitter-context',
-
+  'alexghergh/nvim-tmux-navigation',
 
   -- lsp
   {
