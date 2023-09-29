@@ -12,12 +12,15 @@ end
 local function find_and_replace()
   local search = vim.fn.expand("<cword>")
   local replace = vim.fn.input("Replace with: ")
+
+  if replace == nil then
+    return
+  end
   vim.cmd(":%s/" .. search .. "/" .. replace .. "/g")
 end
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '*', '*zz', { desc = 'Search and center screen' })
-vim.keymap.set('n', '<leader>E', 'Y%', { remap = true, desc = 'Go to matching pair' })
 
 vim.keymap.set('n', '<leader>bd', ':bdelete<cr>', { desc = 'delete buffer' })
 vim.keymap.set('n', '<leader>bn', ':bnext<cr>', { desc = 'next buffer' })

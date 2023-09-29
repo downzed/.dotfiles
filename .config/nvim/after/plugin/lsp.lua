@@ -16,7 +16,16 @@ local servers = {
   "rust_analyzer"
 }
 
-mason.setup({})
+mason.setup({
+  ui = {
+    icons = {
+      package_installed = "",
+      package_pending = "󰚰",
+      package_uninstalled = "",
+    },
+  }
+})
+
 masonconfig.setup({
   ensure_installed = servers,
   automatic_installation = true,
@@ -25,8 +34,8 @@ masonconfig.setup({
     lua_ls = function()
       local lua_opts = lsp.nvim_lua_ls()
       lspconfig.lua_ls.setup(lua_opts)
-    end
-  }
+    end,
+  },
 })
 
 local function eslint_config_exists()
@@ -60,7 +69,6 @@ lsp.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['rust_analyzer'] = { 'rust' },
     ['pyright'] = { 'python' },
-    -- TODO: I hate work
     ['eslint'] = {
       'javascript.js',
       'javascript.jsx',
@@ -87,6 +95,12 @@ cmp.setup({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'path' },
+    { name = 'crates' }
+  }
 })
 lsp.setup()
 lsp_progress.setup()

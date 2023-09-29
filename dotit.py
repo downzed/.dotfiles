@@ -8,8 +8,8 @@ dotfiles_dir = os.path.expanduser("~/.dotfiles")
 # Define a dictionary of dotfiles to symlink
 dotfiles = {
     ".zshrc": f"{dotfiles_dir}/.zshrc",
-    # ".tmux.conf": f"{dotfiles_dir}/.tmux.conf",
-    ".gitconfig": f"{dotfiles_dir}/.gitconfig",
+    ".tmux.conf": f"{dotfiles_dir}/.tmux.conf",
+    # ".gitconfig": f"{dotfiles_dir}/.gitconfig",
 }
 
 # Define a dictionary of directories to symlink

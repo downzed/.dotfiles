@@ -64,25 +64,24 @@ local plugins = {
   'klen/nvim-test',
 
   -- rust
-  'simrat39/rust-tools.nvim',
+  {
+    'rust-lang/rust.vim',
+    'simrat39/rust-tools.nvim',
+    {
+      'saecki/crates.nvim',
+      tag = 'v0.3.0',
+      event = { "BufRead Cargo.toml" },
+      dependencies = { 'nvim-lua/plenary.nvim' },
+    }
+  },
 
-  -- code tools
+  -- vim/code tools
   'RRethy/vim-illuminate', -- highlight keyword
   'tpope/vim-commentary',  -- comment/uncomments
   'folke/which-key.nvim',
 
   -- start page
-  'goolord/alpha-nvim',
-  {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
-    -- config = function()
-    --   require('dashboard').setup {
-    --     -- config
-    --   }
-    -- end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-  },
+  { 'echasnovski/mini.starter', version = '*' },
 
   -- file tree
   {
@@ -95,19 +94,24 @@ local plugins = {
     }
   },
 
-  -- notes
-  {
-    'phaazon/mind.nvim',
-    branch = 'v2.2',
-    requires = { 'nvim-lua/plenary.nvim' },
-  },
-
   -- ui, notifications & messages
   {
-    'stevearc/dressing.nvim',
-    opts = {},
+    'xiyaowong/transparent.nvim',
+
+    {
+      'stevearc/dressing.nvim',
+      lazy = true,
+    },
+    {
+      "rcarriga/nvim-notify",
+      config = function()
+        vim.notify = require("notify")
+      end,
+    },
+    { "MunifTanjim/nui.nvim", lazy = true },
   },
-  -- status
+
+  -- status line
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
@@ -131,7 +135,7 @@ local plugins = {
     opts = {},
   },
   'EdenEast/nightfox.nvim',
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'rose-pine/neovim',         name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
 }
 

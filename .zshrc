@@ -8,9 +8,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="robbyrussell" # set by `omz`
 ZSH_THEME="robbyrussell" # set by `omz`
 
-# Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rust zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git yarn npm zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,29 +95,21 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
-# aliases
-
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cls="clear"
-alias ..="cd .."
-alias ~="cd ~"
-alias vim="nvim"
-alias dots="cls; cd ~/.dotfiles/; nvim"
-alias yarn_refresh="echo 'Removing node_modules...'; rm -rf node_modules; echo 'Running Yarn'; yarn; echo 'Yarn is Ready \n run yrun dev'|cowsay"
-alias weather="curl 'wttr.in/Dvora?format=3'"
-alias nala_update="sudo nala update; sudo nala upgrade -y; sudo nala autopurge; sudo nala autoremove; echo 'system updated...' | cowsay"
-# alias ohmyzsh="vim ~/.oh-my-zsh"
-alias py="python3"
-alias ai="cd ~/projects/ai" 
-alias rust="cd ~/projects/rust"
-alias lsa="tree -LCa 1"
+alias dots="cd ~/.dotfiles"
+alias ls="colorls"
+alias rust="cd ~/Developer/rust"
+alias edit_nvim="cd ~/.dotfiles/.config/nvim; nvim ."
+alias cd_nvim="cd ~/.dotfiles/.config/nvim;"
+alias rust_by_practice="cd ~/Developer/rust/rust-by-practice; mdbook serve en/"
+
 
 export NVM_DIR="$HOME/.nvm"
-
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# [ -z "$TMUX" ] && command -v tmux &>/dev/null && tmux 
-
-eval $(thefuck --alias fuck) 
-
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
