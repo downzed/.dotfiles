@@ -28,13 +28,17 @@ local plugins = {
     { 'neovim/nvim-lspconfig' },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
-
     -- Autocompletion
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-nvim-lsp' },
-    { 'L3MON4D3/LuaSnip' }
+    { 'L3MON4D3/LuaSnip' },
   },
 
+  -- Debugging
+  {
+    { 'mfussenegger/nvim-dap' },
+    { 'nvim-lua/plenary.nvim' },
+  },
   -- AI completion
   'Exafunction/codeium.vim',
 
