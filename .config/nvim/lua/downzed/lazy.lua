@@ -95,13 +95,13 @@ local plugins = {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
       'MunifTanjim/nui.nvim',
-    }
+    },
   },
 
   -- ui, notifications & messages
   {
     'xiyaowong/transparent.nvim',
-
+    'gelguy/wilder.nvim',
     {
       'stevearc/dressing.nvim',
       lazy = true,

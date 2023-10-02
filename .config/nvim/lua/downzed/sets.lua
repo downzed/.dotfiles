@@ -31,4 +31,5 @@ vim.opt.clipboard = 'unnamedplus'
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.foldlevel = 99
+vim.o.cmdheight = 0
 vim.cmd.set('noswapfile')
