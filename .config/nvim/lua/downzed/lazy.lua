@@ -29,8 +29,10 @@ local plugins = {
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     -- Autocompletion
-    { 'hrsh7th/nvim-cmp' },
+    { 'hrsh7th/cmp-cmdline' },
     { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
   },
 
@@ -100,14 +102,13 @@ local plugins = {
 
   -- ui, notifications & messages
   {
-    'xiyaowong/transparent.nvim',
-    'gelguy/wilder.nvim',
     {
       'stevearc/dressing.nvim',
       lazy = true,
     },
     {
-      "rcarriga/nvim-notify",
+      'rcarriga/nvim-notify',
+      lazy = true,
       config = function()
         vim.notify = require("notify")
       end,

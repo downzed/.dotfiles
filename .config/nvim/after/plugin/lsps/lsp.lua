@@ -99,8 +99,10 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
-    { name = 'crates' }
+    { name = 'crates' },
+    { name = 'nvim_lsp_references' },
   }
 })
+
 lsp.setup()
 lsp_progress.setup()
