@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>e', ':Neotree reveal float toggle<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree reveal position=left toggle<CR>')
 
 -- require("neo-tree").setup({
 --   filesystem = {

@@ -69,16 +69,16 @@ lsp.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['rust_analyzer'] = { 'rust' },
     ['pyright'] = { 'python' },
-    ['eslint'] = {
-      'javascript.js',
-      'javascript.jsx',
-      'javascriptreact',
-      'javascript',
-      'typescript',
-      'typescript.ts',
-      'typescript.tsx',
-      'typescriptreact'
-    },
+    -- ['eslint'] = {
+    --   'javascript.js',
+    --   'javascript.jsx',
+    --   'javascriptreact',
+    --   'javascript',
+    --   'typescript',
+    --   'typescript.ts',
+    --   'typescript.tsx',
+    --   'typescriptreact'
+    -- },
   }
 })
 

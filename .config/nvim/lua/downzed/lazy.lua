@@ -82,9 +82,20 @@ local plugins = {
   },
 
   -- vim/code tools
-  'RRethy/vim-illuminate', -- highlight keyword
-  'tpope/vim-commentary',  -- comment/uncomments
+  'ThePrimeagen/vim-be-good', -- practive vim
+  'folke/twilight.nvim',
+  'RRethy/vim-illuminate',    -- highlight keyword
+  'tpope/vim-commentary',     -- comment/uncomments
   'folke/which-key.nvim',
+  {
+    'folke/todo-comments.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
 
   -- start page
   { 'echasnovski/mini.starter', version = '*' },
@@ -139,7 +150,7 @@ local plugins = {
     priority = 1000,
     opts = {},
   },
-  'EdenEast/nightfox.nvim',
+  -- 'EdenEast/nightfox.nvim',
   { 'rose-pine/neovim',         name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
 }
