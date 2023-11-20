@@ -1,19 +1,19 @@
 function _G.SetColorscheme(color)
-  color = color or "rose-pine-moon"
-  -- color = color or "tokyonight-night"
+  color = color or "rose-pine-main"
   vim.cmd.colorscheme(color)
-
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NeotreeNormal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NeogitHunkBorder", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NeogitHunkHeader", { bg = "none" })
 end
 
 SetColorscheme()
 
 vim.keymap.set("n", "<leader>th", require('telescope.builtin').colorscheme, { desc = "Select Colorscheme" })
+
+
+function _G.SwitchMode()
+  if vim.api.nvim_get_option("background") == "light" then
+    SetColorscheme("rose-pine-moon")
+    vim.api.nvim_set_option("background", "dark")
+  else
+    SetColorscheme("rose-pine-dawn")
+    vim.api.nvim_set_option("background", "light")
+  end
+end
