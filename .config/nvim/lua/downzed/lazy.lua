@@ -145,6 +145,10 @@ local plugins = {
 
   -- themes
   {
+    'projekt0n/github-nvim-theme',
+    lazy = false,
+  },
+  {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
