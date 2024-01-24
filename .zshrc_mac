@@ -3,14 +3,15 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export GODOT4_BIN="/Applications/Godot.app/Contents/MacOS/"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell" # set by `omz`
-ZSH_THEME="robbyrussell" # set by `omz`
+ZSH_THEME="gallois" # set by `omz`
 
+# Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
@@ -70,7 +71,7 @@ ZSH_THEME="robbyrussell" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn npm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git yarn npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,16 +101,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cls="clear"
-alias dots="cd ~/.dotfiles"
-alias ls="colorls"
-alias rust="cd ~/Developer/rust"
-alias edit_nvim="cd ~/.dotfiles/.config/nvim; nvim ."
-alias cd_nvim="cd ~/.dotfiles/.config/nvim;"
-alias rust_by_practice="cd ~/Developer/rust/rust-by-practice; mdbook serve en/"
+alias rust="cd ~/projects/rust"
+alias edit_nvim="cd ~/projects/.dotfiles/.config/nvim; nvim ."
+alias cd_nvim="cd ~/projects/.dotfiles/.config/nvim;"
+alias tenb="cd ~/Documents/10bis-next"
+alias rustbypractice="cd ~/projects/rust/rust-by-practice; mdbook serve en/"
 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-

@@ -18,7 +18,7 @@ local plugins = {
     build = ':TSUpdate',
   },
   'nvim-treesitter/nvim-treesitter-context',
-
+  'alexghergh/nvim-tmux-navigation',
 
   -- lsp
   {
@@ -28,13 +28,19 @@ local plugins = {
     { 'neovim/nvim-lspconfig' },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
-
     -- Autocompletion
-    { 'hrsh7th/nvim-cmp' },
+    { 'hrsh7th/cmp-cmdline' },
     { 'hrsh7th/cmp-nvim-lsp' },
-    { 'L3MON4D3/LuaSnip' }
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'L3MON4D3/LuaSnip' },
   },
 
+  -- Debugging
+  {
+    { 'mfussenegger/nvim-dap' },
+    { 'nvim-lua/plenary.nvim' },
+  },
   -- AI completion
   'Exafunction/codeium.vim',
 
@@ -64,16 +70,37 @@ local plugins = {
   'klen/nvim-test',
 
   -- rust
-  'simrat39/rust-tools.nvim',
+  {
+    'rust-lang/rust.vim',
+    'simrat39/rust-tools.nvim',
+    {
+      'saecki/crates.nvim',
+      tag = 'v0.3.0',
+      event = { "BufRead Cargo.toml" },
+      dependencies = { 'nvim-lua/plenary.nvim' },
+    }
+  },
 
-  -- code tools
-  'RRethy/vim-illuminate', -- highlight keyword
-  'tpope/vim-commentary',  -- comment/uncomments
+  -- vim/code tools
+  'ThePrimeagen/vim-be-good', -- practive vim
+  'folke/twilight.nvim',
+  'RRethy/vim-illuminate',    -- highlight keyword
+  'tpope/vim-commentary',     -- comment/uncomments
   'folke/which-key.nvim',
+  {
+    'folke/todo-comments.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
 
   -- start page
-  'goolord/alpha-nvim',
+  { 'echasnovski/mini.starter', version = '*' },
 
+  -- file tree
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
@@ -81,22 +108,26 @@ local plugins = {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
       'MunifTanjim/nui.nvim',
-    }
-  },
-
-  -- notes
-  {
-    'phaazon/mind.nvim',
-    branch = 'v2.2',
-    requires = { 'nvim-lua/plenary.nvim' },
+    },
   },
 
   -- ui, notifications & messages
   {
-    'stevearc/dressing.nvim',
-    opts = {},
+    {
+      'stevearc/dressing.nvim',
+      lazy = true,
+    },
+    {
+      'rcarriga/nvim-notify',
+      lazy = true,
+      config = function()
+        vim.notify = require("notify")
+      end,
+    },
+    { "MunifTanjim/nui.nvim", lazy = true },
   },
-  -- status
+
+  -- status line
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
@@ -114,13 +145,17 @@ local plugins = {
 
   -- themes
   {
+    'projekt0n/github-nvim-theme',
+    lazy = false,
+  },
+  {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
     opts = {},
   },
-  'EdenEast/nightfox.nvim',
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  -- 'EdenEast/nightfox.nvim',
+  { 'rose-pine/neovim',         name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
 }
 

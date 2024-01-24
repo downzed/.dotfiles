@@ -1,9 +1,15 @@
-vim.keymap.set('n', '<leader>e', ':Neotree reveal=true toggle<CR>')
--- vim.keymap.set('n', '<leader>bf', ':Neotree toggle source=buffers position=bottom<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree reveal position=left toggle<CR>')
 
-require("neo-tree").setup({
-  -- source_selector = {
-  --   winbar = false,
-  --   statusline = false
-  -- }
-})
+-- require("neo-tree").setup({
+--   filesystem = {
+--     use_git_status = true,
+--     use_libuv_file_watcher = true,
+--     follow_current_file = {
+--       enable = true
+--     }
+--   }
+--   -- source_selector = {
+--   --   winbar = false,
+--   --   statusline = false
+--   -- }
+-- })
