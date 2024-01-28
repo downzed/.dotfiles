@@ -49,6 +49,12 @@ local plugins = {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
+  {
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
 
   -- files & navigation
   {
