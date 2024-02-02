@@ -146,6 +146,7 @@ local plugins = {
     priority = 1000,
     opts = {},
   },
+  'arcticicestudio/nord-vim',
   -- 'EdenEast/nightfox.nvim',
   { 'rose-pine/neovim',         name = 'rose-pine' },
   'nvim-tree/nvim-web-devicons',
