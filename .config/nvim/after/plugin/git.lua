@@ -1,9 +1,4 @@
-local ng = require('neogit')
 local gs = require('gitsigns')
-
-ng.setup {
-  kind = 'split'
-}
 
 gs.setup {
   signs = {
@@ -17,4 +12,7 @@ gs.setup {
 }
 
 
-vim.keymap.set('n', '<leader>ng', '<cmd>Neogit<CR>', { desc = 'Neogit' })
+vim.keymap.set('n', '<leader>gst', ":Gitsigns toggle_current_line_blame<CR>", { desc = 'Toggle current line blame' })
+vim.keymap.set('n', '<leader>gsp', ":Gitsigns preview_hunk<CR>", { desc = 'Preview hunk' })
+-- vim.keymap.set('n', '<leader>gts', ":Gitsigns stage_hunk<CR>", { desc = 'Stage hunk' })
+-- vim.keymap.set('n', '<leader>gtu', ":Gitsigns undo_stage_hunk<CR>", { desc = 'Undo stage hunk' })

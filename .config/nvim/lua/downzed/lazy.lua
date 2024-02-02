@@ -49,12 +49,6 @@ local plugins = {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
-  {
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-    config = function()
-      require("lsp_lines").setup()
-    end,
-  },
 
   -- files & navigation
   {
@@ -64,12 +58,9 @@ local plugins = {
   },
 
   -- git
-  'lewis6991/gitsigns.nvim',
   {
-    'NeogitOrg/neogit',
-    dependencies = {
-      'nvim-lua/plenary.nvim'
-    }
+    'lewis6991/gitsigns.nvim',
+    'tpope/vim-fugitive',
   },
 
   -- test
@@ -89,7 +80,6 @@ local plugins = {
 
   -- vim/code tools
   'ThePrimeagen/vim-be-good', -- practive vim
-  'folke/twilight.nvim',
   'RRethy/vim-illuminate',    -- highlight keyword
   'tpope/vim-commentary',     -- comment/uncomments
   'folke/which-key.nvim',
@@ -150,10 +140,6 @@ local plugins = {
   },
 
   -- themes
-  {
-    'projekt0n/github-nvim-theme',
-    lazy = false,
-  },
   {
     'folke/tokyonight.nvim',
     lazy = false,
