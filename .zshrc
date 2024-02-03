@@ -1,3 +1,5 @@
+# homebrew zsh
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -106,7 +108,7 @@ alias rust="cd ~/Developer/rust"
 alias edit_nvim="cd ~/.dotfiles/.config/nvim; nvim ."
 alias cd_nvim="cd ~/.dotfiles/.config/nvim;"
 alias rust_by_practice="cd ~/Developer/rust/rust-by-practice; mdbook serve en/"
-
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
