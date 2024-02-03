@@ -4,11 +4,14 @@
       "lua/?.lua",
       "lua/?/init.lua"
     ],
-    "diagnostics.globals": ["vim"],
     "workspace.checkThirdParty": false,
+    "diagnostics.globals": ["vim"],
     "workspace.library": [
       "$VIMRUNTIME",
       "./lua"
+    ],
+    "diagnostics.globals": [
+        "ts"
     ]
   }
 
