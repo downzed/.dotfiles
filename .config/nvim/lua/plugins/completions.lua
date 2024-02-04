@@ -3,7 +3,7 @@ return {
   {
     "hrsh7th/cmp-cmdline",
     dependencies = {
-      "hrsh7th/cmp-buffer"
+      "hrsh7th/cmp-buffer",
     },
     config = function()
       local cmp = require("cmp")
@@ -23,8 +23,15 @@ return {
         }),
       }
 
-      cmp.setup.cmdline("/", config)
-      cmp.setup.cmdline("?", config)
+      local buffer_config = {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "buffer" },
+        }),
+      }
+
+      cmp.setup.cmdline("/", buffer_config)
+      cmp.setup.cmdline("?", buffer_config)
       cmp.setup.cmdline(":", config)
     end,
   },
@@ -60,8 +67,7 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "luasnip" }, -- For luasnip users.
-        }, {
-          { name = "buffer" },
+          { name = "nvim_lsp" },
         }),
       })
     end,
