@@ -2,18 +2,16 @@ return {
   { "hrsh7th/cmp-nvim-lsp" },
   {
     "hrsh7th/cmp-cmdline",
+    dependencies = {
+      "hrsh7th/cmp-buffer"
+    },
     config = function()
       local cmp = require("cmp")
 
       local config = {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" },
-        },
-      }
-      local vim_config = {
-        mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
+          { name = "buffer" },
           { name = "path" },
         }, {
           {
@@ -27,8 +25,7 @@ return {
 
       cmp.setup.cmdline("/", config)
       cmp.setup.cmdline("?", config)
-      cmp.setup.cmdline(":", vim_config)
-
+      cmp.setup.cmdline(":", config)
     end,
   },
   {
@@ -62,10 +59,7 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
-          -- { name = "nvim_lsp" },
           { name = "luasnip" }, -- For luasnip users.
-          -- { name = 'ultisnips' }, -- For ultisnips users.
-          -- { name = 'snippy' }, -- For snippy users.
         }, {
           { name = "buffer" },
         }),
