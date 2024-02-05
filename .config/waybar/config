@@ -1,0 +1,118 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 28,
+
+    "modules-left": ["sway/workspaces","custom/d","sway/window", "sway/mode"],
+    "modules-right": ["tray", "disk", "pulseaudio", "battery", "temperature", "bluetooth", "network", "clock", "user"],
+    "modules-center": ["custom/prevtune","custom/spotify", "custom/nexttune"],
+
+    "custom/spotify": {
+      "interval": 1,
+      "format": {},
+      "return-type": "json",
+      "exec": "~/.config/waybar/scripts/spotify.py",
+      "on-click": "playerctl play-pause",
+      "on-click-middle": "spotify",
+      "tooltip":true,
+      "escape": true,
+    },
+
+    "custom/prevtune": {
+      "format":"<span size='110%'>󰶢</span>",
+      "on-click": "playerctl previous",
+    },
+
+    "custom/nexttune": {
+      "format":"<span size='110%'>󰔰</span>",
+      "on-click": "playerctl next",
+    },
+
+    "custom/d": {
+      "format": " ",
+      "tooltip": false,
+    },
+
+    "sway/mode": {
+        "format": "> {}"
+    },
+
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true,
+    },
+
+    "user": {
+      "format": "{user} >> {work_d} days",
+      "interval": 60,
+      "height": 30,
+      "width": 30,
+      "icon": true,
+    },
+
+    "clock": {
+      "format": "{:%H:%M >> %d/%m/%y}",
+      "tooltip": false
+    },
+
+    "backlight":{
+      "device": "intel_backlight",
+      "format": "LIGHT >> {percent}%"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": "TEMP >> {temperatureC}°C",
+        "format": "TEMP >> {temperatureC}°C"
+    },
+
+    "disk": {
+      "format": "SPACE >> {percentage_free}%",
+      "tooltip-format": "{used} used out of {total} >> ({percentage_used}% used)"
+    }, 
+
+    "battery": {
+        "format": "BAT >> {capacity}%",
+        "format-alt": "{time}",
+        "format-full": "FULL >> {capacity}%",
+        "format-charging": "CHRG >> {capacity}%",
+        "interval": 30,
+        "states": {
+            "full": 100,
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+
+    "network": {
+      "format": "NET",
+      "format-wifi": "WIFI >> {signalStrength}%",
+      "format-alt": "{ipaddr}/{cidr}",
+      "format-alt-click": "click-right",
+      //"on-click": "kitty -e nmtui",
+      "tooltip": false
+    },
+
+   "bluetooth": {
+      "format": "BT >> {status}",
+      "format-connected-battery": "{device_alias} {device_battery_percentage}%",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": "BT >> {num_connections} connected",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+   
+    "tray": {
+      "icon-size": 18
+    },
+
+    "pulseaudio": {
+      "format": "VOL >> {volume}%",
+      "format-bluetooth": "BTH VOL >> {volume}%",
+      "scroll-step": 1,
+      "on-click": "pavucontrol",
+      "ignored-sinks": ["Easy Effects Sink"]
+  }
+}
