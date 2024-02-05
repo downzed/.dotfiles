@@ -1,0 +1,14 @@
+  {
+    "runtime.version": "LuaJIT",
+    "runtime.path": [
+      "lua/?.lua",
+      "lua/?/init.lua"
+    ],
+    "workspace.checkThirdParty": false,
+    "diagnostics.globals": ["vim", "attach"],
+    "workspace.library": [
+      "$VIMRUNTIME",
+      "./lua"
+    ],
+  }
+

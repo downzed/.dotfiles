@@ -1,0 +1,26 @@
+window {
+  background: #0e1419;
+}
+.hl-on-hover {
+  //.icon {
+  font-size: 26px;
+  &:hover {
+    font-size: 32px;
+  }
+  //}
+}
+.hover-module {
+  //width: 40px;
+}
+.test-box {
+  background-color: #2a2a2a;
+}
+.test-box.red {
+  background-color: red;
+}
+.test-box.blue {
+  background-color: blue;
+}
+.test-box.green {
+  background-color: green;
+}

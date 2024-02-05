@@ -1,0 +1,67 @@
+(defwidget hbar []
+  (box :orientation "h"
+       :space-evenly true
+    (workspaces)
+    (sidestuff)
+  ))
+
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (label :class "label" :text label :tooltip value)
+    ;(label :class "value" :text value :tooltip value)
+    (scale :min 0
+           :max 100
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)
+           ))
+
+(defpoll button_active :interval "300ms" "~/.config/eww/scripts/get_workspace.sh")
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+       :spacing 8
+      
+    (button :onclick "hyprctl dispatch workspace 1"  
+            :class {button_active == 1 ? "active" : "inactive"}
+            ""
+    )
+    (button :onclick "hyprctl dispatch workspace 2"
+            :class {button_active == 2 ? "active" : "inactive"}
+          ""
+    )
+    (button :onclick "hyprctl dispatch workspace 3"
+            :class {button_active == 3 ? "active" : "inactive"}
+          ""
+    )
+   )
+  )
+
+(defpoll volume :interval "100ms" "~/.config/eww/scripts/vol.sh")
+
+(defpoll time :interval "60s" "date '+%H:%M :: %d_%m_%y'")
+
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (hover-module)
+    (label :text time
+           :class "clock"
+      ))
+)
+
+(defwindow bar
+  :monitor 0
+  :stacking "fg"
+  :exclusive true
+  :geometry (geometry :x "0%"
+                      :y "0.5%"
+                      :width "33%"
+                      :height "3%"
+                      :anchor "bottom center")
+  (hbar))

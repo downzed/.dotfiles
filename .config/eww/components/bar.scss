@@ -1,0 +1,64 @@
+.bar {
+  background-color: transparent;
+  color: rgba(211, 211, 211, 0.95);
+  padding: 16px;
+  //background-color: rgba(11, 11, 11, 0.35);
+  //border-radius: 2px;
+  //border: 1px solid #dcdccc;
+  font-family: "BigBlueTermPlus Nerd Font Mono";
+  font-size: 14px;
+}
+
+.sidestuff slider {
+  all: unset;
+  color: #ffd5cd;
+}
+.clock {
+  padding-right: 16px;
+}
+.metric {
+  font-size: 12px;
+}
+.metric scale trough highlight {
+  all: unset;
+  background-color: #d35d6e;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 8px;
+  margin-right: 16px;
+}
+
+.label-ram {
+  font-size: large;
+}
+.workspaces {
+  padding: 0px 8px;
+  button {
+    padding: 8px 12px;
+    font-size: 26px;
+    border-radius: 4px;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+      color: #fef;
+      //color: #444;
+      background-color: rgba(255, 255, 0, 0.33);
+    }
+    &.active {
+      color: #444;
+      background: white;
+      border-radius: 8px;
+    }
+  }
+}
+
+.vol-text {
+  margin: 0 16px;
+  font-size: 12px;
+}

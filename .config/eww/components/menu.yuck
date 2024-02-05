@@ -1,0 +1,65 @@
+(defvar reveal false)
+
+; NOTE: GTK revealer transitions are kinda stupid
+(defwidget hovered-sign [var]
+  (box :space-evenly false
+      (revealer :reveal {!var}
+                :duration "100ms"
+                :transition "fade"
+        (children :nth 0)) 
+      (revealer :reveal {var}
+                :duration "100ms"
+                :transition "slideleft"
+        (children :nth 1)))) 
+
+; Revealer on hover, using children
+(defwidget revealer-on-hover [var varname ?class ?duration ?transition]
+  (box :class "${class} revealer-on-hover"
+       :orientation "h"
+       :space-evenly false
+    (eventbox :class "eventbox"
+              :onhover "eww update ${varname}=true"
+              :onhoverlost "eww update ${varname}=false"
+      (box :space-evenly false
+        (children :nth 0)
+        (revealer :reveal var
+                  :transition {transition ?: "slideleft"}
+                  :duration {duration ?: "500ms"}
+          (children :nth 1))
+        (children :nth 2)))))
+
+
+(defpoll updates :interval "60m" "~/.config/eww/scripts/updates.sh")
+
+(defwidget hover-module [?class]
+  (box :space-evenly false
+       :class "hover-module ${class}"
+    (revealer-on-hover :class "hl-on-hover"
+                       :var reveal
+                       :varname "reveal"
+                       :transition "slideleft"
+          
+      (hovered-sign :var reveal)
+    (box :space-evenly false 
+
+     (label :text "${updates}")
+    ;(metric :label "vol"
+            ;:value volume
+            ;:onchange "amixer sset Master {}%")
+
+    ;(metric :label "updates"
+            ;:value {updates} 
+            ;:onchange "")
+ 
+    ;(metric :label "mem"
+            
+            ;:value {eww_ram.used_mem_perc} 
+            ;:onchange "")
+    ;(metric :label "disk"
+            ;:tooltip "Disk"
+            ;:value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+            ;:onchange "")
+
+    )
+   (label :class "icon" :text "  "))))
+

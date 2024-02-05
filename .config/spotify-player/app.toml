@@ -1,0 +1,18 @@
+client_id = ""
+border_type = "Plain"
+playback_window_position = "Bottom"
+progress_bar_type = "Line"
+enable_media_control = true
+enable_cover_image_cache = true
+cover_img_length = 9
+cover_img_width = 5
+cover_image_refresh_duration_in_ms = 2000
+
+[device]
+name = "archme"
+volume = 75
+bitrate = 320
+audio_cache = false
+#device = 
+#device_type = "computer"
+#backend = "pipewire"
