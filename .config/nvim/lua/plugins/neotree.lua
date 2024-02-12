@@ -8,5 +8,14 @@ return {
 	},
 	config = function()
 		vim.keymap.set("n", "<C-n>", ":Neotree reveal position=left toggle<CR>")
+    require("neo-tree").setup({
+      window = {
+        position = "left",
+      },
+      filesystem = {
+        follow_current_file = true,
+      },
+
+    })
 	end,
 }
