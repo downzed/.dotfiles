@@ -17,11 +17,11 @@ return {
         },
         indent = { enable = true },
         autotag = { enable = true },
-        -- ensure_installed = { "rust", "lua", "javascript", "typescript", "vim" },
+        rainbow = { enable = true },
+        ensure_installed = { "rust", "lua", "vim" },
         -- sync_install = false,
         -- auto_install = true,
         -- indent = { enable = true },
-        -- rainbow = { enable = true },
       })
     end,
   },

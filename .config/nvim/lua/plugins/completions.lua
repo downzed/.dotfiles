@@ -1,64 +1,55 @@
 return {
-	{
-		"hrsh7th/cmp-nvim-lsp",
-	},
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
-		},
-	},
-	{
-		"hrsh7th/nvim-cmp",
-		config = function()
-			local cmp = require("cmp")
+  'hrsh7th/nvim-cmp',         -- Autocompletion plugin
+  'hrsh7th/cmp-nvim-lsp',     -- LSP source for nvim-cmp
+  'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
+  {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      local luasnip = require('luasnip')
+      local cmp = require('cmp')
 
-			require("luasnip.loaders.from_vscode").lazy_load()
+      cmp.setup {
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
 
-			cmp.setup({
-				snippet = {
-					expand = function(args)
-						require("luasnip").lsp_expand(args.body)
-					end,
-				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" }, -- For luasnip users.
-				}, {
-					{ name = "buffer" },
-				}),
-			})
-		end,
-	},
-	{
-		"nvimtools/none-ls.nvim",
-		config = function()
-			local null_ls = require("null-ls")
-			null_ls.setup({
-				sources = {
-					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.diagnostics.eslint_d,
-					null_ls.builtins.formatting.eslint,
-					null_ls.builtins.formatting.prettier,
-					null_ls.builtins.completion.spell,
-					null_ls.builtins.formatting.rustfmt,
-					null_ls.builtins.code_actions.xo,
-				},
-			})
+        mapping = cmp.mapping.preset.insert({
+          ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
+          ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
+          -- C-b (back) C-f (forward) for snippet placeholder navigation.
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          },
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+        }),
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+        },
+      }
+      require("luasnip.loaders.from_snipmate").lazy_load()
+    end
 
-			vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {})
-		end,
-	},
+  }
 }

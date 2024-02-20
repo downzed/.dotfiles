@@ -1,9 +1,11 @@
 return {
   { "MunifTanjim/nui.nvim", lazy = true },
   {
-    "j-hui/fidget.nvim",
+    'stevearc/dressing.nvim',
+    opts = {},
     config = function()
-      require("fidget").setup()
-    end,
-  },
+      local dressing = require("dressing")
+      dressing.setup()
+    end
+  }
 }

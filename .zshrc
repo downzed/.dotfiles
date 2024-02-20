@@ -110,10 +110,12 @@ alias cd_nvim="cd ~/.dotfiles/.config/nvim;"
 alias rust_by_practice="cd ~/Developer/rust/rust-by-practice; mdbook serve en/"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 
 export PATH="$HOME/bin:$PATH"
 

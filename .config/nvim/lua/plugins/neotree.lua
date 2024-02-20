@@ -13,7 +13,10 @@ return {
         position = "left",
       },
       filesystem = {
-        follow_current_file = true,
+        follow_current_file = {
+          enabled = true,
+          update_root = true,
+        },
       },
 
     })
