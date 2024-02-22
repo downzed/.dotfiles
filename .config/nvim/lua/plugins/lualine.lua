@@ -5,12 +5,14 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    require("lualine").setup({
+    local lualine = require("lualine")
+
+    lualine.setup({
       options = {
         theme = "rose-pine",
         component_separators = "",
         section_separators = { left = "", right = "" },
-        disabled_filetypes = { "alpha" },
+        disabled_filetypes = { "starter", "Starter", "neotree", "Neotree", "neo-tree" },
       },
       sections = {
         lualine_a = {
@@ -20,13 +22,16 @@ return {
               left = "",
               right = "",
             },
-            right_padding = 2,
+            right_padding = 1,
           },
         },
         lualine_b = {
-          "branch",
+          {
+            "branch",
+            left_padding = 1,
+          },
           "diff",
-          "diagnostics",
+          "diagnostics"
         },
         lualine_c = {
           {
@@ -35,15 +40,21 @@ return {
             path = 4,
           },
         },
-        lualine_x = {
-          "filetype",
+        lualine_y = {
+          "progress"
         },
-        lualine_y = { "progress" },
         lualine_z = {
-          { "location", separator = { right = "", left = "" }, left_padding = 2 },
+          { "location", separator = { right = "", left = "" }, left_padding = 1 },
         },
       },
-      inactive_sections = {},
+      inactive_sections = {
+        lualine_a = { 'filename' },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = { 'location' },
+      },
     })
   end,
 }
