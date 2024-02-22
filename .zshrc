@@ -102,7 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cls="clear;"
-alias dots="cd ~/.dotfiles"
 alias ls="colorls"
 alias rust_by_practice="cd ~/Developer/rust/rust-by-practice; mdbook serve en/"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
