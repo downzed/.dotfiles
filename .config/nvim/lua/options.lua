@@ -22,11 +22,15 @@ vim.opt.relativenumber = true
 vim.opt.clipboard = 'unnamedplus'
 
 vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
+-- vim.g.netrw_banner = 0   -- Disables the Netrw banner. Press 'I' to toggle.
+
+vim.cmd.set('nocp')
+vim.cmd('filetype plugin on')
 
 vim.o.cmdheight = 0
 vim.cmd.set('noswapfile')
 
+vim.keymap.set('n', '<leader>p', vim.cmd.Ex)
 vim.keymap.set('n', '<leader><leader>', ':nohlsearch<CR>')
 vim.keymap.set('n', '*', '*zz', { desc = 'Search and center screen' })
 

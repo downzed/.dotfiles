@@ -2,12 +2,49 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      require('neodev').setup({})
+
       local lspconfig = require('lspconfig')
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            completion = {
+              callSnippet = "Replace"
+            }
+          }
+        },
+        capabilities = capabilities,
+      })
+
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+        on_attach = function(_, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+        root_dir = lspconfig.util.root_pattern("package.json", "package-lock.json"),
+        filetypes = {
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx"
+        },
+        single_file_support = true
+      })
+
+      lspconfig.tsserver.setup({
+        capabilities = capabilities,
+      })
 
       local check_eslint_config = function(client)
         local eslint_config = vim.fn.glob(".eslintrc*")
 
-        -- if client name is not eslint
         if eslint_config == "" or client.name ~= "eslint" or client.name ~= "tsserver" then
           return false
         end
@@ -60,43 +97,13 @@ return {
 
       vim.api.nvim_create_autocmd('LspAttach', on_attach)
 
-      vim.g.rustaceanvim = {
-        server = {
-          on_attach = on_attach
-        }
-      }
+      -- vim.g.rustaceanvim = {
+      --   server = {
+      --     on_attach = on_attach
+      --   }
+      -- }
 
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
-
-      lspconfig.eslint.setup({
-        capabilities = capabilities,
-        on_attach = function(_, bufnr)
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-          })
-        end,
-        root_dir = lspconfig.util.root_pattern("package.json", "package-lock.json"),
-        filetypes = {
-          "typescript",
-          "typescriptreact",
-          "typescript.tsx",
-          "javascript",
-          "javascriptreact",
-          "javascript.jsx"
-        },
-        single_file_support = true
-      })
-
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
     end,
-
   },
   {
     "williamboman/mason-lspconfig.nvim",

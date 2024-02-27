@@ -21,15 +21,14 @@ return {
         silent = true,
       }
 
-      vim.api.nvim_set_keymap("n", "<leader>gp", ":Gitsigns<CR>" , gitsigns_opts)
-      vim.api.nvim_set_keymap("v", "<leader>gp", ":'<,'> Gitsigns<CR>" , gitsigns_opts)
+      vim.api.nvim_set_keymap("n", "<leader>gp", ":Gitsigns<CR>", gitsigns_opts)
     end,
   },
 
   {
     "tpope/vim-fugitive",
     config = function()
-      vim.keymap.set("n", "<leader>gt", ":Git<CR>", { desc = "fugitive" })
+      vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "fugitive" })
     end,
   },
 }
