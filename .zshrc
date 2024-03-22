@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell" # set by `omz`
-ZSH_THEME="robbyrussell" # set by `omz`
+ZSH_THEME="simple" # set by `omz`
 
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -101,15 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cls="clear"
-alias dots="cd ~/.dotfiles"
+alias cls="clear;"
 alias ls="colorls"
-alias rust="cd ~/Developer/rust"
-alias edit_nvim="cd ~/.dotfiles/.config/nvim; nvim ."
-alias cd_nvim="cd ~/.dotfiles/.config/nvim;"
 alias rust_by_practice="cd ~/Developer/rust/rust-by-practice; mdbook serve en/"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+alias cd="z"
 
+export ZK_NOTEBOOK_DIR="$HOME/Documents/notes"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -117,3 +115,6 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 export PATH="$HOME/bin:$PATH"
 
+eval "$(zoxide init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

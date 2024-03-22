@@ -27,12 +27,17 @@ vim.g.netrw_banner = 0
 vim.o.cmdheight = 0
 vim.cmd.set('noswapfile')
 
+-- fold
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+
 vim.keymap.set('n', '<leader><leader>', ':nohlsearch<CR>')
 vim.keymap.set('n', '*', '*zz', { desc = 'Search and center screen' })
-
-vim.keymap.set('n', '<leader>bd', ':bdelete<cr>', { desc = 'delete buffer' })
-vim.keymap.set('n', '<leader>bn', ':bnext<cr>', { desc = 'next buffer' })
-vim.keymap.set('n', '<leader>bp', ':bprevious<cr>', { desc = 'previous buffer' })
 
 local function closeAllBuffers()
   local buffers = vim.api.nvim_list_bufs()
@@ -43,4 +48,8 @@ local function closeAllBuffers()
   end
 end
 
-vim.keymap.set('n', '<leader>bD', function() closeAllBuffers() end, { desc = 'close all buffers except the current one' })
+vim.keymap.set('n', '<leader>bD', function() closeAllBuffers() end, { desc = '[B]uffer [D]elete all but current' })
+
+vim.keymap.set('n', '<leader>bd', ':bdelete<cr>', { desc = '[B]uffer [D]elete' })
+vim.keymap.set('n', '<leader>bn', ':bnext<cr>', { desc = '[B]uffer [N]ext' })
+vim.keymap.set('n', '<leader>bp', ':bprevious<cr>', { desc = '[B]uffer [P]revious' })
