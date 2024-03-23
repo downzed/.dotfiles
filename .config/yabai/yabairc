@@ -1,0 +1,52 @@
+# bsp or float (default: float)
+yabai -m config layout bsp
+
+yabai -m config window_placement second_child
+
+# set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
+# yabai -m config focus_follows_mouse autoraise
+
+# set mouse follows focus mode (default: off)
+yabai -m config mouse_follows_focus on
+
+# modify window shadows (default: on, options: on, off, float)
+# example: show shadows only for floating windows
+yabai -m config window_shadow float
+
+# window opacity (default: off)
+# example: render all unfocused windows with 90% opacity
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+
+# padding
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
+
+yabai -m config external_bar all:32:0
+
+# to disable apps from being managed by yabai use: manage=off
+yabai -m rule --add app="^Calcualtor$" manage=off
+
+# set space labels
+# yabai -m space n --label code
+yabai -m space 1 --label term
+yabai -m space 2 --label web
+yabai -m space 3 --label sound
+yabai -m space 5 --label misc
+
+# assign apps to spaces
+yabai -m rule --add app="^iTerm2$" space=^"term" 
+yabai -m rule --add app="^Code$" space=^"term" manage=off
+
+yabai -m rule --add app="^Google Chrome$" space=^"web" 
+yabai -m rule --add app="^Firefox$" space=^"web" 
+
+yabai -m rule --add app="^Spotify$" space=^"sound" 
+
+yabai -m rule --add app="^System Settings$" manage=off space=^"misc"
+yabai -m rule --add app="^NordPass$" manage=off space=^"misc"
+
