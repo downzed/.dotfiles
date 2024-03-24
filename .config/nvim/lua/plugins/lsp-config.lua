@@ -6,46 +6,52 @@ return {
       require('neodev').setup({})
 
       local lsp_config = require('lspconfig')
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local mason_lspconfig = require("mason-lspconfig")
 
-      lsp_config.lua_ls.setup({
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            format = {
-              enable = true,
-            },
-            completion = {
-              callSnippet = "Replace"
-            }
-          }
+      mason_lspconfig.setup({
+        ensure_installed = { 'lua_ls', 'eslint', 'rust_analyzer' },
+        handlers = {
+          function(server)
+            require("lspconfig")[server].setup({
+              capabilities = lsp_capabilities
+            })
+          end,
+          rust_analyzer = nil,
+          eslint = function()
+            lsp_config.eslint.setup({
+              capabilities = lsp_capabilities,
+              root_dir = lsp_config.util.root_pattern("package.json"),
+              filetypes = {
+                "typescript",
+                "typescriptreact",
+                "typescript.tsx",
+                "javascript",
+                "javascriptreact",
+                "javascript.jsx"
+              },
+              single_file_support = true
+            })
+          end,
+          lua_ls = function()
+            lsp_config.lua_ls.setup({
+              capabilities = lsp_capabilities,
+              settings = {
+                Lua = {
+                  runtime = {
+                    version = 'LuaJIT',
+                  },
+                  diagnostics = {
+                    globals = { 'vim' }
+                  },
+                  format = {
+                    enable = true,
+                  },
+                }
+              }
+            })
+          end
         }
-      })
-
-      lsp_config.taplo.setup({
-        capabilities = capabilities,
-      })
-
-      lsp_config.eslint.setup({
-        capabilities = capabilities,
-        root_dir = lsp_config.util.root_pattern("package.json", "package-lock.json"),
-        filetypes = {
-          "typescript",
-          "typescriptreact",
-          "typescript.tsx",
-          "javascript",
-          "javascriptreact",
-          "javascript.jsx"
-        },
-        single_file_support = true
-      })
-
-      lsp_config.tsserver.setup({
-        capabilities = capabilities,
-      })
-
-      lsp_config.bashls.setup({
-        capabilities = capabilities,
       })
 
       local check_eslint_config = function(client)
@@ -94,8 +100,6 @@ return {
             { buffer = ev.buf, desc = "[C]ode [A]ction" })
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = "Hover" })
 
-          print("[" .. client.name .. "] ")
-
           -- -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
           -- -- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
           -- -- vim.keymap.set('n', '<leader>wl', function()
@@ -126,31 +130,23 @@ return {
               command = "lua vim.lsp.buf.format()"
             })
           end
+
+          print("[" .. client.name .. "] ")
         end,
       }
-      vim.g.rustaceanvim = {
-        server = {
-          on_attach = function(_client, bufnr)
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', ':RustLsp codeAction<CR>',
-              { buffer = bufnr, desc = "[C]ode [A]ction" })
-            vim.keymap.set('n', 'K', ':RustLsp hover actions<CR>', { buffer = bufnr, desc = "Hover" })
-          end
-        }
-      }
-
 
       vim.api.nvim_create_autocmd('LspAttach', on_attach)
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    config = function()
-      local mason_lspconfig = require("mason-lspconfig")
+    -- config = function()
+    --   local mason_lspconfig = require("mason-lspconfig")
 
-      mason_lspconfig.setup({
-        ensure_installed = { 'lua_ls', 'eslint' }
-      })
-    end
+    --   mason_lspconfig.setup({
+    --     ensure_installed = { 'lua_ls', 'eslint' }
+    --   })
+    -- end
   },
   {
     "williamboman/mason.nvim",
