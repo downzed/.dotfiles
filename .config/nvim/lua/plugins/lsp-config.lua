@@ -10,10 +10,10 @@ return {
       local mason_lspconfig = require("mason-lspconfig")
 
       mason_lspconfig.setup({
-        ensure_installed = { 'lua_ls', 'eslint', 'rust_analyzer' },
+        ensure_installed = { 'lua_ls', 'eslint', 'rust_analyzer', 'bashls' },
         handlers = {
           function(server)
-            require("lspconfig")[server].setup({
+            require('lspconfig')[server].setup({
               capabilities = lsp_capabilities
             })
           end,
@@ -82,11 +82,6 @@ return {
           -- See `:help vim.lsp.*` for documentation on any of the below functions
           local client = vim.lsp.get_client_by_id(ev.data.client_id)
           local ts_builtin = require('telescope.builtin')
-
-          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = "[G]o to [D]eclaration" })
-          -- keymap go to definition
-          vim.keymap.set('n', 'gtd', vim.lsp.buf.definition, { buffer = ev.buf, desc = "[G]o to [D]efinition" })
-
 
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = "[R]e[n]ame" })
           vim.keymap.set('n', 'gd', ts_builtin.lsp_definitions, { buffer = ev.buf, desc = "[G]o to [D]efinitions" })
