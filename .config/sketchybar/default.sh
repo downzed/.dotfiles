@@ -16,7 +16,7 @@ default=(
   background.color=$SECONDARY_BG
   background.corner_radius=4
 
-  icon.font="RobotoMono Nerd Font:Noraml:12.0"
+  icon.font="RobotoMono Nerd Font:Noraml:14.0"
   icon.color=$WHITE
   icon.padding_left=6
   icon.padding_right=4

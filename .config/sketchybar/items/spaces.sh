@@ -1,26 +1,33 @@
-#!/bin/sh
+#!/bin/bash
 
-##### Adding Mission Control Space Indicators #####
-# Let's add some mission control spaces:
-# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
-# to indicate active and available mission control spaces.
+SPACE_SIDS=(1 2 3 4 5 6 7 8 9 10)
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-for i in "${!SPACE_ICONS[@]}"
+for sid in "${SPACE_SIDS[@]}"
 do
-  sid="$(($i+1))"
   space=(
-    space="$sid"
-    icon="${SPACE_ICONS[i]}"
-    icon.padding_left=7
-    icon.padding_right=7
-    background.color=0x40ffffff
-    background.corner_radius=5
-    background.height=25
-    label.drawing=off
+    space=$sid                                 
+    icon=$sid
+    background.color=$SECONDARY_BG
+    label.color=$SECONDARY_BG2
+    icon.color=$SECONDARY_FG
+    label.highlight_color=$SECONDARY_FG2
+    icon.highlight_color=$SECONDARY_FG2
+    label.font="sketchybar-app-font:Regular:14.0"
+    label.padding_right=20
+    label.y_offset=-1
+    icon.drawing=on
     script="$PLUGIN_DIR/space.sh"
-    click_script="yabai -m space --focus $sid"
-  )
-  sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+)
+
+  sketchybar --add space space.$sid left                                 \
+             --set space.$sid "${space[@]}"
 done
 
+sketchybar --add item space_separator left                             \
+           --set space_separator icon=""                                \
+                                 icon.color=$SECONDARY_FG \
+                                 icon.padding_left=4                   \
+                                 label.drawing=off                     \
+                                 background.drawing=off                \
+                                 script="$PLUGIN_DIR/window.sh" \
+           --subscribe space_separator space_windows_change
