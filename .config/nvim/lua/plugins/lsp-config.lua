@@ -18,6 +18,15 @@ return {
             })
           end,
           rust_analyzer = nil,
+          bashls = function()
+            lsp_config.bashls.setup({
+              capabilities = lsp_capabilities,
+              filetypes = { "sh" },
+              single_file_support = true,
+              name = 'bash',
+              cmdline = { 'bash-language-server', 'start' },
+            })
+          end,
           eslint = function()
             lsp_config.eslint.setup({
               capabilities = lsp_capabilities,

@@ -1,4 +1,6 @@
+#!/usr/bin/env sh
 # bsp or float (default: float)
+
 yabai -m config layout bsp
 
 yabai -m config window_placement second_child
@@ -20,7 +22,7 @@ yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.9
 
 # padding
-yabai -m config top_padding 8
+yabai -m config top_padding 0
 yabai -m config bottom_padding 8
 yabai -m config left_padding 8
 yabai -m config right_padding 8
