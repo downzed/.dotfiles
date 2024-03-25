@@ -35,14 +35,14 @@ source $ITEMS_DIR/cal.sh
 source $ITEMS_DIR/vol.sh
 source $ITEMS_DIR/bat.sh
 
-## -- Left side items -- ##
-
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
 # only the properties deviating from the current defaults need to be set
 
+source $ITEMS_DIR/media.sh
+## -- Left side items -- ##
 source $ITEMS_DIR/fa.sh
-#
+
 # Some items refresh on a fixed cycle, e.g. the clock runs its script once
 # every 10s. Other items respond to events they subscribe to, e.g. the
 # volume.sh script is only executed once an actual change in system audio

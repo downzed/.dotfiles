@@ -1,6 +1,5 @@
 return {
   { 'folke/neodev.nvim', opts = {} },
-
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
@@ -63,7 +62,7 @@ return {
         -- Replace the language servers listed here
         -- with the ones you want to install
         automatic_installation = true,
-        ensure_installed = { 'lua_ls', 'tsserver', 'rust_analyzer', 'bashls' },
+        ensure_installed = { 'lua_ls', 'tsserver', 'rust_analyzer', 'bashls', 'shfmt' },
         handlers = {
           lsp_zero.default_setup,
           function(server)
