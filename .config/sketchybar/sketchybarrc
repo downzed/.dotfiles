@@ -41,12 +41,8 @@ source $ITEMS_DIR/bat.sh
 # We add some regular items to the left side of the bar, where
 # only the properties deviating from the current defaults need to be set
 
-sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-           --subscribe front_app front_app_switched
-
+source $ITEMS_DIR/fa.sh
+#
 # Some items refresh on a fixed cycle, e.g. the clock runs its script once
 # every 10s. Other items respond to events they subscribe to, e.g. the
 # volume.sh script is only executed once an actual change in system audio
