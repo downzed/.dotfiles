@@ -41,7 +41,8 @@ Ensure you have `Homebrew` installed on your macOS system, which will be used to
    Install `sketchybar` using Homebrew:
 
    ```sh
-   brew install sketchybar
+    brew tap FelixKratz/formulae
+    brew install sketchybar
    ```
 
    Start and enable `sketchybar`:
