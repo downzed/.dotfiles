@@ -9,7 +9,7 @@ source $CONFIG_DIR/colors.sh # import color variables
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEMS_DIR="$CONFIG_DIR/items"
-
+FONT="IosevkaTerm Nerd Font"
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
 # These are only some of the options available. For all options see:
@@ -34,6 +34,7 @@ source $ITEMS_DIR/spaces.sh
 source $ITEMS_DIR/cal.sh
 source $ITEMS_DIR/vol.sh
 source $ITEMS_DIR/bat.sh
+source $ITEMS_DIR/wifi.sh
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
