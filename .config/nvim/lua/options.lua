@@ -53,3 +53,5 @@ vim.keymap.set('n', '<leader>bD', function() closeAllBuffers() end, { desc = '[B
 vim.keymap.set('n', '<leader>bd', ':bdelete<cr>', { desc = '[B]uffer [D]elete' })
 vim.keymap.set('n', '<leader>bn', ':bnext<cr>', { desc = '[B]uffer [N]ext' })
 vim.keymap.set('n', '<leader>bp', ':bprevious<cr>', { desc = '[B]uffer [P]revious' })
+
+vim.keymap.set('n', '<leader>q', ':q<cr>', { desc = '[Q]uit' })

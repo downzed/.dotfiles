@@ -1,13 +1,9 @@
 return {
   "alexghergh/nvim-tmux-navigation",
-  "ThePrimeagen/vim-be-good", -- practive vim
+  "ThePrimeagen/vim-be-good",
   "tpope/vim-commentary",
   "tpope/vim-surround",
   "RRethy/vim-illuminate",
-  {
-    "folke/twilight.nvim",
-    "folke/zen-mode.nvim",
-  },
   {
     'folke/which-key.nvim',
     config = function()
