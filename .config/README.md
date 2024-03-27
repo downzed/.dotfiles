@@ -12,11 +12,19 @@ Welcome to my personal dotfiles repository, where I share my custom configuratio
 
 ### Prerequisites
 
-Ensure you have `Homebrew` installed on your macOS system, which will be used to install the required tools. If not, install Homebrew by running:
+Before you begin, ensure your macOS system has the following tools installed:
 
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
+- **Homebrew**: The package manager for macOS, used for installing the necessary software. If you haven't installed Homebrew yet, you can do so by running the following command in your terminal:
+
+    ```sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+- **jq**: A lightweight and flexible command-line JSON processor, useful for parsing and managing JSON data in scripts and configurations. After installing Homebrew, install `jq` by running:
+
+    ```sh
+    brew install jq
+    ```
 
 ### Installation
 
