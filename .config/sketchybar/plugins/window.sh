@@ -1,5 +1,6 @@
 #!/bin/bash
 
+showing all open apps icons
 if [ "$SENDER" = "space_windows_change" ]; then
   space="$(echo "$INFO" | jq -r '.space')"
   apps="$(echo "$INFO" | jq -r '.apps | keys[]')"
