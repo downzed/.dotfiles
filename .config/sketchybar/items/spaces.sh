@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SPACE_SIDS=(1 2 3 4 5 6 7 8 9 10)
+SPACE_SIDS=(1 2 3 4)
 
 for sid in "${SPACE_SIDS[@]}"
 do
@@ -24,7 +24,7 @@ do
 done
 
 sketchybar --add item space_separator left                             \
-           --set space_separator icon=""                                \
+           --set space_separator icon=""                                 \
                                  icon.color=$SECONDARY_FG \
                                  icon.padding_left=4                   \
                                  label.drawing=off                     \

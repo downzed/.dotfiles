@@ -22,7 +22,7 @@ yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.90
 
 # padding
-yabai -m config top_padding 0
+yabai -m config top_padding 8
 yabai -m config bottom_padding 8
 yabai -m config left_padding 8
 yabai -m config right_padding 8
@@ -32,13 +32,14 @@ yabai -m config external_bar all:32:0
 
 # to disable apps from being managed by yabai use: manage=off
 yabai -m rule --add app="^Calcualtor$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 
 # set space labels
 # yabai -m space n --label code
 yabai -m space 1 --label term
 yabai -m space 2 --label web
 yabai -m space 3 --label sound
-yabai -m space 5 --label misc
+yabai -m space 4 --label misc
 
 # assign apps to spaces
 yabai -m rule --add app="^iTerm2$" space=^"term" 
