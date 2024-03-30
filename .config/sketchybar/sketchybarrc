@@ -34,7 +34,7 @@ source $ITEMS_DIR/spaces.sh
 ## -- Right side items -- ##
 source $ITEMS_DIR/cal.sh
 source $ITEMS_DIR/vol.sh
-source $ITEMS_DIR/bat.sh
+# source $ITEMS_DIR/bat.sh
 source $ITEMS_DIR/wifi.sh
 
 ##### Adding Left Items #####

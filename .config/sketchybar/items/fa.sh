@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sketchybar --add item front_app q \
+sketchybar --add item front_app left \
            --set front_app script="$PLUGIN_DIR/front_app.sh" \
                            background.color=$MAIN_BG \
                            label.padding_right=12 \
