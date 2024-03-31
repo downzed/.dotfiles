@@ -1,4 +1,8 @@
-local function attach(buffer)
+local function attach(buffer, client)
+  local check_is_not_eslint = function()
+    return vim.fn.filereadable(vim.fn.getcwd() .. "/.eslintrc.js") == 0 and client.name ~= "eslint"
+  end
+
   local map = function(keys, func, desc)
     vim.keymap.set("n", keys, func, {
       buffer = buffer,
@@ -9,7 +13,6 @@ local function attach(buffer)
     })
   end
 
-
   map("<leader>ws", ":Telescope lsp_dynamic_workspace_symbols <cr>", "[W]orkspace [S]ymbols")
   map("<leader>ds", ":Telescope lsp_document_symbols<cr>", "[D]ocument [S]ymbols")
   map("<leader>od", vim.diagnostic.open_float, "[O]pen [D]iagnostic")
@@ -18,15 +21,31 @@ local function attach(buffer)
 
   map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
   map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-  map("<leader>F", vim.lsp.buf.format, "[F]ormat")
 
   map("gd", require('telescope.builtin').lsp_definitions, "[G]oto [D]efinition")
   map("gr", require('telescope.builtin').lsp_references, "[G]oto [R]eferences")
   map("gI", require('telescope.builtin').lsp_implementations, "[G]oto [I]mplementation")
   map("<leader>td", require('telescope.builtin').lsp_type_definitions, "[T]ype definition")
-
-  map("<C-h>", vim.lsp.buf.signature_help, "Signature Help")
   map("K", vim.lsp.buf.hover, "Hover")
+
+  -- best keymap for signature_help
+  vim.keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.signature_help,
+    { buffer = buffer, silent = true, desc = "Signature Help" })
+
+  -- ESlint or Default format
+  local isNotEslint = check_is_not_eslint()
+  if isNotEslint then
+    map("<leader>f", vim.lsp.buf.format, "[F]ormat")
+  else
+    map("<leader>f", ":EslintFixAll<cr>", "[E]slint [F]ormat")
+  end
+
+  local command = isNotEslint and "lua vim.lsp.buf.format()" or "EslintFixAll"
+
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = buffer,
+    command = command
+  })
 end
 
 return {
@@ -53,8 +72,10 @@ return {
           "lua_ls",
           "rust_analyzer",
           "tsserver",
-          "bashls"
+          "bashls",
+          "eslint"
         },
+        automatic_installation = true,
         handlers = {
           function(server)
             lspconfig[server].setup({
@@ -67,12 +88,9 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("DownzedLspConfig", {}),
         callback = function(ev)
-          attach(ev.buf)
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = ev.buf,
-            command = "lua vim.lsp.buf.format()"
-          })
+          attach(ev.buf, client)
         end,
       })
     end,
