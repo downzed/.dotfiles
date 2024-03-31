@@ -55,3 +55,4 @@ sketchybar --add item space_separator left                             \
                                  background.drawing=off                \
                                  # script="$PLUGIN_DIR/window.sh" \
            --subscribe space_separator space_windows_change
+
