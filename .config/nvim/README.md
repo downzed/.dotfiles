@@ -24,9 +24,6 @@ NVIM_APPNAME=downzed/.dotfiles/.config/nvim nvim
 
 ## Plugins
 
-### color
-
-+ [folke/twilight.nvim](https://dotfyle.com/plugins/folke/twilight.nvim)
 ### colorscheme
 
 + [rose-pine/neovim](https://dotfyle.com/plugins/rose-pine/neovim)
@@ -42,7 +39,6 @@ NVIM_APPNAME=downzed/.dotfiles/.config/nvim nvim
 ### editing-support
 
 + [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
-+ [folke/zen-mode.nvim](https://dotfyle.com/plugins/folke/zen-mode.nvim)
 + [nvim-treesitter/nvim-treesitter-context](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-context)
 ### file-explorer
 
@@ -62,8 +58,8 @@ NVIM_APPNAME=downzed/.dotfiles/.config/nvim nvim
 ### lsp
 
 + [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
++ [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
 + [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
-+ [mrcjkb/rustaceanvim](https://dotfyle.com/plugins/mrcjkb/rustaceanvim)
 ### lsp-installer
 
 + [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
@@ -90,14 +86,12 @@ NVIM_APPNAME=downzed/.dotfiles/.config/nvim nvim
 ### syntax
 
 + [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
-### utility
-
-+ [stevearc/dressing.nvim](https://dotfyle.com/plugins/stevearc/dressing.nvim)
-+ [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
 ## Language Servers
 
++ bashls
 + eslint
 + lua_ls
++ rust_analyzer
 + tsserver
 + zk
 
