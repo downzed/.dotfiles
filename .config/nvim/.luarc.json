@@ -10,9 +10,5 @@
       "$VIMRUNTIME",
       "./lua"
     ],
-    "diagnostics.globals": [
-        "ts",
-        "vim"
-    ]
   }
 

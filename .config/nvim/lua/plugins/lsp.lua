@@ -55,9 +55,11 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "j-hui/fidget.nvim",
     },
     config = function()
       require('neodev').setup({})
+      require('fidget').setup({})
 
       local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
       local capabalities = vim.lsp.protocol.make_client_capabilities()
@@ -92,6 +94,10 @@ return {
 
           attach(ev.buf, client)
         end,
+      })
+
+      vim.diagnostic.config({
+        virtual_text = true
       })
     end,
   }
