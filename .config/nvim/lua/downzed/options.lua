@@ -25,7 +25,6 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 
 vim.o.cmdheight = 0
-vim.cmd.set('noswapfile')
 
 -- fold
 vim.o.foldlevel = 99
@@ -34,3 +33,5 @@ vim.o.foldenable = true
 
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+vim.cmd.set('noswapfile')

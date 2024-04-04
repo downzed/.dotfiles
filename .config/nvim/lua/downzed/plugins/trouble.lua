@@ -7,10 +7,17 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
-    config = function(_, opts)
+    config = function()
       local trouble = require("trouble")
-      trouble.setup(opts)
-      vim.keymap.set("n", "<leader>xx", trouble.toggle)
+
+      require("which-key").register({
+        t = {
+          name = "[T]rouble: ",
+          t = { trouble.toggle, "Toggle" },
+          l = { function() trouble.toggle("loclist") end, "Loclist" },
+          q = { function() trouble.toggle("quickfix") end, "Quickfix" },
+        }
+      }, { prefix = "<leader>" })
     end,
   },
 }

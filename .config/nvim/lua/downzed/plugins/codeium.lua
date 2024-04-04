@@ -1,26 +1,22 @@
 return {
-	{
-		"Exafunction/codeium.vim",
-		-- event = "BufEnter",
-		config = function()
-			vim.g.codeium_disable_bindings = 1
-			local opts = { expr = true }
+  {
 
-			vim.keymap.set("i", "<c-a>", function()
-				return vim.fn["codeium#Accept"]()
-			end, opts)
+    'Exafunction/codeium.vim',
+    -- event = 'BufEnter',
 
-			vim.keymap.set("i", "<c-N>", function()
-				return vim.fn["codeium#CycleCompletions"](1)
-			end, opts)
+    config = function()
+      vim.g.codeium_disable_bindings = 1
 
-			vim.keymap.set("i", "<c-s-b>", function()
-				return vim.fn["codeium#CycleCompletions"](-1)
-			end, opts)
+      local map = function(lhs, rhs, desc)
+        local set = vim.keymap.set
+        local opts = { expr = true, desc = "[Codeium]: " .. desc }
+        set("i", lhs, rhs, opts)
+      end
 
-			vim.keymap.set("i", "<c-x>", function()
-				return vim.fn["codeium#Clear"]()
-			end, opts)
-		end,
-	},
+      map("<c-a>", function() return vim.fn["codeium#Accept"]() end, "Accept")
+      map("<c-x>", function() return vim.fn["codeium#Clear"]() end, "Clear")
+      map("<c-j>", function() return vim.fn["codeium#CycleCompletions"](1) end, "Next Completion")
+      map("<c-k>", function() return vim.fn["codeium#CycleCompletions"](-1) end, "Previous Completion")
+    end,
+  },
 }

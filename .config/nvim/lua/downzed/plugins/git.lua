@@ -1,4 +1,5 @@
 return {
+  "tpope/vim-fugitive",
   {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -15,20 +16,32 @@ return {
         },
       })
 
-      local gitsigns_opts = {
-        desc = "Show Gitsigns",
+      local wk = require("which-key")
+
+      local opts = {
         noremap = true,
         silent = true,
+        prefix = "<leader>",
       }
 
-      vim.api.nvim_set_keymap("n", "<leader>gp", ":Gitsigns<CR>" , gitsigns_opts)
-    end,
-  },
-
-  {
-    "tpope/vim-fugitive",
-    config = function()
-      vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "fugitive" })
+      wk.register({
+        g = {
+          name = "[G]it",
+          f = { "<cmd>Git<cr>", "[F]ugitive" },
+          s = {
+            name = "[S]igns",
+            h = { gs.stage_hunk, "Stage Hunk" },
+            x = { gs.reset_hunk, "Reset Hunk" },
+            s = { "<cmd>Gitsigns<cr>", "Show Signs" },
+            p = { gs.preview_hunk, "Preview Hunk" },
+            ["]"] = { gs.next_hunk, "Next Hunk" },
+            ["["] = { gs.prev_hunk, "Prev Hunk" },
+          }
+          -- s = { gs.stage_hunk, "Stage Hunk" },
+          -- r = { gs.reset_hunk, "Reset Hunk" },
+          -- u = { gs.undo_stage_hunk, "Undo Stage Hunk" },
+        }
+      }, opts)
     end,
   },
 }

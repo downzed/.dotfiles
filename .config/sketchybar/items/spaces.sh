@@ -53,5 +53,5 @@ sketchybar --add item space_separator left                             \
                                  icon.font="$FONT:Normal:18.0" \
                                  label.drawing=off                     \
                                  background.drawing=off                \
-                                 # script="$PLUGIN_DIR/window.sh" \
            --subscribe space_separator space_windows_change
+                                 # script="$PLUGIN_DIR/window.sh" \

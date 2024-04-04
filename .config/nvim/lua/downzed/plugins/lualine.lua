@@ -9,10 +9,10 @@ return {
 
     lualine.setup({
       options = {
-        theme = "rose-pine",
+        theme = 'rose-pine',
         component_separators = "",
-        section_separators = { left = " ", right = " " },
-        -- section_separators = { left = "", right = "" },
+        -- section_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
         disabled_filetypes = { "starter", "Starter", "neotree", "Neotree", "neo-tree" },
       },
       sections = {
@@ -21,8 +21,8 @@ return {
             "mode",
             icons_enabled = true,
             separator = {
-              left = " ",
-              right = " ",
+              left = "",
+              right = "",
               -- left = "",
               -- right = "",
             },

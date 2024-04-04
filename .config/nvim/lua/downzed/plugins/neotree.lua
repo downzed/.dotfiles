@@ -26,6 +26,9 @@ return {
         },
       },
     })
-    vim.keymap.set("n", "<C-n>", ":Neotree reveal position=left toggle<CR>")
+
+    require("which-key").register({
+      ["<C-n>"] = { ":Neotree reveal position=left toggle<CR>", "NeoTree" },
+    })
   end,
 }

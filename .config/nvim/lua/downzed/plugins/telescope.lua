@@ -11,12 +11,40 @@ return {
       local builtin = require("telescope.builtin")
       local themes = require("telescope.themes")
 
-      vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-      vim.keymap.set("n", "<C-f>", builtin.live_grep, {})
-      vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "Select [Th]eme" })
-      vim.keymap.set('n', '<leader>ht', builtin.help_tags, { desc = "[H]elp [T]ags" })
-      vim.keymap.set("n", "<leader>bf", builtin.buffers, { desc = "[B]u[f]fers" })
-      vim.keymap.set("n", "<leader>of", builtin.oldfiles, { desc = "[O]ld [F]iles" })
+      local wk = require("which-key")
+
+      wk.register({
+        name = "Telescope: ",
+        ["th"] = { builtin.colorscheme, "[Th]eme" },
+        ["ht"] = { builtin.help_tags, "[H]elp [T]ags" },
+        ["of"] = { builtin.oldfiles, "[O]ld [F]iles" },
+      }, { prefix = "<leader>" })
+
+      wk.register({
+        name = "Telescope: ",
+        ["<C-p>"] = { builtin.find_files, "Find Files" },
+        ["<C-f>"] = { builtin.live_grep, "Live Grep" },
+      })
+
+      local function closeAllBuffers()
+        local buffers = vim.api.nvim_list_bufs()
+        for _, buffer in ipairs(buffers) do
+          if buffer ~= vim.api.nvim_get_current_buf() then
+            vim.api.nvim_buf_delete(buffer, { force = true })
+          end
+        end
+      end
+
+      wk.register({
+        b = {
+          name = "[B]uffers: ",
+          f = { builtin.buffers, "Buffer list" },
+          d = { ":bdelete<cr>", "Delete" },
+          D = { function() closeAllBuffers() end, "Delete all but current" },
+          n = { ":bnext<cr>", "Next" },
+          p = { ":bprevious<cr>", "Previous" },
+        }
+      }, { prefix = "<leader>" })
 
       telescope.setup({
         extensions = {
