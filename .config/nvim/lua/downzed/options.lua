@@ -25,7 +25,8 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 
 vim.o.cmdheight = 0
-
+-- completion
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 -- fold
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99

@@ -4,7 +4,8 @@ return {
     tag = "0.1.5",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-ui-select.nvim"
+      "nvim-telescope/telescope-ui-select.nvim",
+      -- "piersolenski/telescope-import.nvim",
     },
     config = function()
       local telescope = require("telescope")
@@ -18,12 +19,28 @@ return {
         ["th"] = { builtin.colorscheme, "[Th]eme" },
         ["ht"] = { builtin.help_tags, "[H]elp [T]ags" },
         ["of"] = { builtin.oldfiles, "[O]ld [F]iles" },
+        ["pWs"] = {
+          function()
+            local w = vim.fn.expand("<cWORD>")
+            builtin.grep_string({ search = w })
+          end, "Find Cursor expression in files"
+        },
+        ["pws"] = {
+          function()
+            local w = vim.fn.expand("<cword>")
+            builtin.grep_string({ search = w })
+          end, "Find Word in files"
+        },
       }, { prefix = "<leader>" })
 
       wk.register({
         name = "Telescope: ",
         ["<C-p>"] = { builtin.find_files, "Find Files" },
-        ["<C-f>"] = { builtin.live_grep, "Live Grep" },
+        ["<C-f>"] = {
+          function()
+            builtin.grep_string({ search = vim.fn.input("Grep > ") })
+          end, "Live Grep"
+        },
       })
 
       local function closeAllBuffers()
@@ -78,7 +95,9 @@ return {
         },
       })
 
-      telescope.load_extension("ui-select")
+      telescope
+          .load_extension("ui-select")
+      -- .load_extension("import")
     end,
   },
 }

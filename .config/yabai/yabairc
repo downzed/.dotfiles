@@ -47,6 +47,7 @@ yabai -m rule --add app="^Code$" space=^"term" manage=off
 
 yabai -m rule --add app="^Google Chrome$" space=^"web" 
 yabai -m rule --add app="^Firefox$" space=^"web" 
+yabai -m rule --add app="^Slack$" space=^"web" 
 yabai -m rule --add app="^Arc$" space=^"web" 
 
 yabai -m rule --add app="^Spotify$" space=^"sound" 

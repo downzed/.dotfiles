@@ -10,8 +10,8 @@ local attach = function(buffer, client)
     silent = true
   }
 
-  local isNotEslint = check_is_not_eslint()
-  local fmt_cmd = isNotEslint and ":lua vim.lsp.buf.format()<cr>" or ":EslintFixAll<cr>"
+  local is_not_eslint = check_is_not_eslint()
+  local fmt_cmd = is_not_eslint and ":lua vim.lsp.buf.format()<cr>" or ":EslintFixAll<cr>"
 
   local wk = require("which-key")
   wk.register({
@@ -34,6 +34,7 @@ local attach = function(buffer, client)
     ["rn"] = { vim.lsp.buf.rename, "[R]e[n]ame" },
 
   }, vim.tbl_deep_extend('force', {}, { prefix = "<leader>" }, options))
+
   wk.register({
     g = {
       name = "[G]o to",
@@ -52,7 +53,7 @@ local attach = function(buffer, client)
 
   vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = buffer,
-    command = isNotEslint and "lua vim.lsp.buf.format()" or "EslintFixAll"
+    command = check_is_not_eslint() and "lua vim.lsp.buf.format()" or "EslintFixAll"
   })
 end
 

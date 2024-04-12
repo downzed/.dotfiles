@@ -17,3 +17,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("downzed.plugins")
 require("downzed.custom.lsp_attach")
+require("downzed.custom.autocmd")

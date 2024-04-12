@@ -24,23 +24,26 @@ local icons = {
   Event = "",
   Operator = "󰆕",
   TypeParameter = "",
+  Codeium = "",
 }
 
 local sources = {
-  nvim_lsp = "lsp",
-  luasnip = "snip",
-  buffer = "buf",
+  nvim_lsp = "",
+  luasnip = "",
+  buffer = "",
   path = "",
-  cmdline = "",
+  cmdline = "",
+  codeium = ""
 }
 
 return {
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/cmp-buffer",
+  "nvim_lsp_signature_help",
+  "mmolhoek/cmp-scss",
   "hrsh7th/cmp-path",
   "saadparwaiz1/cmp_luasnip",
-  -- "onsails/lspkind.nvim",
   "L3MON4D3/LuaSnip",
   {
     "hrsh7th/nvim-cmp",
@@ -48,9 +51,8 @@ return {
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
-      -- local lspkind = require('lspkind')
 
-      local cmp_select = { behavior = cmp.SelectBehavior.Insert }
+      local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
       cmp.setup({
         window = {
@@ -77,15 +79,19 @@ return {
         }),
 
         sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
+          { name = 'codeium',                keyword_length = 0, max_item_count = 3 },
+          { name = 'path' },
+          { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },
+          { name = 'nvim_lsp',               max_item_count = 6 },
+          { name = 'buffer',                 max_item_count = 6 },
+          { name = 'scss' },
         }, {
-          { name = 'buffer', keyword_length = 2 },
           { name = 'crates' },
         }),
 
         formatting = {
-          -- fields = { "kind", "abbr", "menu" },
+          fields = { "abbr", "kind", "menu" },
           format = function(entry, vim_item)
             local kind = vim_item.kind
             vim_item.kind = (icons[kind] or "") .. " " .. kind
@@ -112,7 +118,7 @@ return {
           {
             name = "cmdline",
             option = {
-              ignore_cmds = { "Man" },
+              ignore_cmds = { "man" },
             },
           },
         }),

@@ -9,7 +9,7 @@ return {
 
     lualine.setup({
       options = {
-        theme = 'rose-pine',
+        theme = 'auto',
         component_separators = "",
         -- section_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
@@ -84,7 +84,8 @@ return {
       inactive_sections = {
         lualine_a = { 'filename' },
         lualine_b = {},
-        lualine_c = {},
+        -- lualine_c = {},
+        lualine_c = { require('auto-session.lib').current_session_name },
         lualine_x = {},
         lualine_y = {},
         lualine_z = { 'location' },
