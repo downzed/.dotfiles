@@ -32,7 +32,7 @@ local sources = {
   luasnip = "",
   buffer = "",
   path = "",
-  cmdline = "",
+  cmdline = "",
   codeium = ""
 }
 
@@ -96,7 +96,12 @@ return {
             local kind = vim_item.kind
             vim_item.kind = (icons[kind] or "") .. " " .. kind
             local source = entry.source.name
-            vim_item.menu = " [" .. sources[source] .. "]"
+            vim_item.menu = " -> " .. sources[source]
+
+            if source == "cmdline" then
+              vim_item.menu = sources[source]
+              vim_item.kind = " "
+            end
             return vim_item
           end
         }

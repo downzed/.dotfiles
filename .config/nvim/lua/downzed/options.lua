@@ -13,7 +13,7 @@ vim.opt.laststatus = 2
 vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.autowrite = true
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 
 vim.opt.smartindent = true
 vim.opt.wrap = false

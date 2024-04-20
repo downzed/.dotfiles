@@ -1,11 +1,17 @@
 return {
   {
+    "piersolenski/telescope-import.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("telescope").load_extension("import")
+    end
+  },
+  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
-      -- "piersolenski/telescope-import.nvim",
     },
     config = function()
       local telescope = require("telescope")
@@ -41,6 +47,7 @@ return {
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
           end, "Live Grep"
         },
+        ["<c-I>"] = { ":Telescope import<cr>", "Import" },
       })
 
       local function closeAllBuffers()
@@ -82,14 +89,14 @@ return {
             theme = "ivy",
           },
           lsp_references = {
-            theme = "ivy",
+            -- theme = "ivy",
           },
           find_files = {
-            theme = "ivy",
+            -- theme = "ivy",
             ignore_patterns = { "node_modules", ".git" },
           },
           oldfiles = {
-            theme = "ivy",
+            -- theme = "ivy",
             only_cwd = true,
           },
         },
@@ -97,7 +104,6 @@ return {
 
       telescope
           .load_extension("ui-select")
-      -- .load_extension("import")
     end,
   },
 }
