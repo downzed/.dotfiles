@@ -144,3 +144,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # export PATH="~/.nvm/versions/node/v20.9.0/bin/eslint_d:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+eval $(thefuck --alias)
+
