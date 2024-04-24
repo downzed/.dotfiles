@@ -3,9 +3,7 @@ return {
     -- my very first WIP plugin
     -- https://github.com/downzed/meine-schnecke.nvim
     -- "downzed/meine-schnecke.nvim",
-    -- personal oc dir
-    dir = "~/Developer/lua/die-schnecke.nvim",
-    -- macbook pro dir
+    dir = "~/Developer/lua_projects/die-schnecke.nvim",
     dependencies = {
       "grapp-dev/nui-components.nvim",
       "MunifTanjim/nui.nvim",

@@ -1,0 +1,162 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# format = """
+# $username\
+# $hostname\
+# $localip\
+# $shlvl\
+# $singularity\
+# $kubernetes\
+# $directory\
+# $vcsh\
+# $fossil_branch\
+# $fossil_metrics\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_metrics\
+# $git_status\
+# $hg_branch\
+# $pijul_channel\
+# $docker_context\
+# $package\
+# $c\
+# $cmake\
+# $cobol\
+# $daml\
+# $dart\
+# $deno\
+# $dotnet\
+# $elixir\
+# $elm\
+# $erlang\
+# $fennel\
+# $golang\
+# $guix_shell\
+# $haskell\
+# $haxe\
+# $helm\
+# $java\
+# $julia\
+# $kotlin\
+# $gradle\
+# $lua\
+# $nim\
+# $nodejs\
+# $ocaml\
+# $opa\
+# $perl\
+# $php\
+# $pulumi\
+# $purescript\
+# $python\
+# $quarto\
+# $raku\
+# $rlang\
+# $red\
+# $ruby\
+# $rust\
+# $scala\
+# $solidity\
+# $swift\
+# $terraform\
+# $typst\
+# $vlang\
+# $vagrant\
+# $zig\
+# $buf\
+# $nix_shell\
+# $conda\
+# $meson\
+# $spack\
+# $memory_usage\
+# $aws\
+# $gcloud\
+# $openstack\
+# $azure\
+# $direnv\
+# $env_var\
+# $crystal\
+# $custom\
+# $sudo\
+# $cmd_duration\
+# $line_break\
+# $jobs\
+# $battery\
+# $time\
+# $status\
+# $os\
+# $container\
+# $shell\
+# $character"""
+
+# A minimal left prompt
+# format = '$directory$character'
+# right_format = "$all"
+
+format = """
+$directory\
+$git_branch\
+$git_metrics\
+$git_status\
+$nodejs\
+$lua\
+$rust\
+$shell\
+$line_break\
+$character\
+"""
+
+right_format = """
+$time\
+"""
+
+[character] # The name of the module we are configuring is 'character'
+format = '$symbol '
+success_symbol = '[](bold bright-yellow dimmed) ' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[](bright-red dimmed) ' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+[directory]
+truncation_length = 2
+truncate_to_repo = true
+truncation_symbol = "…/"
+style = 'cyan bold dimmed'
+
+[time]
+time_format = "%R"
+disabled = true
+format = '$time'
+
+[lua]
+format = 'with [](bold pink)'
+
+[rust]
+format = 'with [](bold grey)'
+
+[nodejs]
+format = 'with [](bold grey)'
+
+[git_branch]
+symbol = ""
+# style = "bg:color_aqua"
+# format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+[git_metrics]
+disabled = false
+# [git_status]
+# style = "bg:color_aqua"
+# format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+

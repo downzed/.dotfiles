@@ -1,16 +1,19 @@
+import = [
+  "~/.config/alacritty/keybindings.toml",
+]
+
 live_config_reload = true
 
 [window] 
-  opacity = 0.85
   decorations = "None"
-  dynamic_padding = true
   blur = true
-  startup_mode = "Maximized"
-  # startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
+  padding = { x = 12, y = 12 }
+  dynamic_padding = true
+  opacity = 0.9
 
 [font] 
-  # normal = { family = 'RobotoMono Nerd Font Mono', style = 'Regular' }
-  normal = { family = 'JetBrainsMono Nerd Font Mono', style = 'Regular' }
+  normal = { family = 'JetBrainsMono Nerd Font', style = 'Regular' }
+  # normal = { family = 'ZedMono Nerd Font Mono', style = 'Regular' }
   size = 16.0
 
 [cursor]
