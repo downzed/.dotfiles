@@ -3,7 +3,7 @@
 import os
 
 # Define the dotfiles directory
-dotfiles_dir = os.path.expanduser("~/.dotfiles")
+dotfiles_dir = os.path.expanduser("$HOME/Developer/.dotfiles")
 
 # Define a dictionary of dotfiles to symlink
 dotfiles = {
@@ -15,6 +15,7 @@ dotfiles = {
 # Define a dictionary of directories to symlink
 directories = {
     ".config/nvim": f"{dotfiles_dir}/.config/nvim",
+    ".config/alacritty": f"{dotfiles_dir}/.config/alacritty",
     # ".config/kitty": f"{dotfiles_dir}/.config/kitty",
     # ".config/sway": f"{dotfiles_dir}/.config/sway",
     # ".config/waybar": f"{dotfiles_dir}/.config/waybar",
