@@ -1,23 +1,30 @@
-plugins=(git yarn npm brew cargo)
-
-alias cls="clear"
-alias cd="z"
-alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
-
-export NVM_DIR="$HOME/.nvm"
-export VOLTA_HOME="$HOME/.volta"
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+autoload -U colors && colors
 
 . "$HOME/.cargo/env" 
 
+# Add Homebrew and Volta to the PATH
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
 
-eval "$(thefuck --alias)"
+export ZSH=$HOME/.zsh
+
+# History settings
+export HISTFILE=~/.zsh/.zsh_history
+export HISTSIZE=10000  # Number of commands zsh will load into memory
+export SAVEHIST=10000  # Number of commands history will save to file
+setopt HIST_IGNORE_ALL_DUPS  # History won't save duplicates
+setopt HIST_FIND_NO_DUPS  # History won't show duplicates on search
+
+# Source configuration files
+[[ -f $ZSH/alias.zsh ]] && source $ZSH/alias.zsh
+[[ -f $ZSH/plugins.zsh ]] && source $ZSH/plugins.zsh
+[[ -f $ZSH/completion.zsh ]] && source $ZSH/completion.zsh
+
+# Initialize fun
 eval "$(fzf --zsh)"
+eval "$(thefuck --alias)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

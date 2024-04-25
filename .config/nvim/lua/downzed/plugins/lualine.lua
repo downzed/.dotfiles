@@ -13,7 +13,7 @@ return {
         component_separators = "",
         -- section_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
-        disabled_filetypes = { "starter", "Starter", "neotree", "Neotree", "neo-tree" },
+        disabled_filetypes = { "neotree", "Neotree", "neo-tree" },
       },
       sections = {
         lualine_a = {
@@ -23,8 +23,6 @@ return {
             separator = {
               left = "",
               right = "",
-              -- left = "",
-              -- right = "",
             },
             right_padding = 0,
             fmt = function(str)
@@ -62,7 +60,7 @@ return {
           {
             "filename",
             file_status = true,
-            path = 4,
+            path = 5,
           },
         },
         lualine_y = {

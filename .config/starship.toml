@@ -95,57 +95,28 @@
 # right_format = "$all"
 
 format = """
+$nodejs\
+$lua\
+$rust\
 $directory\
 $git_branch\
 $git_metrics\
 $git_status\
-$nodejs\
-$lua\
-$rust\
 $shell\
 $line_break\
 $character\
 """
 
-right_format = """
-$time\
-"""
+# right_format = """
+# $nodejs\
+# $lua\
+# $rust\
+# """
 
-[character] # The name of the module we are configuring is 'character'
-format = '$symbol '
-success_symbol = '[](bold bright-yellow dimmed) ' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-error_symbol = '[](bright-red dimmed) ' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+# [](fg:color_bg1)\
+# [](fg:color_bg1) \
 
-[directory]
-truncation_length = 2
-truncate_to_repo = true
-truncation_symbol = "…/"
-style = 'cyan bold dimmed'
-
-[time]
-time_format = "%R"
-disabled = true
-format = '$time'
-
-[lua]
-format = 'with [](bold pink)'
-
-[rust]
-format = 'with [](bold grey)'
-
-[nodejs]
-format = 'with [](bold grey)'
-
-[git_branch]
-symbol = ""
-# style = "bg:color_aqua"
-# format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
-[git_metrics]
-disabled = false
-# [git_status]
-# style = "bg:color_aqua"
-# format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
-
+add_newline = true
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
@@ -159,4 +130,48 @@ color_orange = '#d65d0e'
 color_purple = '#b16286'
 color_red = '#cc241d'
 color_yellow = '#d79921'
+
+[character] # The name of the module we are configuring is 'character'
+format = '[$symbol ](fg:color_bg3)'
+success_symbol = ''
+error_symbol = ''
+
+[directory]
+truncation_length = 2
+truncate_to_repo = true
+truncation_symbol = "…/"
+fish_style_pwd_dir_length = 1
+format = '[$path]($style)[$read_only]($read_only_style) '
+# style = 'fg:color_blue bold dimmed'
+
+# [directory.substitutions]
+# '~/.ollama' = '󰈺'
+
+[time]
+time_format = "%R"
+disabled = true
+format = '$time'
+
+[lua]
+format = ' '
+
+[rust]
+format = ' '
+
+[nodejs]
+format = ' '
+
+[git_branch]
+symbol = ""
+format = '[[$symbol $branch ](fg:color_bg3)]($style)'
+
+[git_metrics]
+# added_style = 'bg:color_red fg:color_fg0'
+# deleted_style = 'bg:color_green fg:color_fg0'
+disabled = false
+# format = '([ +$added ]($added_style))([-$deleted ]($deleted_style))'
+
+# [git_status]
+# style = "bg:color_bg3"
+# format = '[[( $all_status$ahead_behind)](fg:color_fg0 bg:color_aqua)]($style)'
 
