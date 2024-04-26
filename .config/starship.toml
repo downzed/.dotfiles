@@ -1,151 +1,32 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# format = """
-# $username\
-# $hostname\
-# $localip\
-# $shlvl\
-# $singularity\
-# $kubernetes\
-# $directory\
-# $vcsh\
-# $fossil_branch\
-# $fossil_metrics\
-# $git_branch\
-# $git_commit\
-# $git_state\
-# $git_metrics\
-# $git_status\
-# $hg_branch\
-# $pijul_channel\
-# $docker_context\
-# $package\
-# $c\
-# $cmake\
-# $cobol\
-# $daml\
-# $dart\
-# $deno\
-# $dotnet\
-# $elixir\
-# $elm\
-# $erlang\
-# $fennel\
-# $golang\
-# $guix_shell\
-# $haskell\
-# $haxe\
-# $helm\
-# $java\
-# $julia\
-# $kotlin\
-# $gradle\
-# $lua\
-# $nim\
-# $nodejs\
-# $ocaml\
-# $opa\
-# $perl\
-# $php\
-# $pulumi\
-# $purescript\
-# $python\
-# $quarto\
-# $raku\
-# $rlang\
-# $red\
-# $ruby\
-# $rust\
-# $scala\
-# $solidity\
-# $swift\
-# $terraform\
-# $typst\
-# $vlang\
-# $vagrant\
-# $zig\
-# $buf\
-# $nix_shell\
-# $conda\
-# $meson\
-# $spack\
-# $memory_usage\
-# $aws\
-# $gcloud\
-# $openstack\
-# $azure\
-# $direnv\
-# $env_var\
-# $crystal\
-# $custom\
-# $sudo\
-# $cmd_duration\
-# $line_break\
-# $jobs\
-# $battery\
-# $time\
-# $status\
-# $os\
-# $container\
-# $shell\
-# $character"""
-
-# A minimal left prompt
-# format = '$directory$character'
-# right_format = "$all"
-
 format = """
-$nodejs\
-$lua\
-$rust\
+$hostname\
 $directory\
 $git_branch\
-$git_metrics\
+$git_state\
 $git_status\
+$cmd_duration\
 $shell\
 $line_break\
 $character\
 """
 
-# right_format = """
-# $nodejs\
-# $lua\
-# $rust\
-# """
+right_format = """
+$nodejs\
+$lua\
+$rust\
+"""
 
-# [](fg:color_bg1)\
-# [](fg:color_bg1) \
-
-add_newline = true
-palette = 'gruvbox_dark'
-
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
-
-[character] # The name of the module we are configuring is 'character'
-format = '[$symbol ](fg:color_bg3)'
-success_symbol = ''
-error_symbol = ''
+[character]
+format = '[$symbol ](bold)'
+success_symbol = "[](cyan)"
+error_symbol = "[](red)"
+vimcmd_symbol = "[❮](green)"
 
 [directory]
-truncation_length = 2
-truncate_to_repo = true
-truncation_symbol = "…/"
-fish_style_pwd_dir_length = 1
 format = '[$path]($style)[$read_only]($read_only_style) '
-# style = 'fg:color_blue bold dimmed'
-
-# [directory.substitutions]
-# '~/.ollama' = '󰈺'
+style = "bright-blue"
 
 [time]
 time_format = "%R"
@@ -153,25 +34,46 @@ disabled = true
 format = '$time'
 
 [lua]
-format = ' '
+format = '[]($style)'
+style = "bright-green dimmed"
 
 [rust]
-format = ' '
+format = '[]($style)'
+style = "bright-green dimmed"
 
 [nodejs]
-format = ' '
+format = '[]($style)'
+style = "bright-green dimmed"
 
 [git_branch]
-symbol = ""
-format = '[[$symbol $branch ](fg:color_bg3)]($style)'
+format = '[$branch]($style)'
+style = "bright-black"
 
-[git_metrics]
-# added_style = 'bg:color_red fg:color_fg0'
-# deleted_style = 'bg:color_green fg:color_fg0'
+[git_state]
 disabled = false
-# format = '([ +$added ]($added_style))([-$deleted ]($deleted_style))'
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
-# [git_status]
-# style = "bg:color_bg3"
-# format = '[[( $all_status$ahead_behind)](fg:color_fg0 bg:color_aqua)]($style)'
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted) ](218) ($ahead_behind$stashed) ]($style)"
+style = "bright-blue bold"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
 
+# [git_metrics]
+# disabled = false
+[cmd_duration]
+# disabled = false
+format = "[$duration]($style) "
+style = "yellow dimmed"
+
+[hostname]
+disabled = false
+ssh_only = true
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'

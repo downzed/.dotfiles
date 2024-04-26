@@ -26,12 +26,12 @@ return {
       })
     end,
   },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    config = function()
-      require('treesitter-context').setup({
-        multiline_threshold = 3, -- Maximum number of lines to show for a single context
-      })
-    end
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-context",
+  --   config = function()
+  --     require('treesitter-context').setup({
+  --       multiline_threshold = 3, -- Maximum number of lines to show for a single context
+  --     })
+  --   end
+  -- },
 }

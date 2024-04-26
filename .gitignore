@@ -1,3 +1,4 @@
 .DS_STORE
-.zsh_history
+.zsh_history/
+.zsh/.zsh_history
 

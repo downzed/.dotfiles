@@ -16,6 +16,7 @@ return {
           t = { trouble.toggle, "Toggle" },
           l = { function() trouble.toggle("loclist") end, "Loclist" },
           q = { function() trouble.toggle("quickfix") end, "Quickfix" },
+          d = { function() trouble.toggle("todo") end, "Todo" },
         }
       }, { prefix = "<leader>" })
     end,

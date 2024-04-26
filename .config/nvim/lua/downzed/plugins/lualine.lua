@@ -9,21 +9,17 @@ return {
 
     lualine.setup({
       options = {
-        theme = 'auto',
-        component_separators = "",
-        -- section_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
-        disabled_filetypes = { "neotree", "Neotree", "neo-tree" },
+        theme = "monokai-pro",
+        component_separators = { right = "", left = "" },
+        section_separators = { left = "", right = "" },
+        disabled_filetypes = { "netrw", "Netrw", "neotree", "Neotree", "neo-tree" },
       },
+
       sections = {
         lualine_a = {
           {
             "mode",
             icons_enabled = true,
-            separator = {
-              left = "",
-              right = "",
-            },
             right_padding = 0,
             fmt = function(str)
               local mode_map = {
@@ -51,6 +47,7 @@ return {
         lualine_b = {
           {
             "branch",
+            icon = "",
             left_padding = 1,
           },
           "diff",
@@ -69,21 +66,26 @@ return {
         lualine_z = {
           {
             "location",
-            separator = {
-              right = "",
-              left = ""
-              -- right = "",
-              -- left = ""
-            },
             left_padding = 1
           },
         },
       },
+      winbar = {
+        lualine_c = {
+          {
+            function()
+              return require('nvim-navic').get_location()
+            end,
+            cond = function()
+              return require('nvim-navic').is_available()
+            end
+          },
+        }
+      },
       inactive_sections = {
         lualine_a = { 'filename' },
         lualine_b = {},
-        -- lualine_c = {},
-        lualine_c = { require('auto-session.lib').current_session_name },
+        lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = { 'location' },

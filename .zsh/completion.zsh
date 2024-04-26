@@ -1,5 +1,8 @@
 ### ---- autocompletions -----------------------------------
+fpath+=~/.zfunc
+
 fpath=(~/.zsh/site-functions $fpath)
+
 autoload -Uz compinit && compinit
 
 ### ---- Completion options and styling -----------------------------------

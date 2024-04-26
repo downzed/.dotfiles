@@ -1,20 +1,28 @@
 live_config_reload = true
+import = [
+  # "~/.config/alacritty/themes/rose-pine.toml"
+  "~/.config/alacritty/themes/monokai_pro.toml"
+]
 
 [window] 
-  decorations = "buttonless"
-  blur = true
-  padding = { x = 12, y = 12 }
+  decorations = "none"
+  blur = false
+  padding = { x = 0, y = 0 }
   dynamic_padding = true
-  opacity = 0.75
+  # opacity = 0.95
 
 [keyboard]
   bindings = [
-    { key = "F", mods = "Command|Shift", action = "ToggleFullscreen" },
+    { key = "Z", mods = "Command|Shift", action = "ToggleSimpleFullscreen" },
+    { key = "Z", mods = "Control|Shift", action = "ToggleFullscreen" },
   ]
 
 [font] 
+  # normal = { family = 'MesloLGS Nerd Font Mono', style = 'Regular' }
   normal = { family = 'JetBrainsMono Nerd Font Mono', style = 'Regular' }
-  size = 16.0
+  bold = { family = 'JetBrainsMono Nerd Font Mono', style = 'Bold' }
+  italic = { family = 'JetBrainsMono Nerd Font Mono', style = 'Italic' }
+  size = 18
 
 [cursor]
   style = { shape = "Block", blinking = "Always" }
