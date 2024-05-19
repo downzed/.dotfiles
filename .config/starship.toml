@@ -46,7 +46,8 @@ format = '[]($style)'
 style = "bright-green dimmed"
 
 [git_branch]
-format = '[$branch]($style)'
+symbol = ''
+format = ' [$symbol $branch]($style)'
 style = "bright-black"
 
 [git_state]

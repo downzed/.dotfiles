@@ -1,15 +1,14 @@
 live_config_reload = true
 import = [
-  # "~/.config/alacritty/themes/rose-pine.toml"
-  "~/.config/alacritty/themes/monokai_pro.toml"
+  # "~/.config/alacritt/themes/rose-pine.toml"
+  # "~/.config/alacritty/themes/monokai_pro.toml"
+  "~/.config/alacritty/themes/kanagawa_dragon.toml"
 ]
 
 [window] 
   decorations = "none"
-  blur = false
-  padding = { x = 0, y = 0 }
+  padding = { x = 4, y = 8 }
   dynamic_padding = true
-  # opacity = 0.95
 
 [keyboard]
   bindings = [
@@ -18,11 +17,10 @@ import = [
   ]
 
 [font] 
-  # normal = { family = 'MesloLGS Nerd Font Mono', style = 'Regular' }
   normal = { family = 'JetBrainsMono Nerd Font Mono', style = 'Regular' }
   bold = { family = 'JetBrainsMono Nerd Font Mono', style = 'Bold' }
   italic = { family = 'JetBrainsMono Nerd Font Mono', style = 'Italic' }
-  size = 18
+  size = 16
 
 [cursor]
   style = { shape = "Block", blinking = "Always" }

@@ -6,32 +6,30 @@ return {
     dependencies = {
       "windwp/nvim-ts-autotag",
     },
-    config = function()
-      local config = require("nvim-treesitter.configs")
-
-      config.setup({
-        auto_install = true,
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        indent = { enable = true },
-        autotag = { enable = true },
-        rainbow = { enable = true },
-        ensure_installed = { "rust", "lua", "vim", "bash", "markdown", "toml", "javascript", "typescript", "tsx", "css", "scss", "html", "json" },
-        fold = {
-          enable = true,
-          disable = {}
-        }
-      })
+    opts = {
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = { enable = true },
+      autotag = { enable = true },
+      rainbow = { enable = true },
+      fold = { enable = true, disable = {} },
+      ensure_installed = {
+        "lua",
+        "tsx",
+        "javascript",
+        "vim",
+        "query",
+        "css",
+        "scss",
+        "markdown",
+        "rust",
+      },
+    },
+    config = function(opts)
+      require("nvim-treesitter.configs").setup(opts)
     end,
   },
-  -- {
-  --   "nvim-treesitter/nvim-treesitter-context",
-  --   config = function()
-  --     require('treesitter-context').setup({
-  --       multiline_threshold = 3, -- Maximum number of lines to show for a single context
-  --     })
-  --   end
-  -- },
 }
