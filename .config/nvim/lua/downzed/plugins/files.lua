@@ -35,9 +35,7 @@ return {
         },
       })
 
-      require("which-key").register({
-        ["<C-n>"] = { ":Neotree reveal toggle<CR>", "NeoTree" },
-      })
+      vim.keymap.set("n", "<leader>tn", "<cmd>Neotree toggle<CR>", { desc = "[T]oggle [N]eoTree" })
     end,
   },
   {
@@ -48,7 +46,7 @@ return {
     config = function()
       local oil = require("oil")
       oil.setup()
-      vim.keymap.set("n", "<leader>oo", oil.open)
+      vim.keymap.set("n", "<leader>to", oil.open, { desc = "[T]oggle [O]il" })
     end
   }
 }

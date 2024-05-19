@@ -16,32 +16,16 @@ return {
         },
       })
 
-      local wk = require("which-key")
+      local map = function(key, cmd, desc)
+        vim.keymap.set("n", key, cmd, { silent = true, desc = "Git: " .. desc })
+      end
 
-      local opts = {
-        noremap = true,
-        silent = true,
-        prefix = "<leader>",
-      }
-
-      wk.register({
-        g = {
-          name = "[G]it",
-          f = { "<cmd>Git<cr>", "[F]ugitive" },
-          s = {
-            name = "[S]igns",
-            h = { gs.stage_hunk, "Stage Hunk" },
-            x = { gs.reset_hunk, "Reset Hunk" },
-            s = { "<cmd>Gitsigns<cr>", "Show Signs" },
-            p = { gs.preview_hunk, "Preview Hunk" },
-            ["]"] = { gs.next_hunk, "Next Hunk" },
-            ["["] = { gs.prev_hunk, "Prev Hunk" },
-          }
-          -- s = { gs.stage_hunk, "Stage Hunk" },
-          -- r = { gs.reset_hunk, "Reset Hunk" },
-          -- u = { gs.undo_stage_hunk, "Undo Stage Hunk" },
-        }
-      }, opts)
+      map("<leader>gs", "<cmd>Gitsigns<cr>", "[G]it[s]igns")
+      map("<leader>gf", "<cmd>Git<cr>", "[G]it [F]ugitive")
+      map("<leader>gss", gs.stage_hunk, "[G]it[s]igns [S]tage Hunk")
+      map("<leader>gsx", gs.reset_hunk, "[G]it[s]igns [x] Reset Hunk")
+      map("<leader>gs]", gs.next_hunk, "[G]it[s]igns ] next hunk")
+      map("<leader>gs[", gs.prev_hunk, "[G]it[s]igns [ prev hunk")
     end,
   },
 }
