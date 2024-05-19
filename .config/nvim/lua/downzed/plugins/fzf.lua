@@ -14,7 +14,7 @@ return {
           cwd_only                = true,
           stat_file               = true, -- verify files exist on disk
           include_current_session = true, -- include bufs from current session
-        }
+        },
       })
 
       local map = function(keys, func, desc, use_desc)
@@ -25,6 +25,7 @@ return {
       end
 
       map("<leader>sf", fzf_lua.files, "[S]earch [F]iles")
+      map("<leader>sg", fzf_lua.git_files, "[S]earch [G]it files")
       map("<leader>sh", fzf_lua.helptags, "[S]earch [H]elp")
       map("<leader>sk", fzf_lua.keymaps, "[S]earch [K]eymaps")
       map("<leader>so", fzf_lua.oldfiles, "[S]earch [O]ldfiles")
@@ -49,7 +50,7 @@ return {
         end
       end
 
-      map("<leader>bf", fzf_lua.buffers, "[B]uffer list")
+      map("<leader>bf", fzf_lua.buffers, "[B]uffer list", false)
       map("<leader>bd", ":bdelete<cr>", "[B]uffer [D]elete", false)
       map("<leader>bD", closeAllBuffers, "[B]uffer [D]elete all but current", false)
       map("<leader>bn", ":bnext<cr>", "[B]uffer [N]ext", false)

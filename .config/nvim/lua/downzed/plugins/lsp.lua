@@ -57,6 +57,7 @@ return {
           "lua_ls",
           "tsserver",
           "bashls",
+          "eslint",
         },
         automatic_installation = true,
         handlers = {
@@ -65,12 +66,6 @@ return {
               capabilities = capabalities
             })
           end,
-          ["tsserver"] = function()
-            require("lspconfig").tsserver.setup {
-              capabilities = capabalities,
-            }
-          end,
-
           ["lua_ls"] = function()
             require("lspconfig").lua_ls.setup {
               capabilities = capabalities,

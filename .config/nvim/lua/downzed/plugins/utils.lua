@@ -3,7 +3,12 @@ return {
   "ThePrimeagen/vim-be-good",
   "tpope/vim-surround",
   "folke/zen-mode.nvim",
-
+  {
+    "danymat/neogen",
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
+  },
   {
     'folke/which-key.nvim',
     event = "VimEnter",

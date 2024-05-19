@@ -1,14 +1,32 @@
 return {
   {
     "vhyrro/luarocks.nvim",
-    priority = 1000,
-    config = true,
+    priority = 1000, -- We'd like this plugin to load first out of the rest
+    config = true,   -- This automatically runs `require("luarocks-nvim").setup()`
   },
   {
     "nvim-neorg/neorg",
     dependencies = { "luarocks.nvim" },
-    lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-    version = "*", -- Pin Neorg to the latest stable release
-    config = true,
+    -- put any other flags you wanted to pass to lazy here!
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},  -- Loads default behaviour
+          ["core.concealer"] = {}, -- Add pretty icons to your documents
+          ["core.ui"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                notes = "~/Developer/notes",
+              },
+              default_workspace = "notes",
+            },
+          }
+        }
+      }
+
+      vim.wo.foldlevel = 99
+      vim.wo.conceallevel = 2
+    end,
   }
 }
