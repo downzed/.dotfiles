@@ -6,30 +6,39 @@ return {
     },
     config = function()
       local fzf_lua = require("fzf-lua")
-      local wk = require("which-key")
 
       -- calling `setup` is optional for customization
-      fzf_lua.setup({})
-
-      wk.register({
-        name = "Fzf Lua:",
-        ["th"] = { fzf_lua.colorschemes, "[Th]eme" },
-        ["ht"] = { fzf_lua.helptags, "[H]elp [T]ags" },
-
-        ["of"] = { fzf_lua.oldfiles, "[O]ld [F]iles" },
-        ["pws"] = { fzf_lua.grep_cword, "[P]roject [W]ord (word)" },
-        ["pWs"] = { fzf_lua.grep_cWORD, "[P]roject [W]ord (expression)" },
-      }, { prefix = "<leader>" })
-
-      wk.register({
-        name = "Fzf Lua:",
-        ["<C-p>"] = { fzf_lua.files, "Find Files" },
-        ["<C-f>"] = {
-          function()
-            fzf_lua.grep_project({ search = vim.fn.input("Grep > ") })
-          end, "Live Grep"
+      fzf_lua.setup({
+        oldfiles = {
+          prompt                  = 'History❯ ',
+          cwd_only                = true,
+          stat_file               = true, -- verify files exist on disk
+          include_current_session = true, -- include bufs from current session
         }
       })
+
+      local map = function(keys, func, desc, use_desc)
+        if use_desc == nil then use_desc = true end
+        vim.keymap.set('n', keys, func, {
+          desc = use_desc and "FZF: " .. desc or desc
+        })
+      end
+
+      map("<leader>sf", fzf_lua.files, "[S]earch [F]iles")
+      map("<leader>sh", fzf_lua.helptags, "[S]earch [H]elp")
+      map("<leader>sk", fzf_lua.keymaps, "[S]earch [K]eymaps")
+      map("<leader>so", fzf_lua.oldfiles, "[S]earch [O]ldfiles")
+      map("<leader>sw", fzf_lua.grep_cword, "[S]earch [W]ord")
+      map("<leader>sW", fzf_lua.grep_cWORD, "[S]earch [W]ord [E]xpression")
+      map("<leader>scs", fzf_lua.colorschemes, "[S]earch [C]olor [S]chemes")
+      map(
+        "<leader>ss",
+        function()
+          fzf_lua.grep_project({ search = vim.fn.input("Search for > ") })
+        end,
+        "[S]earch [S]tring"
+      )
+      map("<leader>/", fzf_lua.lgrep_curbuf, "[/] Fuzzily search in current buffer")
 
       local function closeAllBuffers()
         local buffers = vim.api.nvim_list_bufs()
@@ -40,16 +49,11 @@ return {
         end
       end
 
-      wk.register({
-        b = {
-          name = "[B]uffers: ",
-          f = { fzf_lua.buffers, "Buffer list" },
-          d = { ":bdelete<cr>", "Delete" },
-          D = { closeAllBuffers, "Delete all but current" },
-          n = { ":bnext<cr>", "Next" },
-          p = { ":bprevious<cr>", "Previous" },
-        }
-      }, { prefix = "<leader>" })
+      map("<leader>bf", fzf_lua.buffers, "[B]uffer list")
+      map("<leader>bd", ":bdelete<cr>", "[B]uffer [D]elete", false)
+      map("<leader>bD", closeAllBuffers, "[B]uffer [D]elete all but current", false)
+      map("<leader>bn", ":bnext<cr>", "[B]uffer [N]ext", false)
+      map("<leader>bp", ":bprevious<cr>", "[B]uffer [P]revious", false)
     end
   }
 }

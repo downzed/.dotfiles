@@ -18,7 +18,7 @@ return {
         indent = { enable = true },
         autotag = { enable = true },
         rainbow = { enable = true },
-        ensure_installed = { "rust", "lua", "vim", "bash" },
+        ensure_installed = { "rust", "lua", "vim", "bash", "markdown", "toml", "javascript", "typescript", "tsx", "css", "scss", "html", "json" },
         fold = {
           enable = true,
           disable = {}

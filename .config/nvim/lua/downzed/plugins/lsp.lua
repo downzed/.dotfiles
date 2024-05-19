@@ -53,13 +53,11 @@ return {
 
       require("mason").setup()
       require("mason-lspconfig").setup({
-        -- ensure_installed = {
-        --   "lua_ls",
-        --   "rust_analyzer",
-        --   "tsserver",
-        --   "bashls",
-        --   "eslint"
-        -- },
+        ensure_installed = {
+          "lua_ls",
+          "tsserver",
+          "bashls",
+        },
         automatic_installation = true,
         handlers = {
           function(server_name)

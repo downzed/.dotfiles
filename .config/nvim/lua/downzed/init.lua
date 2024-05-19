@@ -14,6 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("downzed.plugins")
+local lazy = require("lazy")
+lazy.setup("downzed.plugins")
 require("downzed.custom.lsp_attach")
 require("downzed.custom.autocmd")

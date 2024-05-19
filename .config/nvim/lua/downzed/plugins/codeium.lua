@@ -6,8 +6,7 @@ return {
       "hrsh7th/nvim-cmp",
     },
     config = function()
-      require("codeium").setup({
-      })
+      require("codeium").setup {}
       -- vim.g.codeium_disable_bindings = 1
 
       -- local map = function(lhs, rhs, desc)
