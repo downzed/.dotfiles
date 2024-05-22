@@ -14,6 +14,7 @@ return {
           ["core.defaults"] = {},  -- Loads default behaviour
           ["core.concealer"] = {}, -- Add pretty icons to your documents
           ["core.ui"] = {},
+          ["core.integrations.treesitter"] = {},
           ["core.dirman"] = {
             config = {
               workspaces = {

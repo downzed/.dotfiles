@@ -30,6 +30,14 @@ return {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    config = true
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {
+      disabled_filetypes = { "qf", "netrw", "NeoTree", "NvimTree", "lazy", "mason", "oil" },
+    }
   },
   {
     "iamcco/markdown-preview.nvim",

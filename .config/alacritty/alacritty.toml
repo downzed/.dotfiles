@@ -1,26 +1,31 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/monokai_pro.toml"
+  # "~/.config/alacritty/themes/monokai_pro.toml" ,
+  "~/.config/alacritty/themes/melange.toml",
 ]
 
-[window] 
-  decorations = "none"
-  padding = { x = 4, y = 8 }
-  dynamic_padding = true
-  blur = true
-  opacity = 0.90
+[shell]
+program = "/opt/homebrew/bin/tmux"
+args = ["a", "-t", "Plugin"]
+
+[window]
+decorations = "none"
+padding = { x = 4, y = 8 }
+dynamic_padding = true
+blur = true
+opacity = 0.78
 
 [keyboard]
-  bindings = [
-    { key = "Z", mods = "Command|Shift", action = "ToggleSimpleFullscreen" },
-    { key = "Z", mods = "Control|Shift", action = "ToggleFullscreen" },
-  ]
+bindings = [
+  { key = "Z", mods = "Command|Shift", action = "ToggleSimpleFullscreen" },
+  { key = "Z", mods = "Control|Shift", action = "ToggleFullscreen" },
+]
 
-[font] 
-  normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
-  italic = { family = "NotoSansM Nerd Font Mono", style = "Italic" }
-  bold = { family = "NotoSansM Nerd Font Mono", style = "Bold" }
-  size = 18
+[font]
+normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
+italic = { family = "NotoSansM Nerd Font Mono", style = "Italic" }
+bold = { family = "NotoSansM Nerd Font Mono", style = "Bold" }
+size = 16
 
 [cursor]
-  style = { shape = "Block", blinking = "Always" }
+style = { shape = "Block", blinking = "Always" }

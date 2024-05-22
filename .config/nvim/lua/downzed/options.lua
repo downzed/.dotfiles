@@ -63,14 +63,24 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 vim.opt.cmdheight = 0
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.o.rtp = vim.o.rtp .. ',' .. "/opt/homebrew/bin/fzf"
 
--- -- fold
--- vim.opt.foldcolumn = '1' -- '0' is not bad
--- vim.opt.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
--- vim.opt.foldlevelstart = 99
+-- fold
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = '0'
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 1
+vim.opt.foldlevelstart = 99
+vim.opt.foldnestmax = 4
+
+
+
+
+
+
+
 -- vim.opt.foldenable = true
--- vim.opt.foldmethod = 'expr'
--- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- -- misc
 -- vim.cmd.set('noswapfile')

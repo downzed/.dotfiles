@@ -7,11 +7,6 @@ return {
     dependencies = {
       "grapp-dev/nui-components.nvim",
       "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
     },
-    config = function()
-      local schnecke = require("die-schnecke")
-      schnecke.setup({})
-    end
   },
 }
