@@ -1,7 +1,7 @@
 -- global function to set theme
 
 --- Applies a theme to the editor and removes background colors from Normal and NormalFloat highlight groups.
---- @param theme "rose-pine" | "monokai-pro" | nil
+--- @param theme "rose-pine" | "monokai-pro" | any
 function ApplyTheme(theme)
   local current_theme = theme or vim.g.colors_name
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

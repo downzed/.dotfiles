@@ -3,12 +3,16 @@ import = [
   "~/.config/alacritty/themes/monokai_pro.toml"
 ]
 
+[shell]
+  program = "/opt/homebrew/bin/tmux"
+  args = ["a", "-t", "Plugin"]
+
 [window] 
   decorations = "none"
   padding = { x = 4, y = 8 }
   dynamic_padding = true
   blur = true
-  opacity = 0.90
+  opacity = 0.95
 
 [keyboard]
   bindings = [
@@ -17,9 +21,9 @@ import = [
   ]
 
 [font] 
-  normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
-  italic = { family = "NotoSansM Nerd Font Mono", style = "Italic" }
-  bold = { family = "NotoSansM Nerd Font Mono", style = "Bold" }
+  normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+  italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+  bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
   size = 18
 
 [cursor]
