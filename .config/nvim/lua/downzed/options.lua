@@ -2,6 +2,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
+vim.g.loaded_ruby_provider = 0
+
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -21,6 +23,7 @@ vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
+
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -83,7 +86,7 @@ vim.opt.foldnestmax = 4
 -- vim.opt.foldenable = true
 
 -- -- misc
--- vim.cmd.set('noswapfile')
+vim.cmd.set('noswapfile')
 -- vim.opt.shortmess:append({ I = true })
 -- vim.opt.encoding = 'utf-8'
 -- vim.opt.showcmd = true

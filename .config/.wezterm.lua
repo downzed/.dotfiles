@@ -1,8 +1,11 @@
 local w = require('wezterm')
 
 local font = w.font_with_fallback({
-  { family = "NotoSansM Nerd Font" },
-  { family = "Symbols Nerd Font Mono", scale = 0.65 },
+  "GitLab Mono",
+  {
+    family = "Symbols Nerd Font Mono",
+    scale = 0.75
+  },
 })
 
 local keys = {
@@ -13,10 +16,10 @@ local keys = {
   },
 }
 
-local config = {
-  window_background_opacity = 0.88,
-  macos_window_background_blur = 40,
-  color_scheme = 'Monokai (terminal.sexy)',
+return {
+  window_background_opacity = 0.80,
+  macos_window_background_blur = 50,
+  color_scheme = 'Rosé Pine (Gogh)',
   keys = keys,
   font = font,
   font_size = 16,
@@ -25,9 +28,10 @@ local config = {
   window_decorations = "RESIZE",
   native_macos_fullscreen_mode = false,
 
+  -- Scrollback
+  scrollback_lines = 10000,
+
   -- Performance tweaks
   max_fps = 90,
-  dpi = 144.0,
+  -- dpi = 144.0,
 }
-
-return config

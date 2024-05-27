@@ -25,7 +25,7 @@ return {
         }
       end,
       formatters_by_ft = {
-        lua = { "stylua" },
+        lua = { 'stylua' },
         javascript = { { "eslint_d", "eslint" } },
         typescript = { "tsserver" },
       },
@@ -39,7 +39,10 @@ return {
       }
       vim.api.nvim_create_autocmd('BufWritePost', {
         callback = function()
-          require('lint').try_lint('luacheck')
+          -- check if filetype is lua
+          if vim.bo.filetype == 'lua' then
+            require('lint').try_lint('luacheck')
+          end
         end,
       })
       -- You can set up an autocmd to run linting automatically

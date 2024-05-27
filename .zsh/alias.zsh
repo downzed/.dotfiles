@@ -4,8 +4,8 @@ alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse -q '$*' | x
 alias g="git branch --list | fzf-tmux -p | xargs git checkout" 
 alias s="bat package.json | jq -r '.scripts | keys[]' | fzf-tmux -p --reverse | xargs yarn"
 alias ..="cd .."
-alias double="~/Developer/bash/dir_selector.sh"
 alias top="bpytop"
+alias sleepnow="pmset sleepnow"
 
 alias ls='lsd'
 alias ll='ls -l'

@@ -36,7 +36,16 @@ return {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {
-      disabled_filetypes = { "qf", "netrw", "NeoTree", "NvimTree", "lazy", "mason", "oil" },
+      disabled_filetypes = {
+        "norg",
+        "qf",
+        "netrw",
+        "NeoTree",
+        "lazy",
+        "mason",
+        "oil",
+        "fugitive"
+      },
     }
   },
   {
