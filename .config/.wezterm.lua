@@ -17,12 +17,12 @@ local keys = {
 }
 
 return {
-  window_background_opacity = 0.80,
+  window_background_opacity = 0.75,
   macos_window_background_blur = 50,
   color_scheme = 'Rosé Pine (Gogh)',
   keys = keys,
   font = font,
-  font_size = 16,
+  font_size = 18,
 
   enable_tab_bar = false,
   window_decorations = "RESIZE",
@@ -33,5 +33,6 @@ return {
 
   -- Performance tweaks
   max_fps = 90,
-  -- dpi = 144.0,
+  -- dpi = 72.0,
+  dpi = 144.0,
 }

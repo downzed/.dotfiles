@@ -24,8 +24,9 @@ return {
       map("<leader>gf", "<cmd>Git<cr>", "[G]it [F]ugitive")
       map("<leader>gss", gs.stage_hunk, "[G]it[s]igns [S]tage Hunk")
       map("<leader>gsx", gs.reset_hunk, "[G]it[s]igns [x] Reset Hunk")
+      map("<leader>gsp", gs.preview_hunk, "[G]it[s]igns [P]review hunk")
       map("<leader>gs]", gs.next_hunk, "[G]it[s]igns ] next hunk")
-      map("<leader>gs[", gs.prev_hunk, "[G]it[s]igns [ prev hunk")
+      map("<leader>gs[", gs.prev_hunk, "[G]it[s]igns [ previous hunk")
     end,
   },
 }

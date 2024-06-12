@@ -9,7 +9,7 @@ source $CONFIG_DIR/colors.sh # import color variables
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEMS_DIR="$CONFIG_DIR/items"
-FONT="FiraCode Nerd Font"
+FONT="Hack Nerd Font"
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.

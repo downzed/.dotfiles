@@ -69,13 +69,17 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.o.rtp = vim.o.rtp .. ',' .. "/opt/homebrew/bin/fzf"
 
 -- fold
+-- set foldmethod=expr
+-- set foldexpr=nvim_treesitter#foldexpr()
+-- set nofoldenable                     " Disable folding at startup.
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldcolumn = '0'
-vim.opt.foldtext = ""
-vim.opt.foldlevel = 1
-vim.opt.foldlevelstart = 99
-vim.opt.foldnestmax = 4
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.cmd.set('nofoldenable')
+-- vim.opt.foldcolumn = '0'
+-- vim.opt.foldtext = ""
+-- vim.opt.foldlevel = 1
+-- vim.opt.foldlevelstart = 99
+-- vim.opt.foldnestmax = 4
 
 
 
