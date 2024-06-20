@@ -28,10 +28,8 @@ return {
           }
         },
       },
-      { "folke/neodev.nvim", opts = {} },
     },
     config = function()
-      require('neodev').setup({})
       require('fidget').setup()
 
       local cmp_lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -57,7 +55,8 @@ return {
           "lua_ls",
           "tsserver",
           "bashls",
-          "eslint",
+          -- "eslint",
+          "clangd"
         },
         automatic_installation = true,
         handlers = {

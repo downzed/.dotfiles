@@ -40,7 +40,7 @@ return {
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/cmp-buffer",
-  "nvim_lsp_signature_help",
+  -- "nvim_lsp_signature_help",
   "mmolhoek/cmp-scss",
   "hrsh7th/cmp-path",
   "saadparwaiz1/cmp_luasnip",
@@ -79,12 +79,12 @@ return {
         }),
 
         sources = cmp.config.sources({
-          { name = 'codeium',                keyword_length = 0, max_item_count = 3 },
+          { name = 'codeium',  keyword_length = 0, max_item_count = 3 },
           { name = 'path' },
-          { name = 'nvim_lsp_signature_help' },
+          -- { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },
-          { name = 'nvim_lsp',               max_item_count = 6 },
-          { name = 'buffer',                 max_item_count = 6 },
+          { name = 'nvim_lsp', max_item_count = 6 },
+          { name = 'buffer',   max_item_count = 6 },
           { name = 'scss' },
         }, {
           { name = 'crates' },
