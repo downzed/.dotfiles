@@ -19,8 +19,8 @@ return {
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = {
-          c = true,
-          cpp = true,
+          -- c = true,
+          -- cpp = true,
           scss = true,
           css = true
         }
@@ -34,6 +34,8 @@ return {
         lua = { 'stylua' },
         javascript = { { "eslint_d", "eslint" } },
         typescript = { "tsserver" },
+        c = { 'clang_format' },
+        cpp = { 'clang_format' },
       },
     },
   },

@@ -58,6 +58,7 @@ return {
           "tsserver",
           "bashls",
           "eslint",
+          "clangd"
         },
         automatic_installation = true,
         handlers = {

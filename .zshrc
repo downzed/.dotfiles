@@ -32,9 +32,9 @@ setopt HIST_FIND_NO_DUPS  # History won't show duplicates on search
 # Initialize fun
 [[ -f $ZSH/init.zsh ]] && source $ZSH/init.zsh
 
-
 # Work related config
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
+
 
 # For compilers to find jpeg you may need to set:
 export LDFLAGS="-L/opt/homebrew/opt/jpeg/lib"
@@ -42,6 +42,5 @@ export CPPFLAGS="-I/opt/homebrew/opt/jpeg/include"
 
 # For pkg-config to find jpeg you may need to set:
 export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
-
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
