@@ -1,4 +1,9 @@
 local w = require('wezterm')
+local act = w.action
+
+w.on('update-right-status', function(window, _pane)
+  window:set_right_status(window:active_workspace())
+end)
 
 local font = w.font_with_fallback({
   "GitLab Mono",
@@ -15,33 +20,64 @@ local leader = {
 }
 
 local keys = {
-  { -- Split horizontally
+  -- splits
+  --- horizontally
+  {
     key = '|',
     mods = 'LEADER',
-    action = w.action.SplitHorizontal { domain = 'CurrentPaneDomain' }
+    action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }
   },
-
-  { -- Split vertiacally
+  --- vertiacally
+  {
     key = '_',
     mods = 'LEADER',
-    action = w.action.SplitVertical { domain = 'CurrentPaneDomain' }
+    action = act.SplitVertical { domain = 'CurrentPaneDomain' }
   },
 
-  { -- Zoom pane
+  -- panes
+  --- toggle zoom
+  {
     key = 'z',
     mods = 'LEADER',
-    action = w.action.TogglePaneZoomState
+    action = act.TogglePaneZoomState
+  },
+  --- activate pane
+  { key = 'l', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Right' }) },
+  { key = 'h', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Left' }) },
+  { key = 'k', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Up' }) },
+  { key = 'j', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Down' }) },
+
+  -- workspaces
+  {
+    key = 'w',
+    mods = 'LEADER|SHIFT',
+    action = act.SwitchToWorkspace {
+      name = 'Work',
+      cwd = '~/Developer/work/',
+
+    }
+  },
+  {
+    key = 'c',
+    mods = 'LEADER|SHIFT',
+    action = act.SwitchToWorkspace {
+      name = 'CS50',
+    }
   },
 
+  -- launchers
   {
     key = 'l',
-    mods = 'ALT',
-    action = w.action.ShowLauncher
+    mods = 'CMD|SHIFT',
+    action = act.ShowLauncher
   },
-  { key = 'l', mods = 'LEADER', action = w.action({ ActivatePaneDirection = 'Right' }) },
-  { key = 'h', mods = 'LEADER', action = w.action({ ActivatePaneDirection = 'Left' }) },
-  { key = 'k', mods = 'LEADER', action = w.action({ ActivatePaneDirection = 'Up' }) },
-  { key = 'j', mods = 'LEADER', action = w.action({ ActivatePaneDirection = 'Down' }) },
+  {
+    key = 'w',
+    mods = 'CMD|SHIFT',
+    action = act.ShowLauncherArgs {
+      flags = 'FUZZY|WORKSPACES',
+    },
+  }
 }
 
 -- w.on('gui-startup', function()
@@ -52,11 +88,9 @@ local keys = {
 local config = {
   leader = leader,
   hide_tab_bar_if_only_one_tab = true,
-  -- default_prog = { 'zsh', '-l', '-c', 'exec $SHELL' },
-  window_background_opacity = .95,
-  -- macos_window_background_blur = 88,
-  -- color_scheme = 'Rosé Pine Moon (Gogh)',
-  color_scheme = 'Monokai Pro (Gogh)',
+  window_background_opacity = .68,
+  macos_window_background_blur = 28,
+  color_scheme = 'Batman',
   keys = keys,
   font = font,
   font_size = 17,
@@ -73,5 +107,4 @@ local config = {
   -- dpi = 72.0,
   -- dpi = 144.0,
 }
-
 return config

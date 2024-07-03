@@ -1,11 +1,11 @@
 -- global function to set theme
 --- Applies a theme to the editor and removes background colors from Normal and NormalFloat highlight groups.
---- @param theme "rose-pine" | "monokai-pro" | any
+--- @param theme string
 function _G.ApplyTheme(theme)
-  local current_theme = theme or vim.g.colors_name
+  local current_theme = theme or "default"
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-  vim.cmd.colorscheme(current_theme or "rose-pine-main")
+  vim.cmd.colorscheme(current_theme)
 end
 
 --- Switches theme between dark and light themes
@@ -18,6 +18,19 @@ function _G.ToggleMode()
 end
 
 return {
+  {
+    "cdmill/neomodern.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("neomodern").setup({
+        style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
+        transparent = true,
+      })
+      require("neomodern").load()
+    end,
+  },
+
   -- {
   --   "rose-pine/neovim",
   --   name = "rose-pine",
@@ -33,21 +46,4 @@ return {
   --     -- _G.ApplyTheme("rose-pine")
   --   end
   -- },
-  {
-    "loctvl842/monokai-pro.nvim",
-    config = function()
-      require("monokai-pro").setup({
-        filter = "octagon", --- classic | octagon | pro | machine | ristretto | spectrum
-        transparent_background = true,
-        background_clear = {
-          "float_win",
-          -- "toggleterm",
-          "which-key",
-          "notify",
-          "neo-tree",
-        }
-      })
-      _G.ApplyTheme("monokai-pro")
-    end
-  }
 }

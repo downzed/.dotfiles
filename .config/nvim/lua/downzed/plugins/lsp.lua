@@ -55,6 +55,7 @@ return {
           "lua_ls",
           "tsserver",
           "bashls",
+          "rust_analyzer",
           -- "eslint",
           "clangd"
         },

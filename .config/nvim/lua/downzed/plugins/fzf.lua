@@ -14,6 +14,7 @@ return {
             -- actions inherit from 'actions.files' and merge
             -- this action toggles between 'grep' and 'live_grep'
             ["ctrl-g"] = { actions.grep_lgrep },
+            ["ctrl-q"] = { actions.file_sel_to_qf },
             -- uncomment to enable '.gitignore' toggle for grep
             ["ctrl-r"] = { actions.toggle_ignore }
           },

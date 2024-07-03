@@ -32,8 +32,9 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { { "eslint_d", "eslint" } },
-        typescript = { "tsserver" },
+        rust = { 'rustfmt' },
+        javascript = { { 'eslint_d', 'eslint' } },
+        typescript = { 'tsserver' },
         c = { 'clang_format' },
         cpp = { 'clang_format' },
       },

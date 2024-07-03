@@ -9,6 +9,7 @@ return {
     -- Uncomment next line if you want to follow only stable versions
     -- version = "*"
   },
+
   {
     'folke/which-key.nvim',
     event = "VimEnter",
@@ -27,36 +28,17 @@ return {
       })
     end,
   },
+
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = true
   },
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {
-      disabled_filetypes = {
-        "norg",
-        "qf",
-        "netrw",
-        "NeoTree",
-        "lazy",
-        "mason",
-        "oil",
-        "fugitive"
-      },
-    }
-  },
+
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {}
-  }
 }

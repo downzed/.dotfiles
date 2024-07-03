@@ -1,7 +1,6 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       "windwp/nvim-ts-autotag",
@@ -17,16 +16,17 @@ return {
       rainbow = { enable = true },
       fold = { enable = true, disable = {} },
       ensure_installed = {
-        "lua",
-        "tsx",
-        "javascript",
-        "typescript",
-        "vim",
-        "query",
-        "css",
-        "scss",
-        "markdown",
-        "rust",
+        'c',
+        'cpp',
+        'cmake',
+        'lua',
+        'luadoc',
+        'python',
+        'rust',
+        'toml',
+        'javascript',
+        'typescript',
+        'markdown',
       },
     },
     config = function(opts)
