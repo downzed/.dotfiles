@@ -9,7 +9,18 @@ source $CONFIG_DIR/colors.sh # import color variables
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEMS_DIR="$CONFIG_DIR/items"
-FONT="Hack Nerd Font"
+FONT="FiraCode Nerd Font"
+
+
+# aerospace setting
+AEROSPACE_FOCUSED_MONITOR_NO=$(aerospace list-workspaces --focused)
+AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR=$(aerospace list-windows --workspace $AEROSPACE_FOCUSED_MONITOR_NO | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+
+# Setting up and starting the helper process
+HELPER=git.felix.helper
+killall helper
+(cd $CONFIG_DIR/helper && make)
+$CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
@@ -24,33 +35,30 @@ FONT="Hack Nerd Font"
 # https://felixkratz.github.io/SketchyBar/config/items
 
 source $CONFIG_DIR/default.sh
-source $ITEMS_DIR/spaces.sh
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
 # Additional position (e.g. center) are available, see:
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
-## -- Right side items -- ##
+## -- Right items -- ##
 source $ITEMS_DIR/cal.sh
 source $ITEMS_DIR/vol.sh
 # source $ITEMS_DIR/bat.sh
 source $ITEMS_DIR/wifi.sh
 
-##### Adding Left Items #####
-# We add some regular items to the left side of the bar, where
-# only the properties deviating from the current defaults need to be set
-
+## -- Center items -- ##
 source $ITEMS_DIR/media.sh
-## -- Left side items -- ##
+
+## -- Left items -- ##
+source $ITEMS_DIR/spaces.sh
 source $ITEMS_DIR/fa.sh
 
-# Some items refresh on a fixed cycle, e.g. the clock runs its script once
-# every 10s. Other items respond to events they subscribe to, e.g. the
-# volume.sh script is only executed once an actual change in system audio
-# volume is registered. More info about the event system can be found here:
-# https://felixkratz.github.io/SketchyBar/config/events
-# sketchybar --add alias "<window_owner>,<window_name>" <position>
 
 ##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --hotload on
+# Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
+
+echo "sketchybar configuation loaded.."
+

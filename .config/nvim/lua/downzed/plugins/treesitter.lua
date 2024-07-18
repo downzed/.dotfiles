@@ -26,7 +26,6 @@ return {
         'toml',
         'javascript',
         'typescript',
-        'markdown',
       },
     },
     config = function(opts)

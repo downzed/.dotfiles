@@ -1,9 +1,9 @@
 local w = require('wezterm')
 local act = w.action
 
-w.on('update-right-status', function(window, _pane)
-  window:set_right_status(window:active_workspace())
-end)
+-- w.on('update-right-status', function(window, _pane)
+--   window:set_right_status(window:active_workspace())
+-- end)
 
 local font = w.font_with_fallback({
   "GitLab Mono",
@@ -47,6 +47,16 @@ local keys = {
   { key = 'k', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Up' }) },
   { key = 'j', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Down' }) },
 
+  --- resize pane
+  {
+    key = 'r',
+    mods = 'LEADER',
+    action = act.ActivateKeyTable {
+      name = 'resize_pane',
+      one_shot = false,
+    },
+  },
+
   -- workspaces
   {
     key = 'w',
@@ -80,18 +90,43 @@ local keys = {
   }
 }
 
+local key_tables = {
+  -- Defines the keys that are active in our resize-pane mode.
+  -- Since we're likely to want to make multiple adjustments,
+  -- we made the activation one_shot=false. We therefore need
+  -- to define a key assignment for getting out of this mode.
+  -- 'resize_pane' here corresponds to the name="resize_pane" in
+  -- the key assignments above.
+  resize_pane = {
+    { key = 'LeftArrow',  action = act.AdjustPaneSize { 'Left', 1 } },
+    { key = 'h',          action = act.AdjustPaneSize { 'Left', 1 } },
+
+    { key = 'RightArrow', action = act.AdjustPaneSize { 'Right', 1 } },
+    { key = 'l',          action = act.AdjustPaneSize { 'Right', 1 } },
+
+    { key = 'UpArrow',    action = act.AdjustPaneSize { 'Up', 1 } },
+    { key = 'k',          action = act.AdjustPaneSize { 'Up', 1 } },
+
+    { key = 'DownArrow',  action = act.AdjustPaneSize { 'Down', 1 } },
+    { key = 'j',          action = act.AdjustPaneSize { 'Down', 1 } },
+
+    -- Cancel the mode by pressing escape
+    { key = 'Escape',     action = 'PopKeyTable' },
+  }
+}
 -- w.on('gui-startup', function()
 --   local _, _, window = w.mux.spawn_window({})
 --   window:gui_window():maximize()
 -- end)
 
 local config = {
-  leader = leader,
+  -- leader = leader,
   hide_tab_bar_if_only_one_tab = true,
-  window_background_opacity = .68,
-  macos_window_background_blur = 28,
-  color_scheme = 'Batman',
-  keys = keys,
+  window_background_opacity = .88,
+  macos_window_background_blur = 25,
+  color_scheme = 'rose-pine',
+  -- keys = keys,
+  -- key_tables = key_tables,
   font = font,
   font_size = 17,
 

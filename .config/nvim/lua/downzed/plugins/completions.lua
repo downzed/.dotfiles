@@ -24,7 +24,7 @@ local icons = {
   Event = "",
   Operator = "󰆕",
   TypeParameter = "",
-  Codeium = "",
+  -- Codeium = "",
 }
 
 local sources = {
@@ -33,7 +33,7 @@ local sources = {
   buffer = "",
   path = "",
   cmdline = "",
-  codeium = ""
+  -- codeium = ""
 }
 
 return {
@@ -79,7 +79,7 @@ return {
         }),
 
         sources = cmp.config.sources({
-          { name = 'codeium',                keyword_length = 0, max_item_count = 3 },
+          -- { name = 'codeium',                keyword_length = 0, max_item_count = 3 },
           { name = 'path' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },

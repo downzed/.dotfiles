@@ -1,33 +1,35 @@
 #!/bin/bash
 
-convert_to_roman() {
-  local number=$1
-  declare -A roman=( [1000]=M [900]=CM [500]=D [400]=CD [100]=C [90]=XC [50]=L [40]=XL [10]=X [9]=IX [5]=V [4]=IV [1]=I )
-  
-  local result=""
-  for value in "${!roman[@]}"
-  do
-    while (( number >= value ))
-    do
-      result+="${roman[$value]}"
-      ((number -= value))
-    done
-  done
+# convert_to_roman() {
+#   local number=$1
+#   declare -A roman=( [1000]=M [900]=CM [500]=D [400]=CD [100]=C [90]=XC [50]=L [40]=XL [10]=X [9]=IX [5]=V [4]=IV [1]=I )
+#
+#   local result=""
+#   for value in "${!roman[@]}"
+#   do
+#     while (( number >= value ))
+#     do
+#       result+="${roman[$value]}"
+#       ((number -= value))
+#     done
+#   done
+#
+#   if [[ "$result" == "IIII" ]]; then
+#     result="IV"
+#   fi
+#   echo $result
+# }
+#
+# SPACE_SIDS=(1 2 3 4)
+sketchybar --add event aerospace_workspace_change
 
-  if [[ "$result" == "IIII" ]]; then
-    result="IV"
-  fi
-  echo $result
-}
-
-SPACE_SIDS=(1 2 3 4)
-
-for sid in "${SPACE_SIDS[@]}"
+# for sid in "${SPACE_SIDS[@]}"
+for i in $(aerospace list-workspaces --all);
 do
-  roman_sid=$(convert_to_roman $sid)
+  sid=$i
   space=(
     space=$sid                                 
-    icon=$roman_sid
+    icon=$sid
     background.color=$SECONDARY_BG
     label.color=$MAIN_FG
     icon.color=$SECONDARY_FG

@@ -19,31 +19,25 @@ end
 
 return {
   {
-    "cdmill/neomodern.nvim",
-    lazy = false,
-    priority = 1000,
+    "echasnovski/mini.icons",
+    version = false,
     config = function()
-      require("neomodern").setup({
-        style = "iceclimber", -- choose between 'iceclimber', 'coffeecat', 'darkforest', 'campfire', 'roseprime', 'daylight'
-        transparent = true,
-      })
-      require("neomodern").load()
-    end,
+      require("mini.icons").setup()
+    end
   },
-
-  -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
-  --   config = function()
-  --     require('rose-pine').setup({
-  --       variant = "moon",      -- auto, main, moon, or dawn
-  --       dark_variant = "moon", -- main, moon, or dawn
-  --       styles = {
-  --         transparency = true
-  --       },
-  --     })
-  --
-  --     -- _G.ApplyTheme("rose-pine")
-  --   end
-  -- },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function()
+      require('rose-pine').setup({
+        variant = "moon",      -- auto, main, moon, or dawn
+        dark_variant = "moon", -- main, moon, or dawn
+        styles = {
+          transparency = true
+        },
+      })
+      vim.o.background = "dark"
+      _G.ApplyTheme("rose-pine")
+    end
+  }
 }

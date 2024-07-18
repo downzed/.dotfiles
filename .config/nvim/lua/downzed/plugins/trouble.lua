@@ -1,19 +1,29 @@
 return {
   {
     "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = "Trouble",
     opts = {},
-    config = function()
-      local trouble = require("trouble")
-
-      local map = function(key, cmd, desc)
-        vim.keymap.set("n", key, cmd, { silent = true, desc = "Trbl: " .. desc })
-      end
-
-      map("<leader>tt", trouble.toggle, "[T]oggle [T]rouble")
-      map("<leader>tl", function() trouble.toggle("loclist") end, "[T]oggle [L]oclist")
-      map("<leader>tq", function() trouble.toggle("quickfix") end, "[T]oggle [Q]uickfix")
-      map("<leader>td", function() trouble.toggle("todo") end, "[T]oggle [T]odo")
-    end,
+    keys = {
+      {
+        "<leader>xt",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics: [T]rouble",
+      },
+      {
+        "<leader>xq",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Diagnostics: [Q]uickfix",
+      },
+      {
+        "<leader>xl",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Diagnostics: [L]oclist",
+      },
+      {
+        "<leader>td",
+        "<cmd>Trouble todo<cr>",
+        desc = "[T]oggle to[D]o",
+      },
+    }
   },
 }
