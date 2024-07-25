@@ -15,7 +15,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = true
+start-at-login = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -33,10 +33,10 @@ default-root-container-layout = 'tiles'
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
 #               tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
-
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-key-mapping.preset = 'qwerty'
+[key-mapping]
+preset = 'qwerty'
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
@@ -81,7 +81,7 @@ outer.right =      8
 
 # You can uncomment this line to open up terminal with alt + enter shortcut
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-cmd-enter = 'exec-and-forget open -n /Applications/WezTerm.app/'
+cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app/'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -177,6 +177,7 @@ alt-shift-4 = 'move-node-to-workspace 4'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 # alt-shift-semicolon = 'mode service'
 cmd-shift-semicolon = 'exec-and-forget switch_mode service'
+alt-shift-r = ['reload-config', 'mode main']
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]

@@ -1,19 +1,18 @@
 live_config_reload = true
 import = [
-  # "~/.config/alacritty/themes/monokai_pro.toml" ,
-  "~/.config/alacritty/themes/melange.toml",
+  # "~/.config/alacritty/themes/rose-pine.toml",
 ]
 
-[shell]
-program = "/opt/homebrew/bin/tmux"
-args = ["a", "-t", "Plugin"]
+# [shell]
+# program = "/opt/homebrew/bin/tmux"
+# args = ["a", "-t", "Plugin"]
 
 [window]
 decorations = "none"
-padding = { x = 4, y = 8 }
+padding = { x = 8, y = 8 }
 dynamic_padding = true
 blur = true
-opacity = 0.78
+opacity = 0.9
 
 [keyboard]
 bindings = [
@@ -22,10 +21,20 @@ bindings = [
 ]
 
 [font]
-normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
-italic = { family = "NotoSansM Nerd Font Mono", style = "Italic" }
-bold = { family = "NotoSansM Nerd Font Mono", style = "Bold" }
 size = 16
 
-[cursor]
-style = { shape = "Block", blinking = "Always" }
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "FiraCode Nerd Font Mono"
+style = "Italic"
+
+[cursor.style]
+shape = "Block"
+blinking = "Always" 
