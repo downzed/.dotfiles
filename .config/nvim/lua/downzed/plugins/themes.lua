@@ -3,8 +3,8 @@
 --- @param theme string
 function _G.ApplyTheme(theme)
   local current_theme = theme or "default"
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   vim.cmd.colorscheme(current_theme)
 end
 
@@ -25,17 +25,16 @@ return {
       require("mini.icons").setup()
     end
   },
+
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    config = function()
-      require('rose-pine').setup({
-        variant = "moon",      -- auto, main, moon, or dawn
-        dark_variant = "moon", -- main, moon, or dawn
-        styles = {
-          transparency = true
-        },
-      })
+    opts = {
+      variant = "main",      -- auto, main, moon, or dawn
+      dark_variant = "main", -- main, moon, or dawn
+    },
+    config = function(_, opts)
+      require("rose-pine").setup(opts)
       vim.o.background = "dark"
       _G.ApplyTheme("rose-pine")
     end

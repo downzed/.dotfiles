@@ -19,6 +19,7 @@ return {
             config = {
               workspaces = {
                 notes = "~/Developer/notes",
+                c = "~/Developer/notes/c",
               },
               default_workspace = "notes",
             },

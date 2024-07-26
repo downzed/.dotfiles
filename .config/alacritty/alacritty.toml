@@ -1,6 +1,6 @@
 live_config_reload = true
 import = [
-  # "~/.config/alacritty/themes/rose-pine.toml",
+  "~/.config/alacritty/themes/rose-pine.toml",
 ]
 
 # [shell]
@@ -9,10 +9,10 @@ import = [
 
 [window]
 decorations = "none"
-padding = { x = 8, y = 8 }
+padding = { x = 8, y = 4 }
 dynamic_padding = true
-blur = true
-opacity = 0.9
+# blur = true
+# opacity = 0.87
 
 [keyboard]
 bindings = [
@@ -21,18 +21,18 @@ bindings = [
 ]
 
 [font]
-size = 16
+size = 17
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "FiraCode Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "FiraCode Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Italic"
 
 [cursor.style]
