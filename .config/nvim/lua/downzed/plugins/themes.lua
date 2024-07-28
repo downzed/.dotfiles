@@ -21,22 +21,36 @@ return {
   {
     "echasnovski/mini.icons",
     version = false,
+    opts = {}
+    -- config = function()
+    --   require("mini.icons").setup()
+    -- end
+  },
+  {
+    'tanvirtin/monokai.nvim',
+    priority = 1000,
+    opts = {},
     config = function()
-      require("mini.icons").setup()
+      require('monokai').setup({
+        palette = require('monokai').pro
+      })
+      _G.ApplyTheme("monokai_pro")
     end
+
   },
 
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    opts = {
-      variant = "main",      -- auto, main, moon, or dawn
-      dark_variant = "main", -- main, moon, or dawn
-    },
-    config = function(_, opts)
-      require("rose-pine").setup(opts)
-      vim.o.background = "dark"
-      _G.ApplyTheme("rose-pine")
-    end
-  }
+
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   opts = {
+  --     variant = "main",      -- auto, main, moon, or dawn
+  --     dark_variant = "main", -- main, moon, or dawn
+  --   },
+  --   config = function(_, opts)
+  --     require("rose-pine").setup(opts)
+  --     vim.o.background = "dark"
+  --     _G.ApplyTheme("rose-pine")
+  --   end
+  -- }
 }

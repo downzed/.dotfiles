@@ -20,15 +20,16 @@ return {
               workspaces = {
                 notes = "~/Developer/notes",
                 c = "~/Developer/notes/c",
+                work = "~/Developer/work/notes",
               },
-              default_workspace = "notes",
+              default_workspace = "work",
             },
           }
         }
       }
 
       vim.wo.foldlevel = 99
-      vim.wo.conceallevel = 2
+      vim.wo.conceallevel = 3
     end,
   }
 }

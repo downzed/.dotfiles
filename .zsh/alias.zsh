@@ -14,5 +14,5 @@ alias la='ls -a'
 alias lsa='ls -la'
 alias lst='ls --tree'
 
-# sync c-learning notes (with date), to github
-alias sync_notes="cd ~/Developer/notes/c; git add .; git commit -m 'Sync: $(date)'; git push; echo 'Synced notes to github'; cd -"
+# sync personal notes (with date), to github
+alias sync_notes="cd ~/Developer/notes; git add .; git commit -m 'Sync: $(date)'; git push; echo 'Synced notes to github'; cd -"

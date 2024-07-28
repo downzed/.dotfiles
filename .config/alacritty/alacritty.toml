@@ -1,6 +1,6 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/rose-pine.toml",
+  "~/.config/alacritty/themes/monokai.toml",
 ]
 
 # [shell]
@@ -24,15 +24,15 @@ bindings = [
 size = 17
 
 [font.normal]
-family = "FiraMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "FiraMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "FiraMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
 
 [cursor.style]
