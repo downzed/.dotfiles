@@ -28,11 +28,12 @@ local icons = {
 }
 
 local sources = {
-  nvim_lsp = "",
-  luasnip = "",
-  buffer = "",
-  path = "",
-  cmdline = "",
+  nvim_lsp = "  [LSP]",
+  luasnip = " 󰦩 [Snippet]",
+  buffer = "  [Buffer]",
+  path = "  [Path]",
+  cmdline = "  [Cmd]",
+  neorg = " 󰎚 [Neorg]",
   -- codeium = ""
 }
 
@@ -56,13 +57,8 @@ return {
 
       cmp.setup({
         window = {
-          documentation = cmp.config.window.bordered({
-            border = "rounded",
-          }),
-          completion = cmp.config.window.bordered({
-            border = "rounded",
-            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-          }),
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
         },
 
         snippet = {
@@ -96,7 +92,7 @@ return {
             local kind = vim_item.kind
             vim_item.kind = (icons[kind] or "") .. " " .. kind
             local source = entry.source.name
-            vim_item.menu = " -> " .. sources[source]
+            vim_item.menu = " " .. sources[source]
 
             if source == "cmdline" then
               vim_item.menu = sources[source]

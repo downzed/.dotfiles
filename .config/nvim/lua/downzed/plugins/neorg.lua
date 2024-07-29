@@ -9,6 +9,9 @@ return {
     dependencies = { "luarocks.nvim" },
     -- put any other flags you wanted to pass to lazy here!
     config = function()
+      local user = os.getenv("USER") or os.getenv("USERNAME")
+      local default_ws = user == "ziv.zerr" and "work" or "notes"
+
       require("neorg").setup {
         load = {
           ["core.defaults"] = {},  -- Loads default behaviour
@@ -19,17 +22,17 @@ return {
             config = {
               workspaces = {
                 notes = "~/Developer/notes",
-                c = "~/Developer/notes/c",
-                work = "~/Developer/work/notes",
+                c = user == "zivzerr" and "~/Developer/notes/c" or nil,
+                work = user == "ziv.zerr" and "~/Developer/work/notes" or nil,
               },
-              default_workspace = "work",
+              default_workspace = default_ws,
             },
           }
         }
       }
 
       vim.wo.foldlevel = 99
-      vim.wo.conceallevel = 3
+      vim.wo.conceallevel = 2
     end,
   }
 }

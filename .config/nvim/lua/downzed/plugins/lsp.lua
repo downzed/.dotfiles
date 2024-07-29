@@ -2,9 +2,7 @@ return {
   {
     "SmiteshP/nvim-navic",
     dependencies = {
-      {
-        "neovim/nvim-lspconfig",
-      },
+      "neovim/nvim-lspconfig",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",

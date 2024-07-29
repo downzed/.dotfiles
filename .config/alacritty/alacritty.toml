@@ -11,8 +11,8 @@ import = [
 decorations = "none"
 padding = { x = 8, y = 4 }
 dynamic_padding = true
-# blur = true
-# opacity = 0.87
+blur = true
+opacity = 0.75
 
 [keyboard]
 bindings = [
