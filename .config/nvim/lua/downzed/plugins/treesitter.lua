@@ -6,15 +6,6 @@ return {
       "windwp/nvim-ts-autotag",
     },
     opts = {
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = { enable = true },
-      autotag = { enable = true },
-      rainbow = { enable = true },
-      fold = { enable = true, disable = {} },
       ensure_installed = {
         'c',
         'cpp',
@@ -27,8 +18,17 @@ return {
         'javascript',
         'typescript',
       },
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = { enable = true },
+      autotag = { enable = true },
+      rainbow = { enable = true },
+      fold = { enable = true, disable = {} },
     },
-    config = function(opts)
+    config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end,
   },

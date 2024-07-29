@@ -9,6 +9,7 @@ return {
       local actions = require("fzf-lua.actions")
       -- calling `setup` is optional for customization
       fzf_lua.setup({
+        'borderless_full',
         grep = {
           actions = {
             -- actions inherit from 'actions.files' and merge
@@ -20,7 +21,7 @@ return {
           },
         },
         oldfiles = {
-          prompt                  = 'History❯ ',
+          prompt                  = 'recent files » ',
           cwd_only                = true,
           stat_file               = true, -- verify files exist on disk
           include_current_session = true, -- include bufs from current session
@@ -30,7 +31,7 @@ return {
       --- customized map function
       ---@param keys string
       ---@param func function | string
-      ---@param desc string | string[]
+      ---@param desc string
       ---@param use_desc? boolean
       ---@default true
       local map = function(keys, func, desc, use_desc)
@@ -46,10 +47,12 @@ return {
       local function fzf_custom(dir)
         local is_neorg = dir == "neorg"
         local cwd      = is_neorg and "~/Developer/notes" or "~/Developer/.dotfiles"
+        local prompt   = is_neorg and 'Neorg » ' or '.dots » '
 
-        require('fzf-lua').files({
-          prompt = is_neorg and 'Neorg » ' or '.dots » ',
-          cwd    = cwd,
+        fzf_lua.files({
+          prompt   = prompt,
+          cwd      = cwd,
+          cwd_only = false
         })
       end
 
@@ -78,6 +81,9 @@ return {
           end
         end
       end
+
+      map("<leader>gcb", fzf_lua.git_bcommits, "[G]it [C]ommit [B]uffer", false)
+      map("<leader>gb", fzf_lua.git_branches, "[G]it [B]ranches", false)
 
       map("<leader>bf", fzf_lua.buffers, "[B]uffer list", false)
       map("<leader>bd", ":bdelete<cr>", "[B]uffer [D]elete", false)

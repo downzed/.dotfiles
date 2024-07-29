@@ -1,18 +1,11 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/monokai.toml",
+  "~/.config/alacritty/themes/monokai_pro.toml",
 ]
-
-# [shell]
-# program = "/opt/homebrew/bin/tmux"
-# args = ["a", "-t", "Plugin"]
 
 [window]
 decorations = "none"
-padding = { x = 8, y = 4 }
 dynamic_padding = true
-blur = true
-opacity = 0.75
 
 [keyboard]
 bindings = [
@@ -21,7 +14,7 @@ bindings = [
 ]
 
 [font]
-size = 17
+size = 16
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"

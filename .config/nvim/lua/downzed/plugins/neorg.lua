@@ -22,7 +22,7 @@ return {
             config = {
               workspaces = {
                 notes = "~/Developer/notes",
-                c = user == "zivzerr" and "~/Developer/notes/c" or nil,
+                c = "~/Developer/notes/c",
                 work = user == "ziv.zerr" and "~/Developer/work/notes" or nil,
               },
               default_workspace = default_ws,
