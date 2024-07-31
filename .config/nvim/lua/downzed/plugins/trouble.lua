@@ -20,7 +20,7 @@ return {
         desc = "Diagnostics: [L]oclist",
       },
       {
-        "<leader>td",
+        "<leader>tD",
         "<cmd>Trouble todo<cr>",
         desc = "[T]oggle to[D]o",
       },
