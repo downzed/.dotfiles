@@ -14,18 +14,18 @@ bindings = [
 ]
 
 [font]
-size = 16
+size = 17
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "JetBrainsMono Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Italic"
 
 [cursor.style]

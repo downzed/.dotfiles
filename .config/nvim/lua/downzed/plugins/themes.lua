@@ -1,6 +1,8 @@
--- global function to set theme
---- Applies a theme to the editor and removes background colors from Normal and NormalFloat highlight groups.
+--- @name ApplyTheme
 --- @param theme string
+--- @return nil
+--- @description Applies a given theme
+--- @usage :lua ApplyTheme("default")
 function _G.ApplyTheme(theme)
   local current_theme = theme or "default"
   -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -8,7 +10,10 @@ function _G.ApplyTheme(theme)
   vim.cmd.colorscheme(current_theme)
 end
 
---- Switches theme between dark and light themes
+--- @name ToggleMode
+--- @return nil
+--- @description Switches theme between dark and light themes
+--- @usage :lua ToggleMode()
 function _G.ToggleMode()
   if vim.o.background == "dark" then
     vim.o.background = "light"
@@ -17,29 +22,34 @@ function _G.ToggleMode()
   end
 end
 
+--- @name SetBGMode
+--- @param mode "dark" | "light"
+--- @usage :lua SetBGMode()
+function _G.SetBGMode(mode)
+  local _mode = mode or "dark"
+  vim.o.background = _mode
+end
+
 return {
   {
     "echasnovski/mini.icons",
     version = false,
     opts = {}
-    -- config = function()
-    --   require("mini.icons").setup()
-    -- end
   },
+  -- {
+  --   "aliqyan-21/darkvoid.nvim",
+  --   config = function()
+  --     require("darkvoid").setup({ glow = true });
+  --   end
+  -- },
   {
     'tanvirtin/monokai.nvim',
     priority = 1000,
-    opts = {},
     config = function()
-      require('monokai').setup({
-        palette = require('monokai').pro
-      })
+      require('monokai').setup { palette = require('monokai').pro }
       _G.ApplyTheme("monokai_pro")
     end
-
   },
-
-
   -- {
   --   "rose-pine/neovim",
   --   name = "rose-pine",
@@ -47,10 +57,8 @@ return {
   --     variant = "main",      -- auto, main, moon, or dawn
   --     dark_variant = "main", -- main, moon, or dawn
   --   },
-  --   config = function(_, opts)
-  --     require("rose-pine").setup(opts)
-  --     vim.o.background = "dark"
-  --     _G.ApplyTheme("rose-pine")
-  --   end
+  -- config = function(_, opts)
+  --   require("rose-pine").setup(opts)
+  -- end
   -- }
 }

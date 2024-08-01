@@ -14,7 +14,7 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>A", ":lua toggle_starter()<cr>")
+      vim.keymap.set("n", "<leader>M", ":lua toggle_starter()<cr>", { desc = "Toggle [M]iniStarter" })
 
       -- function to toggle MiniStarter
       function _G.toggle_starter()
