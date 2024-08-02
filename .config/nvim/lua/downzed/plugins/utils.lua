@@ -33,7 +33,11 @@ return {
       })
     end,
   },
-
+  {
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {}
+  },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -41,11 +45,13 @@ return {
   },
   {
     'MeanderingProgrammer/markdown.nvim',
-    name = 'render-markdown',                                                       -- Only needed if you have another plugin named markdown.nvim
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
     opts = {}
   },
-
+  {
+    "norcalli/nvim-colorizer.lua",
+    opts = {},
+  },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

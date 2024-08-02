@@ -36,20 +36,25 @@ return {
     version = false,
     opts = {}
   },
-  -- {
-  --   "aliqyan-21/darkvoid.nvim",
-  --   config = function()
-  --     require("darkvoid").setup({ glow = true });
-  --   end
-  -- },
   {
-    'tanvirtin/monokai.nvim',
-    priority = 1000,
+    "downzed/darkvoid.nvim",
+    branch = "feat/lualine",
     config = function()
-      require('monokai').setup { palette = require('monokai').pro }
-      _G.ApplyTheme("monokai_pro")
+      require("darkvoid").setup({
+        transparent = false,
+        glow = true
+      })
+      _G.ApplyTheme("darkvoid")
     end
   },
+  -- {
+  --   'tanvirtin/monokai.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     require('monokai').setup { palette = require('monokai').pro }
+  --     _G.ApplyTheme("monokai_pro")
+  --   end
+  -- },
   -- {
   --   "rose-pine/neovim",
   --   name = "rose-pine",

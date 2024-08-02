@@ -9,7 +9,7 @@ return {
 
     lualine.setup({
       options = {
-        theme = "auto",
+        theme = "darkvoid",
         component_separators = { right = "", left = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = { "netrw", "Netrw", "neotree", "Neotree", "neo-tree" },
@@ -57,7 +57,7 @@ return {
           {
             "filename",
             file_status = true,
-            path = 5,
+            path = 4
           },
         },
         lualine_x = {
@@ -65,7 +65,6 @@ return {
           {
             require("lazy.status").updates,
             cond = require("lazy.status").has_updates,
-            color = { fg = "#ff9e64" },
           }
         },
         lualine_y = {
@@ -89,14 +88,6 @@ return {
             end
           },
         }
-      },
-      inactive_sections = {
-        lualine_a = { 'filename' },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = { 'location' },
       },
     })
   end,

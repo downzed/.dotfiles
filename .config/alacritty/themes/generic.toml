@@ -1,36 +1,38 @@
-# github Alacritty Colors
+# Alacritty Colors
 
 # Default colors
 [colors.primary]
-background = '#0d1117'
-foreground = '#b3b1ad'
+background = '#1c1c1c'
+foreground = '#c0c0c0'
 
 # Normal colors
 [colors.normal]
-black   = '#484f58'
-red     = '#ff7b72'
-green   = '#3fb950'
-yellow  = '#d29922'
-blue    = '#58a6ff'
-magenta = '#bc8cff'
-cyan    = '#39c5cf'
-white   = '#b1bac4'
+black   = '#585858'  # Comment / Border
+red     = '#ffb3ba'  # Removed
+green   = '#baffc9'  # Added
+yellow  = '#ffffba'  # Changed
+blue    = '#66b2b2'  # Boolean
+magenta = '#bdfe58'  # Cursor / Title
+cyan    = '#66b2b2'  # Boolean
+# cyan    = '#1bfd9c'  # Operator / Search Highlight
+white   = '#e6e6e6'  # Bracket
 
 # Bright colors
 [colors.bright]
-black   = '#6e7681'
-red     = '#ffa198'
-green   = '#56d364'
-yellow  = '#e3b341'
-blue    = '#79c0ff'
-magenta = '#d2a8ff'
-cyan    = '#56d4dd'
-white   = '#f0f6fc'
+black   = '#404040'  # Line Number
+red     = '#ffb3ba'  # Removed (same as normal red)
+green   = '#baffc9'  # Added (same as normal green)
+yellow  = '#ffffba'  # Changed (same as normal yellow)
+blue    = '#66b2b2'  # Boolean (same as normal blue)
+cyan    = '#66b2b2'  # Boolean
+magenta = '#bdfe58'  # Cursor / Title (same as normal magenta)
+# cyan    = '#1bfd9c'  # Operator / Search Highlight (same as normal cyan)
+white   = '#e1e1e1'  # Function
 
 [[colors.indexed_colors]]
 index = 16
-color = '#d18616'
+color = '#b2d8d8'  # Constant
 
 [[colors.indexed_colors]]
 index = 17
-color = '#ffa198'
+color = '#b1b1b1'  # Identifier
