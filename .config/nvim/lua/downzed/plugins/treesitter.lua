@@ -13,6 +13,7 @@ return {
         'lua',
         'luadoc',
         'python',
+        'html',
         'php',
         'rust',
         'toml',
