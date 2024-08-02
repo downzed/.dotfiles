@@ -37,8 +37,8 @@ return {
     opts = {}
   },
   {
-    "downzed/darkvoid.nvim",
-    branch = "feat/lualine",
+    "aliqyan-21/darkvoid.nvim",
+    -- branch = "feat/lualine",
     config = function()
       require("darkvoid").setup({
         transparent = false,
