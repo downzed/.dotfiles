@@ -100,3 +100,41 @@ if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
 
+
+# Yazi
+if command -v yazi &> /dev/null; then
+  function yy() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+      builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+  } 
+else 
+  echo "Yazi not found! You should install it"
+  read answer
+
+  if [[ $answer =~ ^[Yy]$ ]]; then
+    ########
+    # nerd-fonts: (icons, recommended)
+    # ffmpegthumbnailer:  (for video thumbnails)
+    # 7-Zip: (for archive extraction and preview)
+    # jq: (for JSON preview)
+    # poppler: (for PDF preview)
+    # fd: (for file searching)
+    # rg: (for file content searching)
+    # fzf: (for quick file subtree navigation)
+    # zoxide: (for historical directories navigation)
+    # ImageMagick: (for SVG, Font, HEIC, and JPEG XL preview)
+    # xclip / wl-clipboard / xsel: (for system clipboard support)
+
+    brew install yazi ffmpegthumbnailer sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font
+
+    if command -v yazi &> /dev/null; then
+      echo "yazi installed"
+    else
+      echo "Error: Failed to install and source Yazi!"
+    fi
+  fi
+fi
