@@ -41,7 +41,7 @@ return {
     -- branch = "feat/lualine",
     config = function()
       require("darkvoid").setup({
-        transparent = false,
+        transparent = true,
         glow = true
       })
       _G.ApplyTheme("darkvoid")

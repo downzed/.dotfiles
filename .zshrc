@@ -13,7 +13,7 @@ export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 # For compilers to find jpeg you may need to set:
 export LDFLAGS="-L/opt/homebrew/opt/jpeg/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/jpeg/include"
-
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 # For pkg-config to find jpeg you may need to set:
 export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
 

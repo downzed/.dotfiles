@@ -4,9 +4,10 @@ import = [
 ]
 
 [window]
-blur = true
-opacity = 0.92
+padding = { x = 6, y = 6 }
 decorations = "none"
+blur = true
+opacity = 0.93
 dynamic_padding = true
 
 [keyboard]
@@ -16,18 +17,18 @@ bindings = [
 ]
 
 [font]
-size = 18
+size = 19
 
 [font.normal]
-family = "FiraMono Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "FiraMono Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "FiraMono Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 style = "Italic"
 
 [cursor.style]
