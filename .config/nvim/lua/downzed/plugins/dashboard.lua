@@ -2,16 +2,30 @@ return {
   {
     "echasnovski/mini.starter",
     version = "*",
-    config = function()
+    opts = function()
       local starter = require("mini.starter")
-      starter.setup({
+      local opts = {
         items = {
-          starter.sections.builtin_actions(),
           starter.sections.recent_files(10, true),
-        },
-        content_hooks = {
-          starter.gen_hook.aligning("center", "center"),
-        },
+        }
+      }
+      return { starter, opts }
+    end,
+    config = function(_, o)
+      local starter = o[1]
+      local opts = o[2]
+
+      starter.setup(opts)
+
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'LazyVimStarted',
+        callback = function()
+          local stats = require('lazy').stats()
+          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+          opts.footer = '󱐋 ' .. stats.count .. ' plugins loaded in ' .. ms .. 'ms'
+          starter.setup(opts)
+          vim.cmd("lua MiniStarter.refresh()")
+        end,
       })
 
       vim.keymap.set("n", "<leader>M", ":lua toggle_starter()<cr>", { desc = "Toggle [M]iniStarter" })

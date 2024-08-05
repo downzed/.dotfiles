@@ -28,12 +28,12 @@ local icons = {
 }
 
 local sources = {
-  nvim_lsp = "  [LSP]",
-  luasnip = " 󰦩 [Snippet]",
-  buffer = "  [Buffer]",
-  path = "  [Path]",
-  cmdline = "  [Cmd]",
-  neorg = " 󰎚 [Neorg]",
+  nvim_lsp = "[lsp]",
+  luasnip = "[snippet]",
+  buffer = "[buffer]",
+  path = "[path]",
+  cmdline = "[cmd]",
+  neorg = "[neorg]",
   -- codeium = ""
 }
 
@@ -83,6 +83,7 @@ return {
           { name = 'buffer',                 max_item_count = 6 },
           { name = 'scss' },
         }, {
+          { name = "[Neorg]" },
           { name = 'crates' },
         }),
 

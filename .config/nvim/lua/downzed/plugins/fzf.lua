@@ -9,7 +9,7 @@ return {
       local actions = require("fzf-lua.actions")
       -- calling `setup` is optional for customization
       fzf_lua.setup({
-        'borderless_full',
+        'telescope',
         grep = {
           actions = {
             -- actions inherit from 'actions.files' and merge

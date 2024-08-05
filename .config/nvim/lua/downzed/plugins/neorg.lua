@@ -18,6 +18,11 @@ return {
           ["core.concealer"] = {}, -- Add pretty icons to your documents
           ["core.ui"] = {},
           ["core.integrations.treesitter"] = {},
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp",
+            },
+          },
           ["core.dirman"] = {
             config = {
               workspaces = {

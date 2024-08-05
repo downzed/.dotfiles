@@ -36,23 +36,23 @@ disabled = true
 format = '$time'
 
 [c]
-format = '[]($style)'
+format = '[ ]($style)'
 style = "bright-cyan dimmed"
 
 [lua]
-format = '[]($style)'
+format = '[ ]($style)'
 style = "bright-cyan dimmed"
 
 [rust]
-format = '[]($style)'
+format = '[ ]($style)'
 style = "bright-cyan dimmed"
 
 [php]
-format = '[]($style)'
+format = '[ ]($style)'
 style = "bright-cyan dimmed"
 
 [nodejs]
-format = '[]($style)'
+format = '[ ]($style)'
 style = "bright-yellow dimmed"
 
 [git_branch]

@@ -1,13 +1,13 @@
 --- @name ApplyTheme
---- @param theme string
+--- @param theme string | nil
 --- @return nil
 --- @description Applies a given theme
 --- @usage :lua ApplyTheme("default")
 function _G.ApplyTheme(theme)
   local current_theme = theme or "default"
+  vim.cmd.colorscheme(current_theme)
   -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-  vim.cmd.colorscheme(current_theme)
 end
 
 --- @name ToggleMode
@@ -37,16 +37,29 @@ return {
     opts = {}
   },
   {
-    "aliqyan-21/darkvoid.nvim",
-    -- branch = "feat/lualine",
-    config = function()
-      require("darkvoid").setup({
-        transparent = true,
-        glow = true
-      })
-      _G.ApplyTheme("darkvoid")
-    end
+    'stevearc/dressing.nvim',
   },
+  {
+    "slugbyte/lackluster.nvim",
+    lazy = false,
+    priority = 1000,
+    init = function()
+      --- @type "lackluster" | "lackluster-mint" | "lackluster-hack" | "lackluster-night"
+      _G.ApplyTheme("lackluster-night")
+    end,
+  }
+  -- {
+  --   -- "downzed/darkvoid.nvim",
+  --   -- branch = "feat/lualine",
+  --   dir = "~/Developer/lua/darkvoid.nvim",
+  --   config = function()
+  --     require("darkvoid").setup({
+  --       transparent = true,
+  --       glow = true
+  --     })
+  --     _G.ApplyTheme("darkvoid")
+  --   end
+  -- },
   -- {
   --   'tanvirtin/monokai.nvim',
   --   priority = 1000,
