@@ -9,7 +9,13 @@ return {
       local actions = require("fzf-lua.actions")
       -- calling `setup` is optional for customization
       fzf_lua.setup({
-        'telescope',
+        'default-title',
+        keymap = {
+          builtin = {
+            ["<C-d>"] = "preview-page-down",
+            ["<C-u>"] = "preview-page-up",
+          },
+        },
         grep = {
           actions = {
             -- actions inherit from 'actions.files' and merge

@@ -21,7 +21,7 @@ $c\
 """
 
 [character]
-format = '[$symbol ](bold)'
+format = "$symbol "
 success_symbol = "[󱞩](blue)"
 error_symbol = "[](red)"
 vimcmd_symbol = "[❮](green)"
@@ -58,7 +58,7 @@ style = "bright-yellow dimmed"
 [git_branch]
 symbol = ''
 format = ' [$symbol $branch]($style)'
-style = "bright-black"
+style = "cyan dimmed"
 
 [git_state]
 disabled = false
