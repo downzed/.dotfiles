@@ -10,6 +10,22 @@ function _G.ApplyTheme(theme)
   -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
+--- @name ToggleOpacity
+--- @return nil
+--- @description Toggles transparent background
+--- @usage :lua ToggleOpacity()
+
+function _G.ToggleOpacity()
+  if vim.api.nvim_get_hl(0, { name = "Normal" }).bg == nil then
+    -- print("no bg")
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#262626" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#262626" })
+  else
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  end
+end
+
 --- @name ToggleMode
 --- @return nil
 --- @description Switches theme between dark and light themes
@@ -17,14 +33,15 @@ end
 function _G.ToggleMode()
   if vim.o.background == "dark" then
     vim.o.background = "light"
-    vim.cmd.colorscheme("default")
+    vim.cmd.colorscheme("antiphoton")
   else
     vim.o.background = "dark"
-    _G.ApplyTheme("oldworld")
+    _G.ApplyTheme("photon")
   end
 end
 
 vim.keymap.set("n", "<leader>tm", _G.ToggleMode, { desc = "[T]oggle [M]ode" })
+vim.keymap.set("n", "<leader>ty", _G.ToggleOpacity, { desc = "[T]oggle opacit[y]" })
 
 return {
   {
@@ -33,6 +50,12 @@ return {
     opts = {}
   },
   { "stevearc/dressing.nvim" },
+  {
+    "axvr/photon.vim",
+    config = function()
+      _G.ApplyTheme("photon")
+    end
+  },
   {
     "dgox16/oldworld.nvim",
     lazy = false,
@@ -48,7 +71,7 @@ return {
           noice = true,
         },
       })
-      _G.ApplyTheme("oldworld")
+      -- _G.ApplyTheme("oldworld")
     end
   }
 

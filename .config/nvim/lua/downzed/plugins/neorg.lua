@@ -29,6 +29,7 @@ return {
               workspaces = {
                 notes = "~/Developer/notes",
                 c = "~/Developer/notes/c",
+                ["data-strcutures"] = "~/Developer/notes/data-structures",
                 work = user == "ziv.zerr" and "~/Developer/work/notes" or nil,
               },
               default_workspace = default_ws,

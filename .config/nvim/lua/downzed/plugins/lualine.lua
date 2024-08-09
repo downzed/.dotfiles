@@ -6,7 +6,7 @@ return {
 
     lualine.setup({
       options = {
-        theme = "auto",
+        theme = "oldworld",
         component_separators = { right = "", left = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = { "netrw", "Netrw", "neotree", "Neotree", "neo-tree" },

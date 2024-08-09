@@ -6,8 +6,8 @@ import = [
 [window]
 padding = { x = 6, y = 6 }
 decorations = "none"
-blur = true
-opacity = 0.93
+# blur = true
+opacity = 0.92
 dynamic_padding = true
 
 [keyboard]
@@ -17,7 +17,7 @@ bindings = [
 ]
 
 [font]
-size = 16
+size = 17
 
 [font.normal]
 family = "MesloLGS Nerd Font Mono"

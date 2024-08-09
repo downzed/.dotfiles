@@ -21,7 +21,7 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
 
 export ZSH=$HOME/.zsh
 
-EDITOR="nvim"
+export EDITOR="nvim"
 
 # Set up fzf key bindings
 source <(fzf --zsh)

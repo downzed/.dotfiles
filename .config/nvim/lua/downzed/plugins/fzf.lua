@@ -73,6 +73,7 @@ return {
       map("<leader>sh", fzf_lua.helptags, "[S]earch [H]elp")
       map("<leader>sk", fzf_lua.keymaps, "[S]earch [K]eymaps")
       map("<leader>so", fzf_lua.oldfiles, "[S]earch [O]ldfiles")
+      map("<leader>sm", fzf_lua.manpages, "[S]earch [M]anpages")
       map("<leader>sw", fzf_lua.grep_cword, "[S]earch [W]ord")
       map("<leader>sW", fzf_lua.grep_cWORD, "[S]earch [W]ord [E]xpression")
       map("<leader>scs", fzf_lua.colorschemes, "[S]earch [C]olor [S]chemes")
