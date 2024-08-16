@@ -37,6 +37,7 @@ return {
         typescript = { 'ts_ls' },
         c = { 'clang_format' },
         cpp = { 'clang_format' },
+        php = { 'pretty-php' },
       },
     },
   },
@@ -48,7 +49,6 @@ return {
       }
       vim.api.nvim_create_autocmd('BufWritePost', {
         callback = function()
-          -- check if filetype is lua
           if vim.bo.filetype == 'lua' then
             require('lint').try_lint('luacheck')
           end

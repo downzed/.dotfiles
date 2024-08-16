@@ -61,7 +61,8 @@ return {
           "jsonls",
           "yamlls",
           "marksman",
-          "jdtls"
+          "jdtls",
+          "phpactor"
         },
         automatic_installation = true,
         handlers = {
