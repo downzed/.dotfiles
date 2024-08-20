@@ -37,19 +37,19 @@ format = '$time'
 
 [c]
 format = '[ ]($style)'
-style = "bright-cyan dimmed"
+style = "cyan dimmed"
 
 [lua]
 format = '[ ]($style)'
-style = "bright-cyan dimmed"
+style = "blue dimmed"
 
 [rust]
 format = '[ ]($style)'
-style = "bright-cyan dimmed"
+style = "cyan dimmed"
 
 [php]
 format = '[ ]($style)'
-style = "bright-cyan dimmed"
+style = "cyan dimmed"
 
 [nodejs]
 format = '[ ]($style)'
@@ -58,7 +58,7 @@ style = "bright-yellow dimmed"
 [git_branch]
 symbol = ''
 format = ' [$symbol $branch]($style)'
-style = "cyan dimmed"
+style = "cyan"
 
 [git_state]
 disabled = false

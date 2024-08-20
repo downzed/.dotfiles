@@ -14,7 +14,6 @@ return {
         'luadoc',
         'python',
         'html',
-        'php',
         'rust',
         'toml',
         'javascript',

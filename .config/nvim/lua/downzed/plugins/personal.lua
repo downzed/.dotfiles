@@ -1,7 +1,5 @@
 return {
   {
-    -- my very first WIP plugin
-    -- https://github.com/downzed/meine-schnecke.nvim
     -- "downzed/meine-schnecke.nvim",
     dir = "~/Developer/lua/die-schnecke.nvim",
     dependencies = {
@@ -10,8 +8,8 @@ return {
     },
   },
   {
-    dir = "~/Developer/lua/photon.lua/",
+    -- dir = "~/Developer/lua/nvim-colorschemes/photon.lua",
+    "downzed/photon.lua",
     opts = {}
   },
-
 }

@@ -1,6 +1,6 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/oldworld.toml",
+  "~/.config/alacritty/themes/generic.toml",
 ]
 
 [window]

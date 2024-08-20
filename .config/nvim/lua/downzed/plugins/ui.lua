@@ -18,8 +18,8 @@ end
 function _G.ToggleOpacity()
   if vim.api.nvim_get_hl(0, { name = "Normal" }).bg == nil then
     -- print("no bg")
-    vim.api.nvim_set_hl(0, "Normal", { bg = "#262626" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#262626" })
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#161616" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#161616" })
   else
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -50,23 +50,23 @@ return {
     opts = {}
   },
   { "stevearc/dressing.nvim" },
-  {
-    "dgox16/oldworld.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("oldworld").setup({
-        integrations = { -- You can disable/enable integrations
-          markdown = true,
-          mason = true,
-          navic = true,
-          neo_tree = true,
-          neorg = true,
-          noice = true,
-        },
-      })
-      -- _G.ApplyTheme("oldworld")
-    end
-  }
+  -- {
+  --   "dgox16/oldworld.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("oldworld").setup({
+  --       integrations = { -- You can disable/enable integrations
+  --         markdown = true,
+  --         mason = true,
+  --         navic = true,
+  --         neo_tree = true,
+  --         neorg = true,
+  --         noice = true,
+  --       },
+  --     })
+  --     -- _G.ApplyTheme("oldworld")
+  --   end
+  -- }
 
 }

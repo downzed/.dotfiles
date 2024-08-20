@@ -22,7 +22,7 @@ return {
           -- c = true,
           -- cpp = true,
           scss = true,
-          css = true
+          css = true,
         }
 
         return {
