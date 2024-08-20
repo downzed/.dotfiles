@@ -23,6 +23,7 @@ return {
           -- cpp = true,
           scss = true,
           css = true,
+          php = true,
         }
 
         return {
@@ -37,7 +38,6 @@ return {
         typescript = { 'ts_ls' },
         c = { 'clang_format' },
         cpp = { 'clang_format' },
-        php = { 'pretty-php' },
       },
     },
   },
