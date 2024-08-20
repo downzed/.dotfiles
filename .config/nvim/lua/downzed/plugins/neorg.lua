@@ -31,6 +31,7 @@ return {
                 c = "~/Developer/notes/c",
                 ["data-strcutures"] = "~/Developer/notes/data-structures",
                 work = user == "ziv.zerr" and "~/Developer/work/notes" or nil,
+                ["minisites-version2"] = user == "ziv.zerr" and "~/Developer/notes/work/minisites-v2" or nil,
               },
               default_workspace = default_ws,
             },

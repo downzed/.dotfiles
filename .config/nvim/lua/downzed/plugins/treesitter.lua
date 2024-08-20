@@ -22,6 +22,7 @@ return {
         'yaml',
         'markdown',
         'bash',
+        'php'
       },
       auto_install = true,
       highlight = {
