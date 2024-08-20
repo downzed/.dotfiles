@@ -9,4 +9,9 @@ return {
       "MunifTanjim/nui.nvim",
     },
   },
+  {
+    dir = "~/Developer/lua/photon.lua/",
+    opts = {}
+  },
+
 }

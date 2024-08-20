@@ -33,7 +33,7 @@ end
 function _G.ToggleMode()
   if vim.o.background == "dark" then
     vim.o.background = "light"
-    vim.cmd.colorscheme("antiphoton")
+    -- _G.ApplyTheme("antiphoton")
   else
     vim.o.background = "dark"
     _G.ApplyTheme("photon")
@@ -50,12 +50,6 @@ return {
     opts = {}
   },
   { "stevearc/dressing.nvim" },
-  {
-    "axvr/photon.vim",
-    config = function()
-      _G.ApplyTheme("photon")
-    end
-  },
   {
     "dgox16/oldworld.nvim",
     lazy = false,
