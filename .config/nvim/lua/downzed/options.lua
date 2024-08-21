@@ -74,9 +74,9 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.cmd.set('nofoldenable')
 
 -- spell
-vim.cmd.set('syntax=on')
-vim.opt.spelllang = 'en_us'
-vim.opt.spell = true
+-- vim.cmd.set('syntax=on')
+-- vim.opt.spelllang = 'en_us'
+-- vim.opt.spell = true
 
 -- -- misc
 vim.cmd.set('noswapfile')

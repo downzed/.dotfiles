@@ -8,8 +8,11 @@ return {
     },
   },
   {
-    -- dir = "~/Developer/lua/nvim-colorschemes/photon.lua",
-    "downzed/photon.lua",
-    opts = {}
+    -- dir = "~/Developer/lua/nvim-colorschemes/phosmon.nvim",
+    "downzed/phosmon.nvim",
+    opts = {
+      mode = "light", -- "dark" or "light"
+      transparent = false
+    }
   },
 }

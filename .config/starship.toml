@@ -58,7 +58,7 @@ style = "bright-yellow dimmed"
 [git_branch]
 symbol = ''
 format = ' [$symbol $branch]($style)'
-style = "cyan"
+style = "bright-cyan"
 
 [git_state]
 disabled = false

@@ -32,6 +32,7 @@ local attach = function(buffer, client)
   map("gr", fzf_lua.lsp_references, "[G]oto [R]eferences")
   map("gD", fzf_lua.lsp_declarations, "[G]oto [D]eclaration")
   map("<leader>D", fzf_lua.lsp_typedefs, "[G]oto Type [D]efinition")
+  map('<leader>xf', vim.diagnostic.open_float, 'Diagnostics: [F]loat')
 
   -- The following autocommand is used to enable inlay hints in your
   -- code, if the language server you are using supports them
@@ -49,7 +50,11 @@ local attach = function(buffer, client)
     underline = true,
   })
 
-  map('<leader>xf', vim.diagnostic.open_float, 'Diagnostics: [F]loat')
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+    focusable = false,
+    style = "minimal",
+  })
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {

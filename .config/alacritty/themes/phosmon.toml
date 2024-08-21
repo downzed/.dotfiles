@@ -1,0 +1,41 @@
+### Phosmon alacritty theme
+
+[colors]
+
+# Default colors
+[colors.primary]
+background = "#262626"  # bg
+foreground = "#c6c6c6"  # fg
+
+# Normal colors
+[colors.normal]
+black   = "#1c1c1c"   # mostly_black_too
+red     = "#d75f5f"   # red
+green   = "#87af87"   # dark_grayish_green
+yellow  = "#d7af5f"   # gold
+blue    = "#af87d7"   # constant
+magenta = "#af5f87"   # dark_pink
+cyan    = "#5f8787"   # teal
+white   = "#c6c6c6"   # fg
+
+# Bright colors
+[colors.bright]
+black   = "#303030"   # mostly_black
+red     = "#d75f5f"   # red (same as normal red)
+green   = "#87af87"   # dark_grayish_green (same as normal green)
+yellow  = "#d7af5f"   # gold (same as normal yellow)
+blue    = "#af87d7"   # constant (same as normal blue)
+magenta = "#af5f87"   # dark_pink (same as normal magenta)
+cyan    = "#767676"   # gray
+white   = "#c6c6c6"   # fg
+
+# Cursor colors
+[colors.cursor]
+text = "#1e1e1e"     # bg
+cursor = "#c6c6c6"   # fg
+
+# Selection colors
+[colors.selection]
+text = "#c6c6c6"     # fg
+background = "#3a3a3a"  # dark_gray
+
