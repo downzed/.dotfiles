@@ -1,0 +1,32 @@
+# Alacritty Configuration
+# Phosmon (Light) theme
+
+[colors]
+
+# Default colors
+[colors.primary]
+background = "#f7f7f7"  # Warmer off-white background
+foreground = "#4a4a4a"  # Darker gray for text
+
+# Normal colors
+[colors.normal]
+black   = "#808080"   # Balanced dark gray
+red     = "#d88a8a"   # Warm, soft red
+green   = "#86d6a1"   # Warm, muted green
+yellow  = "#d6aa5f"   # Warm yellow
+blue    = "#4a90a4"   # Muted teal
+magenta = "#9a7fd6"   # Softened purple
+cyan    = "#a0a0a0"   # Softer gray
+white   = "#e0e0e0"   # Light gray
+
+# Bright colors
+[colors.bright]
+black   = "#c8c8c8"   # Lighter gray for contrast
+red     = "#d88a8a"   # Consistent warm red
+green   = "#86d6a1"   # Brighter green
+yellow  = "#d6aa5f"   # Consistent warm yellow
+blue    = "#4a90a4"   # Consistent muted teal
+magenta = "#d68fa3"   # Softened pink
+cyan    = "#b0b0b0"   # Mid gray for emphasis
+white   = "#ffffff"   # Pure white
+

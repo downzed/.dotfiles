@@ -10,6 +10,7 @@ return {
       -- calling `setup` is optional for customization
       fzf_lua.setup({
         'default-title',
+        fzf_colors = true,
         keymap = {
           builtin = {
             ["<C-d>"] = "preview-page-down",
@@ -47,7 +48,6 @@ return {
         })
       end
 
-
       ---custom fzf finder
       ---@param dir  "neorg" | "dots"
       local function fzf_custom(dir)
@@ -62,7 +62,12 @@ return {
         })
       end
 
-      map("<leader>st", function() fzf_lua.grep({ search = 'TODO|HACK|PERF|NOTE|FIX', no_esc = true }) end,
+      map("<leader>st", function()
+          fzf_lua.grep({
+            search = 'TODO|HACK|PERF|NOTE|FIX',
+            no_esc = true,
+          })
+        end,
         "[S]earch [T]odo")
 
       map("<leader>sn", function() fzf_custom("neorg") end, "[S]earch [N]eorg")

@@ -1,41 +1,32 @@
-### Phosmon alacritty theme
+# Alacritty Configuration
+# Phosmon (Dark) theme
 
 [colors]
 
 # Default colors
 [colors.primary]
-background = "#262626"  # bg
-foreground = "#c6c6c6"  # fg
+background = "#1c1c1c"  # Softer black-gray background
+foreground = "#d0d0d0"  # Brighter muted white for text
 
 # Normal colors
 [colors.normal]
-black   = "#1c1c1c"   # mostly_black_too
-red     = "#d75f5f"   # red
-green   = "#87af87"   # dark_grayish_green
-yellow  = "#d7af5f"   # gold
-blue    = "#af87d7"   # constant
-magenta = "#af5f87"   # dark_pink
-cyan    = "#5f8787"   # teal
-white   = "#c6c6c6"   # fg
+black   = "#3e3e3e"   # Dark gray, lighter for contrast
+red     = "#c57070"   # Warm, soft red
+green   = "#6a9a60"   # Muted warm green
+yellow  = "#c8c89a"   # Muted yellow, warm
+blue    = "#4a94b3"   # Muted teal
+magenta = "#a680a6"   # Softer purple
+cyan    = "#707070"   # Softer gray
+white   = "#e0e0e0"   # Slightly muted white
 
 # Bright colors
 [colors.bright]
-black   = "#303030"   # mostly_black
-red     = "#d75f5f"   # red (same as normal red)
-green   = "#87af87"   # dark_grayish_green (same as normal green)
-yellow  = "#d7af5f"   # gold (same as normal yellow)
-blue    = "#af87d7"   # constant (same as normal blue)
-magenta = "#af5f87"   # dark_pink (same as normal magenta)
-cyan    = "#767676"   # gray
-white   = "#c6c6c6"   # fg
-
-# Cursor colors
-[colors.cursor]
-text = "#1e1e1e"     # bg
-cursor = "#c6c6c6"   # fg
-
-# Selection colors
-[colors.selection]
-text = "#c6c6c6"     # fg
-background = "#3a3a3a"  # dark_gray
+black   = "#2c2c2c"   # Slightly lighter for reduced contrast
+red     = "#c57070"   # Consistent red
+green   = "#6a9a60"   # Brighter green
+yellow  = "#c8c89a"   # Brighter yellow
+blue    = "#4a94b3"   # Brighter teal
+magenta = "#c0708f"   # Brighter pink
+cyan    = "#707070"   # Consistent gray
+white   = "#f2f2f2"   # Brighter white
 

@@ -78,6 +78,9 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.opt.spelllang = 'en_us'
 -- vim.opt.spell = true
 
+-- f#$king node
+vim.g.node_host_prog = "~./volta/tools/image/node/20.16.0"
+
 -- -- misc
 vim.cmd.set('noswapfile')
 -- vim.opt.shortmess:append({ I = true })

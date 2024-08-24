@@ -10,33 +10,42 @@ function _G.ApplyTheme(theme)
   -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
+_G.default_bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg
 --- @name ToggleOpacity
 --- @return nil
 --- @description Toggles transparent background
 --- @usage :lua ToggleOpacity()
-
 function _G.ToggleOpacity()
+  local hl_groups = {
+    "Normal",
+    "SignColumn",
+    "NormalNC",
+    "NvimTreeNormal",
+    "NvimTreeNormalNC",
+    "EndOfBuffer",
+    "MsgArea",
+  }
+
+  -- local default_bg = vim.o.background == "dark" and "#262626" or "#ffffff"
   if vim.api.nvim_get_hl(0, { name = "Normal" }).bg == nil then
-    -- print("no bg")
-    vim.api.nvim_set_hl(0, "Normal", { bg = "#161616" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#161616" })
+    for _, name in ipairs(hl_groups) do
+      vim.api.nvim_set_hl(0, string.format("%s", name), { bg = _G.default_bg })
+    end
   else
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    for _, name in ipairs(hl_groups) do
+      vim.api.nvim_set_hl(0, string.format("%s", name), { bg = "none" })
+    end
   end
 end
 
 --- @name ToggleMode
---- @return nil
 --- @description Switches theme between dark and light themes
 --- @usage :lua ToggleMode()
 function _G.ToggleMode()
   if vim.o.background == "dark" then
     vim.o.background = "light"
-    -- _G.ApplyTheme("antiphoton")
   else
     vim.o.background = "dark"
-    _G.ApplyTheme("photon")
   end
 end
 
@@ -50,23 +59,4 @@ return {
     opts = {}
   },
   { "stevearc/dressing.nvim" },
-  -- {
-  --   "dgox16/oldworld.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("oldworld").setup({
-  --       integrations = { -- You can disable/enable integrations
-  --         markdown = true,
-  --         mason = true,
-  --         navic = true,
-  --         neo_tree = true,
-  --         neorg = true,
-  --         noice = true,
-  --       },
-  --     })
-  --     -- _G.ApplyTheme("oldworld")
-  --   end
-  -- }
-
 }

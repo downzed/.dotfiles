@@ -1,6 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
+# [](fg:cyan)\
+# [ ](bg:cyan fg:white)\
+
+format = """\
 $hostname\
 $directory\
 $git_branch\
@@ -20,15 +23,19 @@ $php\
 $c\
 """
 
+continuation_prompt = "[▸▹ ](dimmed white)"
+
 [character]
 format = "$symbol "
-success_symbol = "[󱞩](blue)"
+success_symbol = "[](dimmed yellow)"
 error_symbol = "[](red)"
-vimcmd_symbol = "[❮](green)"
+vimcmd_symbol = "[](green)"
 
 [directory]
 format = '[$path]($style)[$read_only]($read_only_style) '
-style = "bright-blue"
+style = "blue"
+# format = '[$path ]($style)[$read_only]($read_only_style)'
+# style = 'fg:white bg:cyan' 
 
 [time]
 time_format = "%R"

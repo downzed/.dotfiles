@@ -4,7 +4,7 @@ import = [
 ]
 
 [window]
-padding = { x = 6, y = 6 }
+padding = { x = 8, y = 8 }
 decorations = "none"
 opacity = 0.92
 # dynamic_padding = true
@@ -16,18 +16,18 @@ bindings = [
 ]
 
 [font]
-size = 18
+size = 19
 
 [font.normal]
-family = "MesloLGS Nerd Font Mono"
+family = "OverpassM Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "MesloLGS Nerd Font Mono"
+family = "OverpassM Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "MesloLGS Nerd Font Mono"
+family = "OverpassM Nerd Font Mono"
 style = "Italic"
 
 [cursor.style]

@@ -18,6 +18,10 @@ return {
         'toml',
         'javascript',
         'typescript',
+        'json',
+        'yaml',
+        'markdown',
+        'bash',
       },
       auto_install = true,
       highlight = {

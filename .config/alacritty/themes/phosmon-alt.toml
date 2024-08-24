@@ -1,0 +1,32 @@
+# Alacritty Configuration
+# Phosmon (photon) theme
+
+[colors]
+
+# Default colors
+[colors.primary]
+background = "#262626"  # Background color
+foreground = "#c6c6c6"  # Foreground color
+
+# Normal colors
+[colors.normal]
+black   = "#3a3a3a"   # Dark gray
+red     = "#d75f5f"   # Red
+green   = "#87af87"   # Green
+yellow  = "#d7af5f"   # Yellow
+blue    = "#af87d7"   # Purple
+magenta = "#d75f87"   # Pink
+cyan    = "#87a8a8"   # Teal
+white   = "#f2f2f2"   # Light foreground for contrast
+
+# Bright colors
+[colors.bright]
+black   = "#2e2e2e"   # Status line background
+red     = "#e06c75"   # Brighter red
+green   = "#98c379"   # Brighter green
+yellow  = "#e5c07b"   # Brighter yellow
+blue    = "#b5a7ff"   # Brighter purple
+magenta = "#ff79c6"   # Brighter pink
+cyan    = "#5fa7a7"   # Brighter teal
+white   = "#ffffff"   # Pure white
+
