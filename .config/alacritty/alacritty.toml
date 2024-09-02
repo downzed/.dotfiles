@@ -30,6 +30,10 @@ style = "Bold"
 family = "OverpassM Nerd Font Mono"
 style = "Italic"
 
+# [font.offset]
+# x = 0
+# y = 0
+
 [cursor.style]
 shape = "Block"
 blinking = "Always" 

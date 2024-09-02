@@ -46,7 +46,7 @@ local attach = function(buffer, client)
 
   -- toggle diagnostics
   vim.diagnostic.config({
-    virtual_text = false,
+    -- virtual_text = false,
     underline = true,
   })
 
