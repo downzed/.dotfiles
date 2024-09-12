@@ -40,15 +40,21 @@ local attach = function(buffer, client)
   -- This may be unwanted, since they displace some of your code
   if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
     map('<leader>th', function()
-      vim.lsp.inlay_hint.enable(vim.lsp.inlay_hint.is_enabled({}))
+      local is_enabled = vim.lsp.inlay_hint.is_enabled()
+      vim.lsp.inlay_hint.enable(not is_enabled)
     end, '[T]oggle Inlay [H]ints')
   end
 
-  -- toggle diagnostics
   vim.diagnostic.config({
-    -- virtual_text = false,
+    virtual_text = false,
     underline = true,
   })
+
+  ---@description toggle virtual text
+  map('<leader>tv', function()
+    local is_enabled = vim.diagnostic.config().virtual_text
+    vim.diagnostic.config({ virtual_text = not is_enabled })
+  end, '[T]oggle [V]irtual text')
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",

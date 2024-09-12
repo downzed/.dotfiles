@@ -17,8 +17,8 @@ keymap('n', '<leader>cp', '<cmd>let @+ = expand("%")<cr>', { desc = '[C]opy file
 
 
 -- Move text up and down
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<C-j>", ":m .+1<CR>==", opts)
+keymap("n", "<C-k>", ":m .-2<CR>==", opts)
 
 -- Visual --
 -- Stay in indent mode

@@ -16,18 +16,18 @@ bindings = [
 ]
 
 [font]
-size = 19
+size = 18
 
 [font.normal]
-family = "OverpassM Nerd Font Mono"
+family = "JetbrainsMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "OverpassM Nerd Font Mono"
+family = "JetbrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "OverpassM Nerd Font Mono"
+family = "JetbrainsMono Nerd Font Mono"
 style = "Italic"
 
 # [font.offset]
