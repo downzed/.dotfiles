@@ -36,3 +36,30 @@ keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+
+local function file_exists(filename)
+  local f = io.open(filename, "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  else
+    return false
+  end
+end
+
+local function open_readme()
+  local current_dir = vim.fn.getcwd()
+  -- Define the path to the README.md or README file
+  local readme_files = { "README.md", "README" }
+
+  -- Check if any of the README files exist and open the first one found
+  for _, file in ipairs(readme_files) do
+    local readme_path = current_dir .. "/" .. file
+    if file_exists(readme_path) then
+      vim.cmd(":e " .. readme_path)
+      return
+    end
+  end
+end
+keymap("n", "<leader>o", open_readme, opts)
