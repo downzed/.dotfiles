@@ -9,11 +9,24 @@ alias py="python3"
 alias sleepnow="pmset sleepnow"
 alias vim="nvim"
 
-alias ls='lsd'
-alias ll='ls -l'
-alias la='ls -a'
-alias lsa='ls -la'
-alias lst='ls --tree'
+alias eza='eza --icons'
+alias ls='eza'
+alias ll='eza -l'
+alias la='eza -a'
+alias lsa='eza -la'
+alias lst='eza --tree'
 
-# sync personal notes (with date), to github
-alias sync_notes="cd ~/Developer/notes; git add .; git commit -m 'Sync: $(date)'; git push; echo 'Synced notes to github'; cd -"
+# docker
+alias dp='docker ps --format "table {{.ID}}\t{{.Names}}\t\t{{.Status}}\t{{.Ports}}"' ## docker ps table
+alias dpe='docker exec -it $(docker ps --format "{{.Names}}" | fzf) bash' ## docker exec fzf  
+alias dr='docker-compose down; cls; docker-compose up --watch' ## docker restart 
+
+alias eza='eza --icons'
+alias ls='eza'
+alias ll='eza -l'
+alias la='eza -a'
+alias lsa='eza -la'
+alias lst='eza --tree'
+
+alias pn='pnpm'
+

@@ -26,22 +26,12 @@ bindkey -e
 
 # Set up fzf key bindings
 source <(fzf --zsh)
-# History settings
-export HISTFILE=~/.zsh/.zsh_history
-export HISTSIZE=10000  # Number of commands zsh will load into memory
-export SAVEHIST=10000  # Number of commands history will save to file
-
-setopt appendhistory  # Append history to file
-setopt HIST_IGNORE_ALL_DUPS  # History won't save duplicates
-setopt HIST_FIND_NO_DUPS  # History won't show duplicates on search
 
 # Source configuration files
 [[ -f $ZSH/alias.zsh ]] && source $ZSH/alias.zsh
 [[ -f $ZSH/plugins.zsh ]] && source $ZSH/plugins.zsh
 [[ -f $ZSH/completion.zsh ]] && source $ZSH/completion.zsh
+[[ -f $ZSH/hist.zsh ]] && source $ZSH/hist.zsh
 
 # Initialize fun
 [[ -f $ZSH/init.zsh ]] && source $ZSH/init.zsh
-
-
-
