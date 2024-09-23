@@ -16,7 +16,6 @@ return {
     },
     config = function(_, opts)
       require("phosmon").setup(opts)
-      vim.cmd.colorscheme("phosmon")
     end
   },
 }
