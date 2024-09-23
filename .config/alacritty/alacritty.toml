@@ -1,6 +1,6 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/rose-pine-moon.toml",
+  "~/.config/alacritty/themes/rose-pine.toml",
 ]
 
 [env]
@@ -19,19 +19,19 @@ bindings = [
 ]
 
 [font]
-size = 20
+size = 18
 
 [font.normal]
-family = "Iosevka Nerd Font Mono"
+family = "Hack Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "Iosevka Nerd Font Mono"
+family = "Hack Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "Iosevka Nerd Font Mono"
-style = "Regular"
+family = "Hack Nerd Font Mono"
+style = "Italic"
 
 # [font.offset]
 # x = 0
