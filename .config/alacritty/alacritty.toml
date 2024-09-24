@@ -22,15 +22,15 @@ bindings = [
 size = 17
 
 [font.normal]
-family = "MesloLGS Nerd Font Mono"
+family = "jetbrainsmono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "MesloLGS Nerd Font Mono"
+family = "jetbrainsmono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "MesloLGS Nerd Font Mono"
+family = "jetbrainsmono Nerd Font Mono"
 style = "Italic"
 
 # [font.offset]
