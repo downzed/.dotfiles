@@ -12,7 +12,7 @@ return {
     -- "downzed/phosmon.nvim",
     config = function()
       require("phosmon").setup()
-      _G.ApplyTheme("phosmon")
+      -- _G.ApplyTheme("phosmon")
     end,
   },
 }
