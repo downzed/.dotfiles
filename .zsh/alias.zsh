@@ -9,16 +9,19 @@ alias py="python3"
 alias sleepnow="pmset sleepnow"
 alias vim="nvim"
 
-# docker
-alias dp='docker ps --format "table {{.ID}}\t{{.Names}}\t\t{{.Status}}\t{{.Ports}}"' ## docker ps table
-alias dpe='docker exec -it $(docker ps --format "{{.Names}}" | fzf) bash' ## docker exec fzf  
-
 alias eza='eza --icons'
 alias ls='eza'
 alias ll='eza -l'
 alias la='eza -a'
 alias lsa='eza -la'
 alias lst='eza --tree'
+
+# docker
+alias dp='docker ps --format "table {{.ID}}\t{{.Names}}\t\t{{.Status}}\t{{.Ports}}"' ## docker ps table
+alias dpe='docker exec -it $(docker ps --format "{{.Names}}" | fzf) bash' ## docker exec fzf  
+alias dr='docker-compose down; cls; docker-compose up --watch' ## docker restart 
+
+alias pn='pnpm'
 
 # work / version2 - docer "restart"
 alias dr_v2='docker-compose down; cls;docker-compose -f docker-compose-m1.yml --env-file=docker.env up --watch' ## docker restart (version2)
