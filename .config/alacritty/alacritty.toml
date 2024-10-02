@@ -1,6 +1,6 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/phosmon.toml",
+  "~/.config/alacritty/themes/rose-pine-moon.toml",
 ]
 
 [env]

@@ -53,10 +53,19 @@ vim.keymap.set("n", "<leader>tm", _G.ToggleMode, { desc = "[T]oggle [M]ode" })
 vim.keymap.set("n", "<leader>ty", _G.ToggleOpacity, { desc = "[T]oggle opacit[y]" })
 
 return {
-  {
-    "echasnovski/mini.icons",
-    version = false,
-    opts = {}
-  },
+  { "echasnovski/mini.icons", version = false, opts = {} },
   { "stevearc/dressing.nvim" },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function()
+<<<<<<< Updated upstream
+      _G.ApplyTheme("rose-pine")
+||||||| Stash base
+      _G.ApplyTheme("rose-pine-main")
+=======
+      _G.ApplyTheme("rose-pine-moon")
+>>>>>>> Stashed changes
+    end
+  },
 }
