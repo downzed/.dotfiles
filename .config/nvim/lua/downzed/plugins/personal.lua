@@ -10,9 +10,10 @@ return {
   {
     dir = "~/Developer/lua/nvim-colorschemes/phosmon.nvim",
     -- "downzed/phosmon.nvim",
-    config = function()
-      require("phosmon").setup()
-      _G.ApplyTheme("phosmon")
-    end,
+    opts = {}
+    -- config = function()
+    --   require("phosmon").setup()
+    --   -- _G.ApplyTheme("phosmon")
+    -- end,
   },
 }

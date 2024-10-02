@@ -1,6 +1,6 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/phosmon.toml",
+  "~/.config/alacritty/themes/rose-pine-moon.toml",
 ]
 
 [env]
@@ -10,7 +10,7 @@ TERM = "xterm-256color"
 padding = { x = 8, y = 8 }
 decorations = "none"
 opacity = 0.92
-# dynamic_padding = true
+dynamic_padding = true
 
 [keyboard]
 bindings = [
@@ -19,18 +19,18 @@ bindings = [
 ]
 
 [font]
-size = 17
+size = 16
 
 [font.normal]
-family = "jetbrainsmono Nerd Font Mono"
+family = "OverpassM Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "jetbrainsmono Nerd Font Mono"
+family = "OverpassM Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "jetbrainsmono Nerd Font Mono"
+family = "OverpassM Nerd Font Mono"
 style = "Italic"
 
 # [font.offset]

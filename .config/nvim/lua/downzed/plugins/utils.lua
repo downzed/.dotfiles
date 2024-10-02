@@ -1,10 +1,13 @@
 return {
-  "alexghergh/nvim-tmux-navigation",
   "ThePrimeagen/vim-be-good",
   "tpope/vim-surround",
   "folke/zen-mode.nvim",
   {
     "danymat/neogen",
+    opts = {}
+  },
+  {
+    "alexghergh/nvim-tmux-navigation",
     opts = {}
   },
 
