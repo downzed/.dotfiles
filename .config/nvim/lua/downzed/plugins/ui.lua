@@ -58,14 +58,5 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    config = function()
-<<<<<<< Updated upstream
-      _G.ApplyTheme("rose-pine")
-||||||| Stash base
-      _G.ApplyTheme("rose-pine-main")
-=======
-      _G.ApplyTheme("rose-pine-moon")
->>>>>>> Stashed changes
-    end
   },
 }
