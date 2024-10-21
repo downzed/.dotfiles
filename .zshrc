@@ -35,3 +35,11 @@ source <(fzf --zsh)
 
 # Initialize fun
 [[ -f $ZSH/init.zsh ]] && source $ZSH/init.zsh
+
+# pnpm
+export PNPM_HOME="/Users/zivzerr/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
