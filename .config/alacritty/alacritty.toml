@@ -1,6 +1,6 @@
 live_config_reload = true
 import = [
-  "~/.config/alacritty/themes/rose-pine-moon.toml",
+  "~/.config/alacritty/themes/phosmon.toml",
 ]
 
 [env]
@@ -19,18 +19,18 @@ bindings = [
 ]
 
 [font]
-size = 18
+size = 17
 
 [font.normal]
-family = "jetbrainsmono Nerd Font Mono"
+family = "JetbrainsMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "jetbrainsmono Nerd Font Mono"
+family = "JetbrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "jetbrainsmono Nerd Font Mono"
+family = "JetbrainsMono Nerd Font Mono"
 style = "Italic"
 
 # [font.offset]
