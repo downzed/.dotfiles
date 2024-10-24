@@ -57,6 +57,7 @@ return {
           "clangd",
           "html",
           "cssls",
+          "tailwindcss",
           "pyright",
           "jsonls",
           "yamlls",
