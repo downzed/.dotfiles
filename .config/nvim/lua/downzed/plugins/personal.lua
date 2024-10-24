@@ -10,6 +10,8 @@ return {
   {
     dir = "~/Developer/lua/nvim-colorschemes/phosmon.nvim",
     -- "downzed/phosmon.nvim",
-    opts = {}
+    opts = {
+      transparent = true
+    }
   },
 }
