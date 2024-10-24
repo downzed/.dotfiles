@@ -57,6 +57,7 @@ return {
           "clangd",
           "html",
           "cssls",
+          "tailwindcss",
           "pyright",
           "jsonls",
           "yamlls",
@@ -69,6 +70,22 @@ return {
             require("lspconfig")[server_name].setup({
               capabilities = capabalities
             })
+          end,
+          ["cssls"] = function()
+            local validate = {
+              validate = true,
+              lint = {
+                unknownAtRules = "ignore"
+              }
+            }
+            require("lspconfig").cssls.setup {
+              capabilities = capabalities,
+              settings = {
+                css = validate,
+                scss = validate,
+                less = validate
+              }
+            }
           end,
           ["lua_ls"] = function()
             require("lspconfig").lua_ls.setup {
