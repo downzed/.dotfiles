@@ -8,10 +8,15 @@ return {
   --   },
   -- },
   {
-    dir = "~/Developer/lua/nvim-colorschemes/phosmon.nvim",
-    -- "downzed/phosmon.nvim",
+    -- dir = "~/Developer/lua/nvim-colorschemes/phosmon.nvim",
+    "downzed/phosmon.nvim",
     opts = {
-      transparent = true
-    }
+      transparent = false, -- true
+      mode = "light",
+    },
+    config = function(_, opts)
+      require("phosmon").setup(opts)
+      vim.cmd.colorscheme("phosmon")
+    end
   },
 }
