@@ -1,15 +1,25 @@
 local w = require('wezterm')
 local act = w.action
 
--- w.on('update-right-status', function(window, _pane)
---   window:set_right_status(window:active_workspace())
--- end)
+local config = {}
+if w.config_builder then
+  config = w.config_builder()
+end
+
+w.on('update-right-status', function(window, _pane)
+  window:set_right_status(window:active_workspace())
+end)
 
 local font = w.font_with_fallback({
-  "GitLab Mono",
+  {
+    family = "GitLab Mono",
+    italic = false,
+    weight = "Medium",
+  },
   {
     family = "Symbols Nerd Font Mono",
-    scale = 0.75
+    scale = 0.75,
+    italic = false
   },
 })
 
@@ -20,6 +30,35 @@ local leader = {
 }
 
 local keys = {
+
+  -- tmux shortcuts
+  {
+    key = '[',
+    mods = 'LEADER',
+    action = act.ActivateCopyMode
+  },
+
+  {
+    key = 'c',
+    mods = 'LEADER',
+    action = act.SpawnTab('CurrentPaneDomain')
+  },
+
+  {
+    key = ',',
+    mods = 'LEADER',
+    action = act.PromptInputLine {
+      description = 'Enter new name for tab',
+      action = w.action_callback(
+        function(window, _, line)
+          if line then
+            window:active_tab():set_title(line)
+          end
+        end
+      ),
+    },
+  },
+
   -- splits
   --- horizontally
   {
@@ -42,20 +81,18 @@ local keys = {
     action = act.TogglePaneZoomState
   },
   --- activate pane
-  { key = 'l', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Right' }) },
-  { key = 'h', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Left' }) },
-  { key = 'k', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Up' }) },
-  { key = 'j', mods = 'LEADER', action = act({ ActivatePaneDirection = 'Down' }) },
+  { key = 'l', mods = 'LEADER',      action = act({ ActivatePaneDirection = 'Right' }) },
+  { key = 'h', mods = 'LEADER',      action = act({ ActivatePaneDirection = 'Left' }) },
+  { key = 'k', mods = 'LEADER',      action = act({ ActivatePaneDirection = 'Up' }) },
+  { key = 'j', mods = 'LEADER',      action = act({ ActivatePaneDirection = 'Down' }) },
 
-  --- resize pane
-  {
-    key = 'r',
-    mods = 'LEADER',
-    action = act.ActivateKeyTable {
-      name = 'resize_pane',
-      one_shot = false,
-    },
-  },
+  --- resize panes
+  { key = 'h', mods = 'LEADER|CTRL', action = act.AdjustPaneSize { 'Left', 8 } },
+  { key = 'l', mods = 'LEADER|CTRL', action = act.AdjustPaneSize { 'Right', 8 } },
+  { key = 'j', mods = 'LEADER|CTRL', action = act.AdjustPaneSize { 'Down', 8 } },
+  { key = 'k', mods = 'LEADER|CTRL', action = act.AdjustPaneSize { 'Up', 8 } },
+
+  { key = 'z', mods = 'CMD|SHIFT',   action = act.ToggleFullScreen },
 
   -- workspaces
   {
@@ -74,6 +111,9 @@ local keys = {
       name = 'CS50',
     }
   },
+  -- switch workspaces
+  { key = 'n', mods = 'LEADER|CTRL', action = act.SwitchWorkspaceRelative(1) },
+  { key = 'p', mods = 'LEADER|CTRL', action = act.SwitchWorkspaceRelative(-1) },
 
   -- launchers
   {
@@ -87,59 +127,37 @@ local keys = {
     action = act.ShowLauncherArgs {
       flags = 'FUZZY|WORKSPACES',
     },
-  }
+  },
+
+
 }
 
-local key_tables = {
-  -- Defines the keys that are active in our resize-pane mode.
-  -- Since we're likely to want to make multiple adjustments,
-  -- we made the activation one_shot=false. We therefore need
-  -- to define a key assignment for getting out of this mode.
-  -- 'resize_pane' here corresponds to the name="resize_pane" in
-  -- the key assignments above.
-  resize_pane = {
-    { key = 'LeftArrow',  action = act.AdjustPaneSize { 'Left', 1 } },
-    { key = 'h',          action = act.AdjustPaneSize { 'Left', 1 } },
-
-    { key = 'RightArrow', action = act.AdjustPaneSize { 'Right', 1 } },
-    { key = 'l',          action = act.AdjustPaneSize { 'Right', 1 } },
-
-    { key = 'UpArrow',    action = act.AdjustPaneSize { 'Up', 1 } },
-    { key = 'k',          action = act.AdjustPaneSize { 'Up', 1 } },
-
-    { key = 'DownArrow',  action = act.AdjustPaneSize { 'Down', 1 } },
-    { key = 'j',          action = act.AdjustPaneSize { 'Down', 1 } },
-
-    -- Cancel the mode by pressing escape
-    { key = 'Escape',     action = 'PopKeyTable' },
-  }
-}
 w.on('gui-startup', function()
   local _, _, window = w.mux.spawn_window({})
   window:gui_window():maximize()
 end)
 
-local config = {
-  leader = leader,
-  hide_tab_bar_if_only_one_tab = true,
-  window_background_opacity = .88,
-  macos_window_background_blur = 25,
-  color_scheme = 'rose-pine',
-  keys = keys,
-  -- key_tables = key_tables,
-  font = font,
-  font_size = 18,
+config.leader = leader
 
-  enable_tab_bar = false,
-  window_decorations = 'RESIZE',
-  native_macos_fullscreen_mode = false,
+config.font = font
+config.font_size = 18
+config.keys = keys
 
-  -- Scrollback
-  scrollback_lines = 10000,
+config.color_scheme = 'rose-pine-moon'
 
-  -- Performance tweaks
-  max_fps = 90,
-  -- dpi = 72.0,
-  -- dpi = 144.0,
-}
+config.scrollback_lines = 10000
+
+config.native_macos_fullscreen_mode = false
+config.macos_window_background_blur = 25
+config.window_background_opacity = .88
+config.window_decorations = 'NONE'
+config.window_padding = { left = 1, right = 1, top = 0, bottom = 0 }
+
+config.use_resize_increments = false
+
+config.hide_tab_bar_if_only_one_tab = true
+config.enable_tab_bar = true
+
+config.dpi = 144
+
 return config
