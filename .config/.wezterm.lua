@@ -30,6 +30,35 @@ local leader = {
 }
 
 local keys = {
+
+  -- tmux shortcuts
+  {
+    key = '[',
+    mods = 'LEADER',
+    action = act.ActivateCopyMode
+  },
+
+  {
+    key = 'c',
+    mods = 'LEADER',
+    action = act.SpawnTab('CurrentPaneDomain')
+  },
+
+  {
+    key = ',',
+    mods = 'LEADER',
+    action = act.PromptInputLine {
+      description = 'Enter new name for tab',
+      action = w.action_callback(
+        function(window, _, line)
+          if line then
+            window:active_tab():set_title(line)
+          end
+        end
+      ),
+    },
+  },
+
   -- splits
   --- horizontally
   {
@@ -82,6 +111,9 @@ local keys = {
       name = 'CS50',
     }
   },
+  -- switch workspaces
+  { key = 'n', mods = 'LEADER|CTRL', action = act.SwitchWorkspaceRelative(1) },
+  { key = 'p', mods = 'LEADER|CTRL', action = act.SwitchWorkspaceRelative(-1) },
 
   -- launchers
   {
