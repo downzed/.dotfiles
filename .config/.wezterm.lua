@@ -114,23 +114,23 @@ local key_tables = {
     { key = 'Escape',     action = 'PopKeyTable' },
   }
 }
--- w.on('gui-startup', function()
---   local _, _, window = w.mux.spawn_window({})
---   window:gui_window():maximize()
--- end)
+w.on('gui-startup', function()
+  local _, _, window = w.mux.spawn_window({})
+  window:gui_window():maximize()
+end)
 
 local config = {
-  -- leader = leader,
+  leader = leader,
   hide_tab_bar_if_only_one_tab = true,
   window_background_opacity = .88,
   macos_window_background_blur = 25,
   color_scheme = 'rose-pine',
-  -- keys = keys,
+  keys = keys,
   -- key_tables = key_tables,
   font = font,
-  font_size = 17,
+  font_size = 18,
 
-  -- enable_tab_bar = false,
+  enable_tab_bar = false,
   window_decorations = 'RESIZE',
   native_macos_fullscreen_mode = false,
 
