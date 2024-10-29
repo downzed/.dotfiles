@@ -95,22 +95,39 @@ local keys = {
   { key = 'z', mods = 'CMD|SHIFT',   action = act.ToggleFullScreen },
 
   -- workspaces
-  {
-    key = 'w',
-    mods = 'LEADER|SHIFT',
-    action = act.SwitchToWorkspace {
-      name = 'Work',
-      cwd = '~/Developer/work/',
-
-    }
-  },
-  {
-    key = 'c',
-    mods = 'LEADER|SHIFT',
-    action = act.SwitchToWorkspace {
-      name = 'CS50',
-    }
-  },
+  -- {
+  --   key = '$',
+  --   mods = 'LEADER|SHIFT',
+  --   action = act.PromptInputLine {
+  --     description = 'Enter new name for session',
+  --     action = w.action_callback(
+  --       function(window, pane, line)
+  --         if line then
+  --           mux.rename_workspace(
+  --             window:mux_window():get_workspace(),
+  --             line
+  --           )
+  --         end
+  --       end
+  --     ),
+  --   },
+  -- },
+  -- {
+  --   key = 'w',
+  --   mods = 'LEADER|SHIFT',
+  --   action = act.SwitchToWorkspace {
+  --     name = 'Work',
+  --     cwd = '~/Developer/work/',
+  --
+  --   }
+  -- },
+  -- {
+  --   key = 'c',
+  --   mods = 'LEADER|SHIFT',
+  --   action = act.SwitchToWorkspace {
+  --     name = 'CS50',
+  --   }
+  -- },
   -- switch workspaces
   { key = 'n', mods = 'LEADER|CTRL', action = act.SwitchWorkspaceRelative(1) },
   { key = 'p', mods = 'LEADER|CTRL', action = act.SwitchWorkspaceRelative(-1) },
@@ -155,9 +172,17 @@ config.window_padding = { left = 1, right = 1, top = 0, bottom = 0 }
 
 config.use_resize_increments = false
 
-config.hide_tab_bar_if_only_one_tab = true
 config.enable_tab_bar = true
 
-config.dpi = 144
+-- config.dpi = 144
+
+local tabs_config = {
+  unzoom_on_switch_pane = true,
+  tab_bar_at_bottom = false,
+  hide_tab_bar_if_only_one_tab = false,
+}
+w.plugin
+    .require('https://github.com/yriveiro/wezterm-tabs')
+    .apply_to_config(config, { tabs = tabs_config })
 
 return config
