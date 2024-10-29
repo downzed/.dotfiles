@@ -14,7 +14,7 @@ return {
     },
     config = function(_, opts)
       require("phosmon").setup(opts)
-      _G.ApplyTheme("rose-pine-moon")
+      _G.ApplyTheme("rose-pine-main")
     end
   },
 }
