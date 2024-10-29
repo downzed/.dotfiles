@@ -156,9 +156,17 @@ config.window_padding = { left = 1, right = 1, top = 0, bottom = 0 }
 
 config.use_resize_increments = false
 
-config.hide_tab_bar_if_only_one_tab = true
 config.enable_tab_bar = true
 
 config.dpi = 144
+
+local tabs_config = {
+  unzoom_on_switch_pane = true,
+  tab_bar_at_bottom = false,
+  hide_tab_bar_if_only_one_tab = false,
+}
+w.plugin
+    .require('https://github.com/yriveiro/wezterm-tabs')
+    .apply_to_config(config, { tabs = tabs_config })
 
 return config
