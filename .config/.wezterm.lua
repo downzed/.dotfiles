@@ -30,7 +30,11 @@ local leader = {
 }
 
 local keys = {
-
+  {
+    key = 'r',
+    mods = 'CMD|SHIFT',
+    action = w.action.ReloadConfiguration,
+  },
   -- tmux shortcuts
   {
     key = '[',
@@ -161,7 +165,7 @@ config.font = font
 config.font_size = 18
 config.keys = keys
 
-config.color_scheme = 'rose-pine'
+config.color_scheme = 'nightfox'
 
 config.scrollback_lines = 10000
 
