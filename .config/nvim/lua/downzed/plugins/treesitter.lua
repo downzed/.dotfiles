@@ -2,14 +2,12 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-      "windwp/nvim-ts-autotag",
-    },
     opts = {
       ensure_installed = {
         'c',
         'cpp',
         'cmake',
+        'css',
         'lua',
         'luadoc',
         'python',
@@ -25,6 +23,7 @@ return {
         'php'
       },
       auto_install = true,
+      sync_install = true,
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
