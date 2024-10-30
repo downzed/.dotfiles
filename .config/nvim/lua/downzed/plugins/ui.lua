@@ -56,10 +56,9 @@ return {
   { "echasnovski/mini.icons", version = false, opts = {} },
   { "stevearc/dressing.nvim" },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "EdenEast/nightfox.nvim",
     config = function()
-      _G.ApplyTheme("rose-pine-main")
-    end,
-  },
+      _G.ApplyTheme("terafox")
+    end
+  }
 }
