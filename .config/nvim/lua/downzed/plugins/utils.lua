@@ -1,11 +1,11 @@
 return {
   "ThePrimeagen/vim-be-good",
   "tpope/vim-surround",
-  {
-    "windwp/nvim-ts-autotag",
-    lazy = false,
-    opts = {}
-  },
+  -- {
+  --   "windwp/nvim-ts-autotag",
+  --   lazy = false,
+  --   opts = {}
+  -- },
   {
     "danymat/neogen",
     opts = {}
@@ -48,7 +48,9 @@ return {
   {
     'MeanderingProgrammer/markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
-    opts = {}
+    opts = {
+      { latex = { enabled = false } }
+    }
   },
   {
     "norcalli/nvim-colorizer.lua",
