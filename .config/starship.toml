@@ -15,14 +15,6 @@ $line_break\
 $character\
 """
 
-right_format = """
-$nodejs\
-$lua\
-$rust\
-$php\
-$c\
-"""
-
 continuation_prompt = "[▸▹ ](dimmed white)"
 
 [character]
@@ -41,26 +33,6 @@ style = "blue"
 time_format = "%R"
 disabled = true
 format = '$time'
-
-[c]
-format = '[ ]($style)'
-style = "cyan dimmed"
-
-[lua]
-format = '[ ]($style)'
-style = "blue dimmed"
-
-[rust]
-format = '[ ]($style)'
-style = "cyan dimmed"
-
-[php]
-format = '[ ]($style)'
-style = "cyan dimmed"
-
-[nodejs]
-format = '[ ]($style)'
-style = "bright-yellow dimmed"
 
 [git_branch]
 symbol = ''
