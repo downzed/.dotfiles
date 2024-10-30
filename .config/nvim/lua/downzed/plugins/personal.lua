@@ -11,10 +11,11 @@ return {
     -- dir = "~/Developer/lua/nvim-colorschemes/phosmon.nvim",
     "downzed/phosmon.nvim",
     opts = {
+      mode = "light"
     },
     config = function(_, opts)
       require("phosmon").setup(opts)
-      _G.ApplyTheme("rose-pine-main")
+      _G.ApplyTheme("phosmon")
     end
   },
 }

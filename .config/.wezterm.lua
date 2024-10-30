@@ -160,7 +160,7 @@ config.font = font
 config.font_size = 18
 config.keys = keys
 
-config.color_scheme = 'rose-pine-moon'
+config.color_scheme = 'Alabaster'
 
 config.scrollback_lines = 10000
 

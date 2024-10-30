@@ -55,8 +55,11 @@ vim.keymap.set("n", "<leader>ty", _G.ToggleOpacity, { desc = "[T]oggle opacit[y]
 return {
   { "echasnovski/mini.icons", version = false, opts = {} },
   { "stevearc/dressing.nvim" },
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-  },
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   config = function()
+  --     _G.ApplyTheme("rose-pine-main")
+  --   end,
+  -- },
 }
