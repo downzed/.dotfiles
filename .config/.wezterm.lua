@@ -30,7 +30,11 @@ local leader = {
 }
 
 local keys = {
-
+  {
+    key = 'r',
+    mods = 'CMD|SHIFT',
+    action = w.action.ReloadConfiguration,
+  },
   -- tmux shortcuts
   {
     key = '[',

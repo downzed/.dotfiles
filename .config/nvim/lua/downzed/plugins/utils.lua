@@ -2,10 +2,6 @@ return {
   "ThePrimeagen/vim-be-good",
   "tpope/vim-surround",
   {
-    "windwp/nvim-ts-autotag",
-    opts = {}
-  },
-  {
     "danymat/neogen",
     opts = {}
   },
