@@ -3,6 +3,7 @@ return {
   "tpope/vim-surround",
   {
     "windwp/nvim-ts-autotag",
+    lazy = false,
     opts = {}
   },
   {
