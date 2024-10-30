@@ -167,8 +167,13 @@ config.scrollback_lines = 10000
 config.native_macos_fullscreen_mode = false
 config.macos_window_background_blur = 25
 config.window_background_opacity = .88
-config.window_decorations = 'NONE'
-config.window_padding = { left = 1, right = 1, top = 0, bottom = 0 }
+config.window_decorations = 'RESIZE'
+config.window_padding = {
+  left = 3,
+  right = 3,
+  top = 0,
+  bottom = 0,
+}
 
 config.use_resize_increments = false
 
