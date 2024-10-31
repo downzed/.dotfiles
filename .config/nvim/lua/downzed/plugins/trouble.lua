@@ -24,6 +24,6 @@ return {
         "<cmd>Trouble todo<cr>",
         desc = "[T]oggle to[D]o",
       },
-    }
+    },
   },
 }

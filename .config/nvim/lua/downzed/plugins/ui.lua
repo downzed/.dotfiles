@@ -59,6 +59,6 @@ return {
     "EdenEast/nightfox.nvim",
     config = function()
       _G.ApplyTheme("terafox")
-    end
-  }
+    end,
+  },
 }

@@ -1,14 +1,14 @@
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- Don't auto commenting new lines
-autocmd('BufEnter', {
-  pattern = '',
-  command = 'set fo-=c fo-=r fo-=o'
+autocmd("BufEnter", {
+  pattern = "",
+  command = "set fo-=c fo-=r fo-=o",
 })
 
-autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -24,7 +24,11 @@ local function sync_notes()
   local current_dir = vim.fn.getcwd()
 
   if current_dir ~= dir then
-    vim.notify("You can only sync notes from the notes directory!", vim.log.levels.ERROR, notify_opts)
+    vim.notify(
+      "You can only sync notes from the notes directory!",
+      vim.log.levels.ERROR,
+      notify_opts
+    )
     return
   end
 
@@ -46,7 +50,7 @@ vim.api.nvim_create_autocmd("FileType", {
     local current_dir = vim.fn.getcwd()
 
     if current_dir:find(root_dir) then
-      vim.api.nvim_buf_create_user_command(0, 'SyncNotes', sync_notes, {})
+      vim.api.nvim_buf_create_user_command(0, "SyncNotes", sync_notes, {})
     end
-  end
+  end,
 })

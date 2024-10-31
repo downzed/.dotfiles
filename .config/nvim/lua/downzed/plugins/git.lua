@@ -2,7 +2,6 @@ local map = function(key, cmd, desc)
   vim.keymap.set("n", key, cmd, { silent = true, desc = "Git: " .. desc })
 end
 
-
 return {
   "tpope/vim-fugitive",
   -- {

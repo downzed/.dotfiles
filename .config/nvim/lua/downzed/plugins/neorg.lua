@@ -2,7 +2,7 @@ return {
   {
     "vhyrro/luarocks.nvim",
     priority = 1000, -- We'd like this plugin to load first out of the rest
-    config = true,   -- This automatically runs `require("luarocks-nvim").setup()`
+    config = true, -- This automatically runs `require("luarocks-nvim").setup()`
   },
   {
     "nvim-neorg/neorg",
@@ -12,9 +12,9 @@ return {
       local user = os.getenv("USER") or os.getenv("USERNAME")
       local default_ws = user == "ziv.zerr" and "work" or "notes"
 
-      require("neorg").setup {
+      require("neorg").setup({
         load = {
-          ["core.defaults"] = {},  -- Loads default behaviour
+          ["core.defaults"] = {}, -- Loads default behaviour
           ["core.concealer"] = {}, -- Add pretty icons to your documents
           ["core.ui"] = {},
           ["core.export"] = {},
@@ -34,12 +34,12 @@ return {
               },
               default_workspace = default_ws,
             },
-          }
-        }
-      }
+          },
+        },
+      })
 
       vim.wo.foldlevel = 99
       vim.wo.conceallevel = 2
     end,
-  }
+  },
 }

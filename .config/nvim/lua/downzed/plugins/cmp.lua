@@ -50,8 +50,8 @@ return {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     config = function()
-      local cmp = require('cmp')
-      local luasnip = require('luasnip')
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
 
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -68,23 +68,23 @@ return {
         },
 
         mapping = cmp.mapping.preset.insert({
-          ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-          ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-          ['<C-y>'] = cmp.mapping.complete(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+          ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+          ["<C-y>"] = cmp.mapping.complete(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
 
         sources = cmp.config.sources({
           -- { name = 'codeium',                keyword_length = 0, max_item_count = 3 },
-          { name = 'path' },
-          { name = 'nvim_lsp_signature_help' },
-          { name = 'luasnip' },
-          { name = 'nvim_lsp',               max_item_count = 6 },
-          { name = 'buffer',                 max_item_count = 6 },
-          { name = 'scss' },
+          { name = "path" },
+          { name = "nvim_lsp_signature_help" },
+          { name = "luasnip" },
+          { name = "nvim_lsp", max_item_count = 6 },
+          { name = "buffer", max_item_count = 6 },
+          { name = "scss" },
         }, {
           { name = "[Neorg]" },
-          { name = 'crates' },
+          { name = "crates" },
         }),
 
         formatting = {
@@ -100,10 +100,9 @@ return {
               vim_item.kind = " "
             end
             return vim_item
-          end
-        }
+          end,
+        },
       })
-
 
       local mapping = cmp.mapping.preset.cmdline()
       local config = {

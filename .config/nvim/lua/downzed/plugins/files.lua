@@ -38,13 +38,13 @@ return {
     end,
   },
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     opts = {},
     -- Optional dependencies
     config = function()
       local oil = require("oil")
       oil.setup()
       vim.keymap.set("n", "<leader>to", oil.open, { desc = "[T]oggle [O]il" })
-    end
-  }
+    end,
+  },
 }

@@ -1,15 +1,15 @@
 return {
   {
-    'stevearc/conform.nvim',
+    "stevearc/conform.nvim",
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        "<leader>f",
         function()
-          require('conform').format { async = true, lsp_fallback = true }
+          require("conform").format({ async = true, lsp_fallback = true })
         end,
-        mode = '',
-        desc = '[F]ormat buffer',
+        mode = "",
+        desc = "[F]ormat buffer",
       },
     },
     opts = {
@@ -31,26 +31,27 @@ return {
         }
       end,
       formatters_by_ft = {
-        lua = { 'stylua' },
-        rust = { 'rustfmt' },
-        javascript = { { 'ts_ls', 'eslint' } },
-        typescript = { 'ts_ls' },
-        c = { 'clang_format' },
-        cpp = { 'clang_format' },
+        lua = { "stylua" },
+        rust = { "rustfmt" },
+        c = { "clang_format" },
+        cpp = { "clang_format" },
+      },
+      default_format_opts = {
+        lsp_format = "fallback",
       },
     },
   },
   {
-    'mfussenegger/nvim-lint',
+    "mfussenegger/nvim-lint",
     config = function()
-      require('lint').linters_by_ft = {
-        lua = { 'luacheck' },
+      require("lint").linters_by_ft = {
+        lua = { "luacheck" },
       }
-      vim.api.nvim_create_autocmd('BufWritePost', {
+      vim.api.nvim_create_autocmd("BufWritePost", {
         callback = function()
           -- check if filetype is lua
-          if vim.bo.filetype == 'lua' then
-            require('lint').try_lint('luacheck')
+          if vim.bo.filetype == "lua" then
+            require("lint").try_lint("luacheck")
           end
         end,
       })
@@ -61,6 +62,6 @@ return {
       --     autocmd BufWritePost * lua require('lint').try_lint()
       --   augroup END
       -- ]])
-    end
-  }
+    end,
+  },
 }

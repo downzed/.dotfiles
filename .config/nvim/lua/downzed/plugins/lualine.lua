@@ -17,25 +17,25 @@ return {
           right_padding = 0,
           fmt = function(str)
             local mode_map = {
-              ['NORMAL'] = 'N',
-              ['INSERT'] = 'I',
-              ['VISUAL'] = 'V',
-              ['V-LINE'] = 'V-L',
-              ['V-BLOCK'] = 'V-B',
-              ['SELECT'] = 'Sel',
-              ['S-LINE'] = 'S-L',
-              ['S-BLOCK'] = 'S-B',
-              ['COMMAND'] = 'Cmd',
-              ['EX'] = 'Ex',
-              ['TERMINAL'] = 'Term',
-              ['REPLACE'] = 'Rplc',
-              ['V-REPLACE'] = 'V-Rplc',
-              ['ENTER'] = 'Ent',
-              ['MORE'] = 'More',
-              ['SHELL'] = 'sh'
+              ["NORMAL"] = "N",
+              ["INSERT"] = "I",
+              ["VISUAL"] = "V",
+              ["V-LINE"] = "V-L",
+              ["V-BLOCK"] = "V-B",
+              ["SELECT"] = "Sel",
+              ["S-LINE"] = "S-L",
+              ["S-BLOCK"] = "S-B",
+              ["COMMAND"] = "Cmd",
+              ["EX"] = "Ex",
+              ["TERMINAL"] = "Term",
+              ["REPLACE"] = "Rplc",
+              ["V-REPLACE"] = "V-Rplc",
+              ["ENTER"] = "Ent",
+              ["MORE"] = "More",
+              ["SHELL"] = "sh",
             }
             return mode_map[str:upper()] or str
-          end
+          end,
         },
       },
       lualine_b = {
@@ -45,13 +45,13 @@ return {
           left_padding = 1,
         },
         "diff",
-        "diagnostics"
+        "diagnostics",
       },
       lualine_c = {
         {
           "filename",
           file_status = true,
-          path = 4
+          path = 4,
         },
       },
       lualine_x = {
@@ -59,15 +59,15 @@ return {
         {
           require("lazy.status").updates,
           cond = require("lazy.status").has_updates,
-        }
+        },
       },
       lualine_y = {
-        "progress"
+        "progress",
       },
       lualine_z = {
         {
           "location",
-          left_padding = 1
+          left_padding = 1,
         },
       },
     },
@@ -75,13 +75,13 @@ return {
       lualine_c = {
         {
           function()
-            return require('nvim-navic').get_location()
+            return require("nvim-navic").get_location()
           end,
           cond = function()
-            return require('nvim-navic').is_available()
-          end
+            return require("nvim-navic").is_available()
+          end,
         },
-      }
+      },
     },
   },
 }

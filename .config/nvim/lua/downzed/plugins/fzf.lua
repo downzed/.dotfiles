@@ -9,7 +9,7 @@ return {
       local actions = require("fzf-lua.actions")
       -- calling `setup` is optional for customization
       fzf_lua.setup({
-        'default-title',
+        "default-title",
         fzf_colors = true,
         keymap = {
           builtin = {
@@ -24,13 +24,13 @@ return {
             ["ctrl-g"] = { actions.grep_lgrep },
             ["ctrl-q"] = { actions.file_sel_to_qf },
             -- uncomment to enable '.gitignore' toggle for grep
-            ["ctrl-r"] = { actions.toggle_ignore }
+            ["ctrl-r"] = { actions.toggle_ignore },
           },
         },
         oldfiles = {
-          prompt                  = 'recent files » ',
-          cwd_only                = true,
-          stat_file               = true, -- verify files exist on disk
+          prompt = "recent files » ",
+          cwd_only = true,
+          stat_file = true, -- verify files exist on disk
           include_current_session = true, -- include bufs from current session
         },
       })
@@ -42,9 +42,11 @@ return {
       ---@param use_desc? boolean
       ---@default true
       local map = function(keys, func, desc, use_desc)
-        if use_desc == nil then use_desc = true end
-        vim.keymap.set('n', keys, func, {
-          desc = use_desc and "FZF: " .. desc or desc
+        if use_desc == nil then
+          use_desc = true
+        end
+        vim.keymap.set("n", keys, func, {
+          desc = use_desc and "FZF: " .. desc or desc,
         })
       end
 
@@ -52,26 +54,29 @@ return {
       ---@param dir  "neorg" | "dots"
       local function fzf_custom(dir)
         local is_neorg = dir == "neorg"
-        local cwd      = is_neorg and "~/Developer/notes" or "~/Developer/.dotfiles"
-        local prompt   = is_neorg and 'Neorg » ' or '.dots » '
+        local cwd = is_neorg and "~/Developer/notes" or "~/Developer/.dotfiles"
+        local prompt = is_neorg and "Neorg » " or ".dots » "
 
         fzf_lua.files({
-          prompt   = prompt,
-          cwd      = cwd,
-          cwd_only = false
+          prompt = prompt,
+          cwd = cwd,
+          cwd_only = false,
         })
       end
 
       map("<leader>st", function()
-          fzf_lua.grep({
-            search = 'TODO|HACK|PERF|NOTE|FIX',
-            no_esc = true,
-          })
-        end,
-        "[S]earch [T]odo")
+        fzf_lua.grep({
+          search = "TODO|HACK|PERF|NOTE|FIX",
+          no_esc = true,
+        })
+      end, "[S]earch [T]odo")
 
-      map("<leader>sn", function() fzf_custom("neorg") end, "[S]earch [N]eorg")
-      map("<leader>sd", function() fzf_custom("dots") end, "[S]earch [D]otfiles")
+      map("<leader>sn", function()
+        fzf_custom("neorg")
+      end, "[S]earch [N]eorg")
+      map("<leader>sd", function()
+        fzf_custom("dots")
+      end, "[S]earch [D]otfiles")
 
       map("<leader>sf", fzf_lua.files, "[S]earch [F]iles")
       map("<leader>sg", fzf_lua.git_files, "[S]earch [G]it files")
@@ -102,6 +107,6 @@ return {
       map("<leader>bD", closeAllBuffers, "[B]uffer [D]elete all but current", false)
       map("<leader>bn", ":bnext<cr>", "[B]uffer [N]ext", false)
       map("<leader>bp", ":bprevious<cr>", "[B]uffer [P]revious", false)
-    end
-  }
+    end,
+  },
 }

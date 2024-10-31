@@ -1,5 +1,5 @@
 return {
-  { 'rust-lang/rust.vim' },
+  { "rust-lang/rust.vim" },
   {
     "saecki/crates.nvim",
     tag = "stable",

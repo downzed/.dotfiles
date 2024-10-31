@@ -3,49 +3,49 @@ return {
   "tpope/vim-surround",
   {
     "danymat/neogen",
-    opts = {}
+    opts = {},
   },
   {
-    'folke/which-key.nvim',
+    "folke/which-key.nvim",
     event = "VimEnter",
     config = function()
       local wk = require("which-key")
       wk.add({
         {
-          '<leader>b',
-          group = 'Buffers',
+          "<leader>b",
+          group = "Buffers",
           expand = function()
-            return require('which-key.extras').expand.buf()
-          end
+            return require("which-key.extras").expand.buf()
+          end,
         },
-        { '<leader>c', group = 'Code' },
-        { '<leader>d', group = 'Document' },
-        { '<leader>r', group = 'Rename' },
-        { '<leader>s', group = 'Search' },
-        { '<leader>w', group = 'Workspace' },
-        { '<leader>t', group = 'Toggle' },
-        { '<leader>g', group = 'Git' },
-        { '<leader>n', group = 'Neorg' },
-        { '<leader>x', group = 'Diagnostics' },
+        { "<leader>c", group = "Code" },
+        { "<leader>d", group = "Document" },
+        { "<leader>r", group = "Rename" },
+        { "<leader>s", group = "Search" },
+        { "<leader>w", group = "Workspace" },
+        { "<leader>t", group = "Toggle" },
+        { "<leader>g", group = "Git" },
+        { "<leader>n", group = "Neorg" },
+        { "<leader>x", group = "Diagnostics" },
       })
     end,
   },
   {
-    'Wansmer/treesj',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    opts = {}
+    "Wansmer/treesj",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
   },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {}
+    opts = {},
   },
   {
-    'MeanderingProgrammer/markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
+    "MeanderingProgrammer/markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" },
     opts = {
-      { latex = { enabled = false } }
-    }
+      { latex = { enabled = false } },
+    },
   },
   {
     "norcalli/nvim-colorizer.lua",
@@ -55,6 +55,8 @@ return {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  }
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 }
