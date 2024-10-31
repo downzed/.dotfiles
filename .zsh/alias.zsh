@@ -20,6 +20,7 @@ alias dp='docker ps --format "table {{.ID}}\t{{.Names}}\t\t{{.Status}}\t{{.Ports
 alias dpe='docker exec -it $(docker ps --format "{{.Names}}" | fzf) bash' ## docker exec fzf  
 alias dr='docker-compose down; cls; docker-compose up --watch' ## docker restart 
 
-alias dr_v2='cls; docker-compose down; cls;docker-compose -f docker-compose-m1.yml --env-file=docker.env up --watch'
+alias dr_v2='cls; docker-compose down; cls;docker-compose -f docker-compose-m1.yml --env-file=docker.env up'
+alias dr_m='cls; docker-compose down; cls;docker-compose -f docker-compose.yml --env-file=.env up'
 alias pn='pnpm'
 
