@@ -19,7 +19,7 @@ alias lst='eza --tree'
 # docker
 alias dp='docker ps --format "table {{.ID}}\t{{.Names}}\t\t{{.Status}}\t{{.Ports}}"' ## docker ps table
 alias dpe='docker exec -it $(docker ps --format "{{.Names}}" | fzf) bash' ## docker exec fzf  
-alias dr='docker-compose down; cls; docker-compose up --watch' ## docker restart 
+alias dr='docker-compose down; cls; docker-compose up -d' ## docker restart 
 
 alias eza='eza --icons'
 alias ls='eza'
