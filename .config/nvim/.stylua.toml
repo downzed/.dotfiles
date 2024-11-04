@@ -1,0 +1,19 @@
+# .stylua.toml
+
+# Input and output configuration
+column_width = 120                # The maximum width for a line of code.
+indent_type = "Spaces"            # Prefer spaces for indentation.
+indent_width = 2                  # Set indentation to 2 spaces.
+
+# # Spacing configuration
+# no_call_parentheses = false       # Always use parentheses in function calls, unless niladic.
+quote_style = "AutoPreferSingle"  # Prefer double quotes, but keep consistency if mixed.
+#
+# # Formatting specific options
+# trailing_table_comma = "Always"   # Add trailing commas to multiline tables.
+# call_arg_parentheses = "Always"   # Always add parentheses around function arguments.
+# collapse_simple_statement = true  # Allow short, simple statements on the same line.
+#
+# # Control comments and other formatting
+# line_endings = "Unix"             # Use Unix-style line endings (\n).
+# insert_final_newline = true       # Always end files with a newline.
