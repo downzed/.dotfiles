@@ -8,8 +8,8 @@ return {
   --   },
   -- },
   {
-    -- dir = "~/Developer/lua/nvim-colorschemes/phosmon.nvim",
-    "downzed/phosmon.nvim",
+    dir = "~/Developer/lua/phosmon.nvim",
+    -- "downzed/phosmon.nvim",
     opts = {},
   },
 }

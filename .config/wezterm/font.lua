@@ -22,7 +22,7 @@ end
 function M.apply_to_config(config)
   private_helper()
   config.font = font
-  config.font_size = 18
+  config.font_size = 19
 end
 
 return M
