@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 vim.g.loaded_ruby_provider = 0
@@ -9,14 +9,14 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = "a"
+vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -29,7 +29,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -43,10 +43,10 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = "split"
+vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -65,12 +65,12 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
 vim.opt.cmdheight = 0
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
-vim.o.rtp = vim.o.rtp .. "," .. "/opt/homebrew/bin/fzf"
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.o.rtp = vim.o.rtp .. ',' .. '/opt/homebrew/bin/fzf'
 
 -- fold
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- vim.cmd.set('nofoldenable')
 
 -- spell
@@ -79,10 +79,10 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.opt.spell = true
 
 -- f#$king node
-vim.g.node_host_prog = "~./volta/tools/image/node/20.16.0"
+vim.g.node_host_prog = '~./volta/tools/image/node/20.16.0'
 
 -- -- misc
-vim.cmd.set("noswapfile")
+vim.cmd.set('noswapfile')
 -- vim.opt.shortmess:append({ I = true })
 -- vim.opt.encoding = 'utf-8'
 -- vim.opt.showcmd = true

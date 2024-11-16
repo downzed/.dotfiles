@@ -1,21 +1,20 @@
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
+      'MunifTanjim/nui.nvim',
     },
     config = function()
-      require("neo-tree").setup({
+      require('neo-tree').setup({
         window = {
-          position = "left",
+          position = 'left',
         },
         event_handlers = {
           {
-            event = "file_opened",
+            event = 'file_opened',
             handler = function()
-              require("neo-tree.command").execute({ action = "close" })
+              require('neo-tree.command').execute({ action = 'close' })
             end,
           },
         },
@@ -34,17 +33,17 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>tn", "<cmd>Neotree toggle<CR>", { desc = "[T]oggle [N]eoTree" })
+      vim.keymap.set('n', '<leader>tn', '<cmd>Neotree toggle<CR>', { desc = '[T]oggle [N]eoTree' })
     end,
   },
   {
-    "stevearc/oil.nvim",
+    'stevearc/oil.nvim',
     opts = {},
     -- Optional dependencies
     config = function()
-      local oil = require("oil")
+      local oil = require('oil')
       oil.setup()
-      vim.keymap.set("n", "<leader>to", oil.open, { desc = "[T]oggle [O]il" })
+      vim.keymap.set('n', '<leader>to', oil.open, { desc = '[T]oggle [O]il' })
     end,
   },
 }

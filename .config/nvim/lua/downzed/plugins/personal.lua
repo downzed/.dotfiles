@@ -8,8 +8,7 @@ return {
   --   },
   -- },
   {
-    dir = "~/Developer/lua/phosmon.nvim",
-    -- "downzed/phosmon.nvim",
+    'downzed/phosmon.nvim',
     opts = {},
   },
 }

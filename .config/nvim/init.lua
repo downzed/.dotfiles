@@ -1,1 +1,1 @@
-require("downzed")
+require('downzed')

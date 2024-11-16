@@ -1,25 +1,25 @@
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
+    'nvim-treesitter/nvim-treesitter',
+    event = { 'BufReadPost', 'BufNewFile' },
     opts = {
       ensure_installed = {
-        "c",
-        "cpp",
-        "cmake",
-        "css",
-        "lua",
-        "luadoc",
-        "python",
-        "html",
-        "rust",
-        "toml",
-        "javascript",
-        "typescript",
-        "json",
-        "yaml",
-        "markdown",
-        "bash",
+        'c',
+        'cpp',
+        'cmake',
+        'css',
+        'lua',
+        'luadoc',
+        'python',
+        'html',
+        'rust',
+        'toml',
+        'javascript',
+        'typescript',
+        'json',
+        'yaml',
+        'markdown',
+        'bash',
       },
       auto_install = true,
       sync_install = true,
@@ -33,7 +33,7 @@ return {
       fold = { enable = true, disable = {} },
     },
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      require('nvim-treesitter.configs').setup(opts)
     end,
   },
 }
