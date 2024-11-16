@@ -1,10 +1,10 @@
 return {
-  { "rust-lang/rust.vim" },
+  { 'rust-lang/rust.vim' },
   {
-    "saecki/crates.nvim",
-    tag = "stable",
+    'saecki/crates.nvim',
+    tag = 'stable',
     config = function()
-      local crates = require("crates")
+      local crates = require('crates')
       crates.setup()
     end,
   },
