@@ -23,7 +23,7 @@ function M.apply_to_config(config)
   config.cursor_blink_ease_in = 'Linear'
   config.cursor_blink_ease_out = 'Linear'
 
-  config.color_scheme = 'terafox'
+  config.color_scheme = 'duskfox'
 
   config.macos_window_background_blur = 25
   config.window_background_opacity = 0.88

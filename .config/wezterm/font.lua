@@ -4,7 +4,7 @@ local M = {}
 
 local font = w.font_with_fallback({
   {
-    family = 'GitLab Mono',
+    family = 'Maple Mono',
     italic = false,
     weight = 'Medium',
   },
@@ -23,6 +23,7 @@ function M.apply_to_config(config)
   private_helper()
   config.font = font
   config.font_size = 19
+  config.harfbuzz_features = { 'calt=0' }
 end
 
 return M
