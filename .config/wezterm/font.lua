@@ -6,7 +6,7 @@ local font = w.font_with_fallback({
   {
     family = 'Maple Mono',
     italic = false,
-    weight = 'Medium',
+    weight = 'Regular',
   },
   {
     family = 'Symbols Nerd Font Mono',
@@ -22,7 +22,7 @@ end
 function M.apply_to_config(config)
   private_helper()
   config.font = font
-  config.font_size = 19
+  config.font_size = 18
   config.harfbuzz_features = { 'calt=0' }
 end
 
