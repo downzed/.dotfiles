@@ -1,0 +1,6 @@
+font-family = Maple Mono
+font-size = 16.0
+theme = nightfox
+keybind = ctrl+s>shift+\=new_split:right
+keybind = ctrl+s>shift+-=new_split:down
+
