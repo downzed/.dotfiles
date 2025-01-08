@@ -1,6 +1,14 @@
 font-family = Maple Mono
 font-size = 16.0
-theme = nightfox
+theme = duskfox
+
 keybind = ctrl+s>shift+\=new_split:right
 keybind = ctrl+s>shift+-=new_split:down
 
+keybind = ctrl+s>l=goto_split:right
+keybind = ctrl+s>h=goto_split:left
+keybind = ctrl+s>k=goto_split:top
+keybind = ctrl+s>j=goto_split:bottom
+
+keybind = ctrl+s>z=toggle_split_zoom
+keybind = cmd+shift+z=toggle_fullscreen
