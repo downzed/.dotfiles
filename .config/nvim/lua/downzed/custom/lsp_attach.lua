@@ -1,3 +1,16 @@
+--- @param keys string representing the key sequence to be mapped.
+--- @param func function function to be executed when the key sequence is pressed.
+--- @param desc string string describing the key mapping.
+--- @usage map("<leader>xx", function() ... end, "[X]xx")
+local map = function(keys, func, desc)
+  vim.keymap.set('n', keys, function()
+    func()
+  end, {
+    buffer = buffer,
+    desc = 'LSP: ' .. desc,
+  })
+end
+
 local attach = function(buffer, client)
   local navic = require('nvim-navic')
   local ts_builtin = require('telescope.builtin')
@@ -6,19 +19,6 @@ local attach = function(buffer, client)
 
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, buffer)
-  end
-
-  --- @param keys string representing the key sequence to be mapped.
-  --- @param func function function to be executed when the key sequence is pressed.
-  --- @param desc string string describing the key mapping.
-  --- @usage map("<leader>xx", function() ... end, "[X]xx")
-  local map = function(keys, func, desc)
-    vim.keymap.set('n', keys, function()
-      func()
-    end, {
-      buffer = buffer,
-      desc = 'LSP: ' .. desc,
-    })
   end
 
   vim.keymap.set(
