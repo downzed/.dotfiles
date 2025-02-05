@@ -58,7 +58,7 @@ return {
   {
     'EdenEast/nightfox.nvim',
     config = function()
-      _G.ApplyTheme('duskfox')
+      _G.ApplyTheme('terafox')
     end,
   },
 }

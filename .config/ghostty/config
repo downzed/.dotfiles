@@ -1,6 +1,6 @@
-font-family = Maple Mono
-font-size = 16.0
-theme = duskfox
+font-family = GitLab Mono
+font-size = 18.0
+theme = terafox 
 
 keybind = ctrl+s>shift+\=new_split:right
 keybind = ctrl+s>shift+-=new_split:down
@@ -9,6 +9,13 @@ keybind = ctrl+s>l=goto_split:right
 keybind = ctrl+s>h=goto_split:left
 keybind = ctrl+s>k=goto_split:top
 keybind = ctrl+s>j=goto_split:bottom
+
+keybind = ctrl+s>ctrl+k=resize_split:up,25
+keybind = ctrl+s>ctrl+j=resize_split:down,25
+keybind = ctrl+s>ctrl+h=resize_split:left,25
+keybind = ctrl+s>ctrl+l=resize_split:right,25
+
+keybind = ctrl+s>ctrl+e=equalize_splits
 
 keybind = ctrl+s>z=toggle_split_zoom
 keybind = cmd+shift+z=toggle_fullscreen
