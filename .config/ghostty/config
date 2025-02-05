@@ -1,6 +1,11 @@
-font-family = GitLab Mono
-font-size = 18.0
 theme = terafox 
+
+font-size = 18.0
+font-family = JetbrainsMono Nerd Font Mono
+
+font-feature = -calt
+font-feature = -dlig
+font-feature = -liga
 
 keybind = ctrl+s>shift+\=new_split:right
 keybind = ctrl+s>shift+-=new_split:down

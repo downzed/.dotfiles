@@ -2,23 +2,8 @@ local attach = function(buffer, client)
   local navic = require('nvim-navic')
   local ts_builtin = require('telescope.builtin')
 
-  -- local builtin = require("fzf-lua")
-
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, buffer)
-  end
-
-  --- @param keys string representing the key sequence to be mapped.
-  --- @param func function function to be executed when the key sequence is pressed.
-  --- @param desc string string describing the key mapping.
-  --- @usage map("<leader>xx", function() ... end, "[X]xx")
-  local map = function(keys, func, desc)
-    vim.keymap.set('n', keys, function()
-      func()
-    end, {
-      buffer = buffer,
-      desc = 'LSP: ' .. desc,
-    })
   end
 
   vim.keymap.set(
@@ -27,6 +12,17 @@ local attach = function(buffer, client)
     vim.lsp.buf.signature_help,
     { desc = 'LSP: Signature Help' }
   )
+
+  --- @param keys string representing the key sequence to be mapped.
+  --- @param func function function to be executed when the key sequence is pressed.
+  --- @param desc string string describing the key mapping.
+  --- @usage map("<leader>xx", function() ... end, "[X]xx")
+  local map = function(keys, func, desc)
+    vim.keymap.set('n', keys, func, {
+      buffer = buffer,
+      desc = 'LSP: ' .. desc,
+    })
+  end
 
   map('<leader>ds', ts_builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
   map('<leader>ws', ts_builtin.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
@@ -39,8 +35,9 @@ local attach = function(buffer, client)
   map('gd', ts_builtin.lsp_definitions, '[G]oto [D]efinition')
   map('gI', ts_builtin.lsp_implementations, '[G]oto [I]mplementation')
   map('gr', ts_builtin.lsp_references, '[G]oto [R]eferences')
-  map('gD', ts_builtin.lsp_declarations, '[G]oto [D]eclaration')
-  map('<leader>D', ts_builtin.lsp_type_definitions, '[G]oto Type [D]efinition')
+  map('gD', ts_builtin.lsp_type_definitions, '[G]oto Type [D]efinition')
+  -- map('gD', ts_builtin.lsp_declarations, '[G]oto [D]eclaration')
+  -- map('<leader>D', ts_builtin.lsp_type_definitions, '[G]oto Type [D]efinition')
   map('<leader>xf', vim.diagnostic.open_float, 'Diagnostics: [F]loat')
 
   if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
