@@ -1,7 +1,7 @@
-theme = terafox 
+theme = nordfox
 
-font-size = 18.0
-font-family = JetbrainsMono Nerd Font Mono
+font-size = 16.0
+font-family = Gitlab Mono
 
 font-feature = -calt
 font-feature = -dlig
@@ -24,3 +24,6 @@ keybind = ctrl+s>ctrl+e=equalize_splits
 
 keybind = ctrl+s>z=toggle_split_zoom
 keybind = cmd+shift+z=toggle_fullscreen
+
+macos-titlebar-style = tabs
+

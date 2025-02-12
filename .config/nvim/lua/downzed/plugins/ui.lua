@@ -44,8 +44,10 @@ end
 function _G.ToggleMode()
   if vim.o.background == 'dark' then
     vim.o.background = 'light'
+    _G.ApplyTheme('dayfox')
   else
     vim.o.background = 'dark'
+    _G.ApplyTheme('nordfox')
   end
 end
 
@@ -58,7 +60,7 @@ return {
   {
     'EdenEast/nightfox.nvim',
     config = function()
-      _G.ApplyTheme('terafox')
+      _G.ApplyTheme('nordfox')
     end,
   },
 }
