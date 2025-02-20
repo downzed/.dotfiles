@@ -47,7 +47,7 @@ function _G.ToggleMode()
     _G.ApplyTheme('dayfox')
   else
     vim.o.background = 'dark'
-    _G.ApplyTheme('duskfox')
+    _G.ApplyTheme('terafox')
   end
 end
 
@@ -60,7 +60,20 @@ return {
   {
     'EdenEast/nightfox.nvim',
     config = function()
-      _G.ApplyTheme('duskfox')
+      require('nightfox').setup({
+        options = {
+          transparent = true,
+          colorblind = {
+            enable = true, -- Enable colorblind support
+            severity = {
+              protan = 0, -- Severity [0,1] for protan (red)
+              deutan = 1, -- Severity [0,1] for deutan (green)
+              tritan = 0, -- Severity [0,1] for tritan (blue)
+            },
+          },
+        },
+      })
+      _G.ApplyTheme('terafox')
     end,
   },
 }
