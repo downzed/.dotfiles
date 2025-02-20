@@ -52,6 +52,10 @@ return {
     opts = {},
   },
   {
+    'folke/zen-mode.nvim',
+    opts = {},
+  },
+  {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
     ft = { 'markdown' },
