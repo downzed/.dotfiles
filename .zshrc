@@ -9,7 +9,8 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export GO_HOME="$HOME/go/bin"
+export PATH="$GO_HOME:$VOLTA_HOME/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 # For compilers to find jpeg you may need to set:

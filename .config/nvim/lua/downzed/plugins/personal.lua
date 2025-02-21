@@ -8,11 +8,11 @@ return {
   --   },
   -- },
   {
-    -- 'downzed/phosmon.nvim',
-    dir = '~/Developer/lua/nvim-colorschemes/phosmon.nvim/',
+    -- dir = '~/Developer/lua/nvim-colorschemes/phosmon.nvim/',
+    'downzed/phosmon.nvim',
     opts = {
       ai = {
-        model = 'olmo2',
+        model = 'codegeex4:latest',
       },
     },
   },

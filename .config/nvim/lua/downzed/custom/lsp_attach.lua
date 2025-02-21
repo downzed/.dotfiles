@@ -30,7 +30,7 @@ local attach = function(buffer, client)
   map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-  map('K', vim.lsp.buf.hover, 'Hover Documentation')
+  -- map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
   map('gd', ts_builtin.lsp_definitions, '[G]oto [D]efinition')
   map('gI', ts_builtin.lsp_implementations, '[G]oto [I]mplementation')
@@ -61,7 +61,6 @@ local attach = function(buffer, client)
 
   vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = 'rounded',
-    focusable = false,
     style = 'minimal',
   })
 end
