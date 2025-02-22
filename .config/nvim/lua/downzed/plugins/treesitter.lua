@@ -14,6 +14,7 @@ return {
         'html',
         'rust',
         'toml',
+        'go',
         'javascript',
         'typescript',
         'json',

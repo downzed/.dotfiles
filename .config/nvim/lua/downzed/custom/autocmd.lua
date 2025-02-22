@@ -54,3 +54,30 @@ vim.api.nvim_create_autocmd('FileType', {
     end
   end,
 })
+
+--- @name ApplyAutoMode
+--- @description Applies the appropriate theme based on the current system mode (light or dark).
+--- @return nil
+local ApplyAutoMode = function()
+  if vim.fn.has('mac') == 1 then
+    local handle = io.popen(
+      [[osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode']]
+    )
+
+    if handle ~= nil then
+      local result = handle:read('*a')
+      handle:close()
+      if not result:match('true') then -- light mode
+        _G.ApplyTheme('dayfox')
+      else -- it's dark
+        _G.ApplyTheme('duskfox')
+      end
+    end
+  end
+end
+
+autocmd({ 'VimEnter', 'FocusGained', 'VimResume' }, {
+  callback = function()
+    ApplyAutoMode()
+  end,
+})

@@ -1,7 +1,8 @@
-theme = light:terafox,dark:duskfox
+theme = light:dayfox,dark:duskfox
 
 font-size = 19.0
-font-family = GitLab Mono
+# font-family = Maple Mono
+font-family = InconsolataGo Nerd Font Mono
 background-opacity = 0.95
 
 font-feature = -calt

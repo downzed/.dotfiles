@@ -41,26 +41,11 @@ return {
     opts = {},
   },
   {
-    'MeanderingProgrammer/markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
-    opts = {
-      { latex = { enabled = false } },
-    },
-  },
-  {
     'norcalli/nvim-colorizer.lua',
     opts = {},
   },
   {
     'folke/zen-mode.nvim',
     opts = {},
-  },
-  {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
   },
 }

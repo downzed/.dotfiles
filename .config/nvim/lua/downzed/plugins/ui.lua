@@ -26,7 +26,6 @@ function _G.ToggleOpacity()
     'MsgArea',
   }
 
-  -- local default_bg = vim.o.background == "dark" and "#262626" or "#ffffff"
   if vim.api.nvim_get_hl(0, { name = 'Normal' }).bg == nil then
     for _, name in ipairs(hl_groups) do
       vim.api.nvim_set_hl(0, string.format('%s', name), { bg = _G.default_bg })
@@ -47,7 +46,7 @@ function _G.ToggleMode()
     _G.ApplyTheme('dayfox')
   else
     vim.o.background = 'dark'
-    _G.ApplyTheme('terafox')
+    _G.ApplyTheme('duskfox')
   end
 end
 
@@ -73,7 +72,6 @@ return {
           },
         },
       })
-      _G.ApplyTheme('terafox')
     end,
   },
 }
