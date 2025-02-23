@@ -2,7 +2,7 @@ alias cd="z"
 alias cls="clear"
 alias vi="fd --type f --hidden --exclude .git | fzf --height=50% --reverse --preview 'bat {}' | xargs nvim"
 alias g="git branch --list | fzf --height=50% --reverse | xargs git checkout" 
-alias sc="cat package.json | jq -r '.scripts | keys[]' | fzf --height=65% --reverse --border | xargs yarn"
+alias yarn="cat package.json | jq -r '.scripts | keys[]' | fzf --height=65% --reverse --border | xargs yarn"
 alias ..="cd .."
 alias top="bpytop"
 alias py="python3"
@@ -22,4 +22,6 @@ alias dpe='docker exec -it $(docker ps --format "{{.Names}}" | fzf) bash' ## doc
 alias dr='docker-compose down; cls; docker-compose up -d' ## docker restart 
 
 alias pn='pnpm'
+alias gor='cls; go run .'
+alias got='cls; go test -v' ## runs all tests and examples
 

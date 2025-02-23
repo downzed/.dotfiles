@@ -1,6 +1,7 @@
 local attach = function(buffer, client)
   local navic = require('nvim-navic')
   local ts_builtin = require('telescope.builtin')
+  local lsp_signature = require('lsp_signature')
 
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, buffer)
@@ -63,6 +64,13 @@ local attach = function(buffer, client)
     border = 'rounded',
     style = 'minimal',
   })
+
+  lsp_signature.on_attach({
+    bind = true,
+    handler_opts = {
+      border = 'rounded',
+    },
+  }, buffer)
 end
 
 vim.api.nvim_create_autocmd('LspAttach', {

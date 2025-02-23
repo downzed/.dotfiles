@@ -3,7 +3,7 @@ return {
   'downzed/phosmon.nvim',
   opts = {
     ai = {
-      model = 'yi-coder:9b',
+      model = 'qwen2.5-coder:7b',
     },
   },
 }

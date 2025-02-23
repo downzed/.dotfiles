@@ -2,6 +2,7 @@ return {
   {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-telescope/telescope-ui-select.nvim',
+    'blacktrub/telescope-godoc.nvim',
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -118,8 +119,9 @@ return {
       map('<leader>bn', ':bnext<cr>', '[B]uffer [N]ext', false)
       map('<leader>bp', ':bprevious<cr>', '[B]uffer [P]revious', false)
 
-      telescope.load_extension('fzf')
       telescope.load_extension('ui-select')
+      telescope.load_extension('fzf')
+      telescope.load_extension('godoc')
     end,
   },
 }

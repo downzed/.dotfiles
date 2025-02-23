@@ -1,11 +1,22 @@
 return {
   {
+    'ray-x/lsp_signature.nvim',
+    event = 'InsertEnter',
+    opts = {
+      bind = true,
+      handler_opts = {
+        border = 'rounded',
+      },
+    },
+  },
+  {
     'SmiteshP/nvim-navic',
     dependencies = {
       'neovim/nvim-lspconfig',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'hrsh7th/cmp-nvim-lsp',
+
       {
         'j-hui/fidget.nvim',
         opts = {

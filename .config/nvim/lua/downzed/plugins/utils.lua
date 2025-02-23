@@ -46,6 +46,17 @@ return {
   },
   {
     'folke/zen-mode.nvim',
-    opts = {},
+    opts = {
+      on_open = function()
+        vim.api.nvim_set_hl(0, 'ZenBg', { bg = 'NONE' })
+      end,
+    },
+    config = function(_, opts)
+      require('zen-mode').setup(opts)
+
+      vim.keymap.set('n', '<leader>tz', function()
+        require('zen-mode').toggle()
+      end, { desc = 'Toggle [Z]enMode' })
+    end,
   },
 }

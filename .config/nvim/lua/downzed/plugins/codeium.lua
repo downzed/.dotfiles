@@ -18,6 +18,9 @@ return {
       vim.keymap.set('i', '<c-x>', function()
         return vim.fn['codeium#Clear']()
       end, { expr = true, silent = true })
+      vim.keymap.set('n', '<leader>tc', function()
+        vim.cmd('CodeiumToggle')
+      end, { expr = true, silent = true, desc = 'Toggle [C]odeium' })
     end,
   },
 }
