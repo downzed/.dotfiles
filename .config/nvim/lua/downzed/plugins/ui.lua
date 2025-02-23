@@ -43,7 +43,7 @@ end
 function _G.ToggleMode()
   if vim.o.background == 'dark' then
     vim.o.background = 'light'
-    _G.ApplyTheme('dayfox')
+    _G.ApplyTheme('dawnfox')
   else
     vim.o.background = 'dark'
     _G.ApplyTheme('duskfox')
