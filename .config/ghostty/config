@@ -1,12 +1,22 @@
-theme = duskfox
+theme = light:dayfox, dark:duskfox
+
+alpha-blending = linear-corrected
 
 font-size = 19.0
 font-family = GitLab Mono
-background-opacity = 0.95
+font-family-bold = GitLab Mono 
+font-variation-bold = wght=800
 
 font-feature = -calt
 font-feature = -dlig
 font-feature = -liga
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+
+background-opacity = 0.98
+background-blur-radius = 45
 
 keybind = ctrl+s>shift+\=new_split:right
 keybind = ctrl+s>shift+-=new_split:down

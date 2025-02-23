@@ -54,3 +54,20 @@ vim.api.nvim_create_autocmd('FileType', {
     end
   end,
 })
+
+--- @name ApplyAutoMode
+--- @description Applies the appropriate theme based on the current system mode (light or dark).
+--- @return nil
+local ApplyAutoMode = function()
+  if require('downzed.custom.mode').get_is_dark_mode() == 'true' then
+    _G.ApplyTheme('duskfox')
+  else
+    _G.ApplyTheme('dayfox')
+  end
+end
+
+autocmd({ 'VimEnter', 'VimResume' }, {
+  callback = function()
+    ApplyAutoMode()
+  end,
+})
