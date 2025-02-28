@@ -54,7 +54,6 @@ vim.keymap.set('n', '<leader>tm', _G.ToggleMode, { desc = '[T]oggle [M]ode' })
 vim.keymap.set('n', '<leader>ty', _G.ToggleOpacity, { desc = '[T]oggle opacit[y]' })
 
 return {
-  { 'echasnovski/mini.icons', version = false, opts = {} },
   { 'stevearc/dressing.nvim' },
   {
     'EdenEast/nightfox.nvim',

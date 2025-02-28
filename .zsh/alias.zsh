@@ -22,6 +22,9 @@ alias dpe='docker exec -it $(docker ps --format "{{.Names}}" | fzf) bash' ## doc
 alias dr='docker-compose down; cls; docker-compose up -d' ## docker restart 
 
 alias pn='pnpm'
+
+# go
 alias gor='cls; go run .'
 alias got='cls; go test -v' ## runs all tests and examples
+alias gotb='cls; go test -bench=.' ## runs all tests and examples
 

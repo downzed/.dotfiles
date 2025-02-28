@@ -1,5 +1,6 @@
 return {
   'nvim-lualine/lualine.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   event = 'VeryLazy',
   opts = {
     options = {
@@ -55,6 +56,11 @@ return {
         },
       },
       lualine_x = {
+        {
+          'filetype',
+          colored = true, -- Displays filetype icon in color if set to true
+          icon_only = true, -- Display only an icon for filetype
+        },
         {
           require('lazy.status').updates,
           cond = require('lazy.status').has_updates,
