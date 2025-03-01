@@ -25,6 +25,6 @@ alias pn='pnpm'
 
 # go
 alias gor='cls; go run .'
-alias got='cls; go test -v' ## runs all tests and examples
+alias got='cls; go test -v ./...' ## runs all tests and examples
 alias gotb='cls; go test -bench=.' ## runs all tests and examples
 

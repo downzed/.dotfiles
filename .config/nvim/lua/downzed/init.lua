@@ -1,6 +1,10 @@
 require('downzed.options')
 require('downzed.keymaps')
 
+if vim.fn.has('termguicolors') == 1 then
+  vim.o.termguicolors = true
+end
+
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'

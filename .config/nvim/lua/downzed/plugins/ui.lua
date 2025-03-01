@@ -6,8 +6,6 @@
 function _G.ApplyTheme(theme)
   local current_theme = theme or 'default'
   vim.cmd.colorscheme(current_theme)
-  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 _G.default_bg = vim.api.nvim_get_hl(0, { name = 'Normal' }).bg
@@ -41,13 +39,15 @@ end
 --- @description Switches theme between dark and light themes
 --- @usage :lua ToggleMode()
 function _G.ToggleMode()
+  -- _G.ApplyTheme('phosmon')
   if vim.o.background == 'dark' then
     vim.o.background = 'light'
-    _G.ApplyTheme('dayfox')
+    -- vim.cmd('PhosmonLight')
   else
     vim.o.background = 'dark'
-    _G.ApplyTheme('duskfox')
+    -- vim.cmd('PhosmonDark')
   end
+  _G.ApplyTheme('monokai-nightasty')
 end
 
 vim.keymap.set('n', '<leader>tm', _G.ToggleMode, { desc = '[T]oggle [M]ode' })
@@ -56,21 +56,20 @@ vim.keymap.set('n', '<leader>ty', _G.ToggleOpacity, { desc = '[T]oggle opacit[y]
 return {
   { 'stevearc/dressing.nvim' },
   {
-    'EdenEast/nightfox.nvim',
-    config = function()
-      require('nightfox').setup({
-        options = {
-          transparent = true,
-          colorblind = {
-            enable = true, -- Enable colorblind support
-            severity = {
-              protan = 0, -- Severity [0,1] for protan (red)
-              deutan = 1, -- Severity [0,1] for deutan (green)
-              tritan = 0, -- Severity [0,1] for tritan (blue)
-            },
-          },
-        },
-      })
+    'polirritmico/monokai-nightasty.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {
+      hl_styles = {
+        -- Custom styles for this groups: (See `:help nvim_set_hl`, Parameters, {val} for supported keys)
+        comments = { italic = false },
+        keywords = { italic = false },
+        functions = { italic = false },
+        variables = { italic = false },
+      },
+    },
+    config = function(_, opts)
+      require('monokai-nightasty').setup(opts)
     end,
   },
 }

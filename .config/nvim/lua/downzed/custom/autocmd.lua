@@ -60,10 +60,13 @@ vim.api.nvim_create_autocmd('FileType', {
 --- @return nil
 local ApplyAutoMode = function()
   if require('downzed.custom.mode').get_is_dark_mode() == 'true' then
-    _G.ApplyTheme('duskfox')
+    -- vim.cmd('PhosmonDark')
+    vim.o.background = 'dark'
   else
-    _G.ApplyTheme('dayfox')
+    vim.o.background = 'light'
+    -- vim.cmd('PhosmonLight')
   end
+  _G.ApplyTheme('monokai-nightasty')
 end
 
 autocmd({ 'VimEnter', 'VimResume' }, {

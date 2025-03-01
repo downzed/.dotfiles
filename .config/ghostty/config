@@ -1,22 +1,22 @@
-theme = light:dayfox,dark:duskfox
+theme = light:Monokai Pro Light,dark:Monokai Pro
 
 alpha-blending = linear-corrected
 
-font-size = 17.0
-font-family = InconsolataGo Nerd Font Mono
-font-family-bold = InconsolataGo Nerd Font Mono
+font-size = 16.0
+font-family = MesloLGS Nerd Font Mono
+font-family-bold = MesloLGS Nerd Font Mono
 font-style-bold = Bold
 
 font-feature = -calt
 font-feature = -dlig
 font-feature = -liga
 
-macos-titlebar-style = tabs
+# macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 
-background-opacity = 0.90
-background-blur-radius = true
+# background-opacity = 0.90
+# background-blur-radius = true
 
 keybind = ctrl+s>shift+\=new_split:right
 keybind = ctrl+s>shift+-=new_split:down
