@@ -43,11 +43,12 @@ function _G.ToggleMode()
   if vim.o.background == 'dark' then
     vim.o.background = 'light'
     -- vim.cmd('PhosmonLight')
+    _G.ApplyTheme('monokai-pro-light')
   else
     vim.o.background = 'dark'
     -- vim.cmd('PhosmonDark')
+    _G.ApplyTheme('monokai-pro-machine')
   end
-  _G.ApplyTheme('monokai-nightasty')
 end
 
 vim.keymap.set('n', '<leader>tm', _G.ToggleMode, { desc = '[T]oggle [M]ode' })
@@ -55,21 +56,5 @@ vim.keymap.set('n', '<leader>ty', _G.ToggleOpacity, { desc = '[T]oggle opacit[y]
 
 return {
   { 'stevearc/dressing.nvim' },
-  {
-    'polirritmico/monokai-nightasty.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {
-      hl_styles = {
-        -- Custom styles for this groups: (See `:help nvim_set_hl`, Parameters, {val} for supported keys)
-        comments = { italic = false },
-        keywords = { italic = false },
-        functions = { italic = false },
-        variables = { italic = false },
-      },
-    },
-    config = function(_, opts)
-      require('monokai-nightasty').setup(opts)
-    end,
-  },
+  { 'loctvl842/monokai-pro.nvim' },
 }

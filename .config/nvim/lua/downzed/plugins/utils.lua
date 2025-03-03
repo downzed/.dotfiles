@@ -2,10 +2,6 @@ return {
   'ThePrimeagen/vim-be-good',
   'tpope/vim-surround',
   {
-    'danymat/neogen',
-    opts = {},
-  },
-  {
     'folke/which-key.nvim',
     event = 'VimEnter',
     config = function()

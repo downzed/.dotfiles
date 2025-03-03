@@ -13,7 +13,6 @@ font-feature = -liga
 
 # macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
-macos-option-as-alt = true
 
 # background-opacity = 0.90
 # background-blur-radius = true
