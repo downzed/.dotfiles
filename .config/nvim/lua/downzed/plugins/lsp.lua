@@ -70,6 +70,7 @@ return {
           'jsonls',
           'yamlls',
           'marksman',
+          'gopls',
         },
         automatic_installation = true,
         handlers = {
