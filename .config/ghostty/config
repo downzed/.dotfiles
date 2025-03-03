@@ -1,22 +1,22 @@
-theme = light:dayfox, dark:duskfox
+theme = light:Monokai Pro Light,dark:Monokai Pro
 
 alpha-blending = linear-corrected
 
-font-size = 19.0
-font-family = GitLab Mono
-font-family-bold = GitLab Mono 
-font-variation-bold = wght=800
+font-size = 16.0
+font-family = MesloLGS Nerd Font Mono
+font-family-bold = MesloLGS Nerd Font Monokai
+font-style-bold = Bold
+
 
 font-feature = -calt
 font-feature = -dlig
 font-feature = -liga
 
-macos-titlebar-style = tabs
+# macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
-macos-option-as-alt = true
 
-background-opacity = 0.98
-background-blur-radius = 45
+# background-opacity = 0.90
+# background-blur-radius = true
 
 keybind = ctrl+s>shift+\=new_split:right
 keybind = ctrl+s>shift+-=new_split:down

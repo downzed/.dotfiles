@@ -2,10 +2,6 @@ return {
   'ThePrimeagen/vim-be-good',
   'tpope/vim-surround',
   {
-    'danymat/neogen',
-    opts = {},
-  },
-  {
     'folke/which-key.nvim',
     event = 'VimEnter',
     config = function()
@@ -41,26 +37,11 @@ return {
     opts = {},
   },
   {
-    'MeanderingProgrammer/markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' },
-    opts = {
-      { latex = { enabled = false } },
-    },
-  },
-  {
-    'norcalli/nvim-colorizer.lua',
-    opts = {},
-  },
-  {
     'folke/zen-mode.nvim',
     opts = {},
   },
   {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
+    'norcalli/nvim-colorizer.lua',
+    opts = {},
   },
 }

@@ -44,10 +44,12 @@ end
 function _G.ToggleMode()
   if vim.o.background == 'dark' then
     vim.o.background = 'light'
-    _G.ApplyTheme('dayfox')
+    -- vim.cmd('PhosmonLight')
+    _G.ApplyTheme('monokai-pro-light')
   else
     vim.o.background = 'dark'
-    _G.ApplyTheme('duskfox')
+    -- vim.cmd('PhosmonDark')
+    _G.ApplyTheme('monokai-pro-machine')
   end
 end
 
@@ -57,23 +59,22 @@ vim.keymap.set('n', '<leader>ty', _G.ToggleOpacity, { desc = '[T]oggle opacit[y]
 return {
   { 'echasnovski/mini.icons', version = false, opts = {} },
   { 'stevearc/dressing.nvim' },
-  {
-    'EdenEast/nightfox.nvim',
-    config = function()
-      require('nightfox').setup({
-        options = {
-          transparent = true,
-          colorblind = {
-            enable = true, -- Enable colorblind support
-            severity = {
-              protan = 0, -- Severity [0,1] for protan (red)
-              deutan = 1, -- Severity [0,1] for deutan (green)
-              tritan = 0, -- Severity [0,1] for tritan (blue)
-            },
-          },
-        },
-      })
-      _G.ApplyTheme('duskfox')
-    end,
-  },
+  { 'loctvl842/monokai-pro.nvim' },
+  -- {
+  --   'polirritmico/monokai-nightasty.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     hl_styles = {
+  --       -- Custom styles for this groups: (See `:help nvim_set_hl`, Parameters, {val} for supported keys)
+  --       comments = { italic = true },
+  --       keywords = { italic = false },
+  --       functions = { italic = false },
+  --       variables = { italic = false },
+  --     },
+  --   },
+  --   config = function(_, opts)
+  --     require('monokai-nightasty').setup(opts)
+  --   end,
+  -- },
 }
