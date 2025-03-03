@@ -1,5 +1,8 @@
 local map = function(key, cmd, desc)
-  vim.keymap.set('n', key, cmd, { silent = true, desc = 'Git: ' .. desc })
+  vim.keymap.set('n', key, cmd, {
+    silent = true,
+    desc = 'Git: ' .. desc,
+  })
 end
 
 return {
@@ -27,6 +30,7 @@ return {
       map('<leader>gsp', gs.preview_hunk, '[G]it[s]igns [P]review hunk')
       map('<leader>gs]', gs.next_hunk, '[G]it[s]igns ] next hunk')
       map('<leader>gs[', gs.prev_hunk, '[G]it[s]igns [ previous hunk')
+      map('<leader>tl', gs.toggle_current_line_blame, '[T]oggle [L]ine blame')
     end,
   },
 }
