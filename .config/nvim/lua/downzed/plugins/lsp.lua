@@ -7,6 +7,16 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'hrsh7th/cmp-nvim-lsp',
       {
+        'ray-x/lsp_signature.nvim',
+        event = 'InsertEnter',
+        opts = {
+          hint_prefix = '',
+          hint_enable = false,
+          handler_opts = { border = 'rounded' },
+          max_width = 80,
+        },
+      },
+      {
         'j-hui/fidget.nvim',
         opts = {
           notification = {
