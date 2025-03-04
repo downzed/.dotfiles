@@ -57,24 +57,7 @@ vim.keymap.set('n', '<leader>tm', _G.ToggleMode, { desc = '[T]oggle [M]ode' })
 vim.keymap.set('n', '<leader>ty', _G.ToggleOpacity, { desc = '[T]oggle opacit[y]' })
 
 return {
-  { 'echasnovski/mini.icons', version = false, opts = {} },
+  { 'nvim-tree/nvim-web-devicons', opts = {} },
   { 'stevearc/dressing.nvim' },
   { 'loctvl842/monokai-pro.nvim' },
-  -- {
-  --   'polirritmico/monokai-nightasty.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     hl_styles = {
-  --       -- Custom styles for this groups: (See `:help nvim_set_hl`, Parameters, {val} for supported keys)
-  --       comments = { italic = true },
-  --       keywords = { italic = false },
-  --       functions = { italic = false },
-  --       variables = { italic = false },
-  --     },
-  --   },
-  --   config = function(_, opts)
-  --     require('monokai-nightasty').setup(opts)
-  --   end,
-  -- },
 }
