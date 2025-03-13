@@ -39,6 +39,14 @@ return {
   {
     'folke/zen-mode.nvim',
     opts = {},
+    config = function()
+      vim.keymap.set(
+        'n',
+        '<leader>tz',
+        require('zen-mode').toggle,
+        { desc = '[T]oggle [Z]en mode' }
+      )
+    end,
   },
   {
     'norcalli/nvim-colorizer.lua',

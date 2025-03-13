@@ -62,11 +62,11 @@ local ApplyAutoMode = function()
   if require('downzed.custom.mode').get_is_dark_mode() == 'true' then
     -- vim.cmd('PhosmonDark')
     vim.o.background = 'dark'
-    _G.ApplyTheme('monokai-pro-machine')
+    _G.ApplyTheme('monokai-pro-classic')
   else
     -- vim.cmd('PhosmonLight')
     vim.o.background = 'light'
-    _G.ApplyTheme('monokai-pro-light')
+    _G.ApplyTheme('shine')
   end
 end
 

@@ -1,10 +1,10 @@
-theme = light:Monokai Pro Light,dark:Monokai Pro
+theme = Monokai Classic
 
 alpha-blending = linear-corrected
 
 font-size = 18.0
-font-family = JetBrainsMono Nerd Font Mono
-font-family-bold = JetBrainsMono Nerd Font Mono
+font-family = MesloLGS Nerd Font Mono
+font-family-bold = MesloLGS Nerd Font Mono
 font-style-bold = Bold
 
 

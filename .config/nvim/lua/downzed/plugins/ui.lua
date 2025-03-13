@@ -49,7 +49,7 @@ function _G.ToggleMode()
   else
     vim.o.background = 'dark'
     -- vim.cmd('PhosmonDark')
-    _G.ApplyTheme('monokai-pro-machine')
+    _G.ApplyTheme('monokai-pro-classic')
   end
 end
 
